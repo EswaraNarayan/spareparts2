@@ -1,0 +1,13 @@
+$productCatalog=sparepartsProductCatalog
+$productCatalogName=Spareparts Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='check']
+$lang=en
+
+
+# Insert Products
+INSERT_UPDATE SparepartsProduct;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);brandName;compatibility;weight;condition;vehicleModel;modelYear;countryOfOrigin;ean;variantType(code);$catalogVersion;$approved
+;P0001;A01;Tata;TT-CD400;pieces;Tata Tiago;Compatible with Tata Tiago Car Models;650gms;New;Tata Tiago EV ;2023;INDIA
+;P0002;A02;Tata;TA-IL32;pieces;Tata Tiago;Compatible with Tata Tiago Car Models;520gms;New;Tata Tiago XT;2023;INDIA005;;Tata Tiago Head Light;Tata Tiago Head Light;High quality engineered product range.These Headlights are made up of Hard Coated Lens which provides Enhanced resistance to scratches.

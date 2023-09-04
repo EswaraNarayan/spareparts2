@@ -1,0 +1,54 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImPex for Importing Product Media
+
+# Macros / Replacement Parameter definitions
+$productCatalog=sparepartsProductCatalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:com.hybris.spareparts.initialdata.setup.InitialDataSystemSetup&/sparepartsinitialdata/import/sampledata/productCatalogs/$productCatalog
+
+# Create Media
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+;1200Wx1200H;/1200Wx1200H/TataTiagoBrakePad.jpg;$siteResource/images/1200Wx1200H/TataTiagoBrakePad.jpg;;;images
+;515Wx515H;/515Wx515H/TataTiagoBrakePad.jpg;$siteResource/images/515Wx515H/TataTiagoBrakePad.jpg;;;images
+;300Wx300H;/300Wx300H/TataTiagoBrakePad.jpg;$siteResource/images/300Wx300H/TataTiagoBrakePad.jpg;;;images
+;96Wx96H;/96Wx96H/TataTiagoBrakePad.jpg;$siteResource/images/96Wx96H/TataTiagoBrakePad.jpg;;;images
+;65Wx65H;/65Wx65H/TataTiagoBrakePad.jpg;$siteResource/images/65Wx65H/TataTiagoBrakePad.jpg;;;images
+;30Wx30H;/30Wx30H/TataTiagoBrakePad.jpg;$siteResource/images/30Wx30H/TataTiagoBrakePad.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/TataTiagoBrakeDiscRoator.jpg;$siteResource/images/1200Wx1200H/TataTiagoBrakeDiscRoator.jpg;;;images
+;515Wx515H;/515Wx515H/TataTiagoBrakeDiscRoator.jpg;$siteResource/images/515Wx515H/TataTiagoBrakeDiscRoator.jpg;;;images
+;300Wx300H;/300Wx300H/TataTiagoBrakeDiscRoator.jpg;$siteResource/images/300Wx300H/TataTiagoBrakeDiscRoator.jpg;;;images
+;96Wx96H;/96Wx96H/TataTiagoBrakeDiscRoator.jpg;$siteResource/images/96Wx96H/TataTiagoBrakeDiscRoator.jpg;;;images
+;65Wx65H;/65Wx65H/TataTiagoBrakeDiscRoator.jpg;$siteResource/images/65Wx65H/TataTiagoBrakeDiscRoator.jpg;;;images
+;30Wx30H;/30Wx30H/TataTiagoBrakeDiscRoator.jpg;$siteResource/images/30Wx30H/TataTiagoBrakeDiscRoator.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/MarutiSuzukiLowerLinkBushKit.jpg;$siteResource/images/1200Wx1200H/MarutiSuzukiLowerLinkBushKit.jpg;;;images
+;515Wx515H;/515Wx515H/MarutiSuzukiLowerLinkBushKit.jpg;$siteResource/images/515Wx515H/MarutiSuzukiLowerLinkBushKit.jpg;;;images
+;300Wx300H;/300Wx300H/MarutiSuzukiLowerLinkBushKit.jpg;$siteResource/images/300Wx300H/MarutiSuzukiLowerLinkBushKit.jpg;;;images
+;96Wx96H;/96Wx96H/MarutiSuzukiLowerLinkBushKit.jpg;$siteResource/images/96Wx96H/MarutiSuzukiLowerLinkBushKit.jpg;;;images
+;65Wx65H;/65Wx65H/MarutiSuzukiLowerLinkBushKit.jpg;$siteResource/images/65Wx65H/MarutiSuzukiLowerLinkBushKit.jpg;;;images
+;30Wx30H;/30Wx30H/MarutiSuzukiLowerLinkBushKit.jpg;$siteResource/images/30Wx30H/MarutiSuzukiLowerLinkBushKit.jpg;;;images
+
+
+# Create Media Containers
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+;Tata Tiago BrakePad;/1200Wx1200H/TataTiagoBrakePad.jpg,/515Wx515H/TataTiagoBrakePad.jpg,/300Wx300H/TataTiagoBrakePad.jpg,/96Wx96H/TataTiagoBrakePad.jpg,/65Wx65H/TataTiagoBrakePad.jpg,/30Wx30H/TataTiagoBrakePad.jpg;
+;TataTiagoBrakeDiscRoator;/1200Wx1200H/TataTiagoBrakeDiscRoator.jpg,/515Wx515H/TataTiagoBrakeDiscRoator.jpg,/300Wx300H/TataTiagoBrakeDiscRoator.jpg,/96Wx96H/TataTiagoBrakeDiscRoator.jpg,/65Wx65H/TataTiagoBrakeDiscRoator.jpg,/30Wx30H/TataTiagoBrakeDiscRoator.jpg;
+
+# Update Products with Media and Media Containers
+UPDATE SparepartsProduct;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+;P0001;/300Wx300H/TataTiagoBrakePad.jpg;/96Wx96H/TataTiagoBrakePad.jpg;;/515Wx515H/TataTiagoBrakePad.jpg,/65Wx65H/TataTiagoBrakePad.jpg,/30Wx30H/TataTiagoBrakePad.jpg;/300Wx300H/TataTiagoBrakePad.jpg;/96Wx96H/TataTiagoBrakePad.jpg;Tata Tiago BrakePad;
+;P0002;/300Wx300H/TataTiagoBrakeDiscRoator.jpg;/96Wx96H/TataTiagoBrakeDiscRoator.jpg;;/515Wx515H/TataTiagoBrakeDiscRoator.jpg,/65Wx65H/TataTiagoBrakeDiscRoator.jpg,/30Wx30H/TataTiagoBrakeDiscRoator.jpg;/300Wx300H/TataTiagoBrakeDiscRoator.jpg;/96Wx96H/TataTiagoBrakeDiscRoator.jpg;TataTiagoBrakeDiscRoator;

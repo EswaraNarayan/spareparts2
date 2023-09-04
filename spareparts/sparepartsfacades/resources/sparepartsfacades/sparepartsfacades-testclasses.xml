@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testclasses><sparepartsfacades><testclass>com.hybris.spareparts.facades.suggestion.impl.DefaultSimpleSuggestionFacadeTest</testclass><testclass>com.hybris.spareparts.facades.suggestion.DefaultSimpleSuggestionFacadeIntegrationTest</testclass></sparepartsfacades></testclasses>

@@ -1,0 +1,210 @@
+$contentCatalog=sparepartsContentCatalog
+$contentCatalogName=Spareparts Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCatalog=sparepartsProductCatalog
+$productCatalogName=Spareparts Product Catalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV);
+$product=product(code, $productCV)
+$category=category(code, $productCV)
+$media=media(code, $contentCV);
+$siteResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/cockpits/cmscockpit
+
+
+# CMS Site Settings
+UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id)
+;spareparts;BP001;P0002;$productCatalog
+
+ 
+
+$lang=en
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/svg+xml'];altText;folder(qualifier)[default='images']
+;;/images/theme/SpareParts-1.svg;SpareParts-1.svg;$siteResource/images/theme/SpareParts-1.svg;image/svg+xml;SpareParts-1;
+
+# Site Logo Component
+INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
+;;SiteLogoComponent;Site Logo Component;SiteLogoComponent;"/"
+
+
+#################    HOME PAGE START     #################
+
+###  Home page splash Slot 1  #######
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+;;SparepartsHompageSplashBannerComponent;Spareparts Homepage Splash Banner Component;/Brakes/Brake/c/BP001;SparepartsHompageSplashBannerComponent
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+;;SparepartsHompageDiscountBannerComponent;Spareparts Homepage Discount Banner Component;/Brake-suspension/bush-kit/c/A03;SparepartsHompageDiscountBannerComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+;;Section1Slot-Homepage;true;SparepartsHompageSplashBannerComponent,SparepartsHompageDiscountBannerComponent
+
+###  Home page slot 2A  ####
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+;;SparepartsHompageBrakeBannerComponent;Spareparts Homepage Brake Banner Component;/Brake-Suspension/c/BP001;SparepartsHompageBrakeBannerComponent
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+;;SparepartsHompageCarLightBannerComponent;Spareparts Homepage Car Light Banner Component;/Car-lights/c/BP004;SparepartsHompageCarLightBannerComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+;;Section2ASlot-Homepage;true;SparepartsHompageBrakeBannerComponent,SparepartsHompageCarLightBannerComponent
+
+#### Home section 2B #######
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+;;SparepartsHompageCarEngineBannerComponent;Spareparts Homepage Car Engine Component;/Car-parts/c/BP002;SparepartsHompageCarEngineBannerComponent
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+;;SparepartsHompageCarBodypartsBannerComponent;Spareparts Homepage Car Bodyparts Component Child;/Car-engine/c/BP003;SparepartsHompageCarBodypartsBannerComponent
+
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+#;;Section2BSlot-Homepage;true;SparepartsHompageCarBodypartsBannerComponent,SparepartsHompageCarEngineBannerComponent
+
+## Home section 2C
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+;;Section2CSlot-Homepage;
+
+## Home section 3
+#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
+#;;SparepartsHomepageProductCarouselComponent;SparepartsHomepageProductCarouselComponent
+
+#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+#;;NewSparepartsHomepageProductCarouselComponent;What's New Spareparts Homepage Product Carousel;P0001,P0002,P0003,P0004,P0005;allVisible;true;NewSparepartsHomepageProductCarouselComponent
+
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#;;Section3Slot-Homepage;SparepartsHomepageProductCarouselComponent,NewSparepartsHomepageProductCarouselComponent
+
+#### Section 4
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+#;;SparepartsHompageImage1BannerComponent;Spareparts Homepage Image 1 Banner Component;/p/#;SparepartsHompageImage1BannerComponent
+#;;SparepartsHompageImage2Component;Spareparts Homepage Image 2 Banner Component;/p/#;SparepartsHompageImage2Component
+#;;SparepartsHompageImage3BannerComponent;Spareparts Homepage Image 3 Banner Component;/p/#;SparepartsHompageImage3BannerComponent
+#;;SparepartsHompageImage4BannerComponent;Spareparts Homepage Image 4 Banner Component;/p/#;SparepartsHompageImage4BannerComponent
+
+
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+#;;Section4Slot-Homepage;true;SparepartsHompageImage1BannerComponent,SparepartsHompageImage2Component,SparepartsHompageImage3BannerComponent,SparepartsHompageImage4BannerComponent
+
+### Section 5
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+;;SparepartsHompageFreeDelBannerComponent;Spareparts Homepage Free Delivery Banner Component;/faq;SparepartsHompageFreeDelBannerComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+;;Section5Slot-Homepage;true;SparepartsHompageFreeDelBannerComponent
+
+#Media Insertion for above slots of homepage
+
+
+# Home Page Splash 
+#Media Content
+
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+;widescreen;;banner_1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner_1400x440.jpg;;banner_1400x440.jpg;;"spareparts "
+;widescreen;;discount-1400x80.jpg;$siteResource/images/banners/homepage/responsive/discount-1400x80.jpg;;discount-1400x80.jpg;;"Assured Quality"
+;mobile;;discount-480x118.jpg;$siteResource/images/banners/homepage/responsive/discount-480x118.jpg;;discount-480x118.jpg;;"Assured Quality"
+;mobile;;banner_480x320.jpg;$siteResource/images/banners/homepage/responsive/banner_480x320.jpg;;banner_480x320.jpg;;"spareparts "
+;tablet;;banner_770x350.jpg;$siteResource/images/banners/homepage/responsive/banner_770x350.jpg;;banner_770x350.jpg;;"spareparts "
+;tablet;;discount-770x80.jpg;$siteResource/images/banners/homepage/responsive/discount-770x80.jpg;;discount-770x80.jpg;;"Assured Quality"
+;desktop;;banner_960x330.jpg;$siteResource/images/banners/homepage/responsive/banner_960x330.jpg;;banner_960x330.jpg;;"spareparts "
+;desktop;;discount-960x85.jpg;$siteResource/images/banners/homepage/responsive/discount-960x85.jpg;;discount-960x85.jpg;;"Assured Quality"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+;spareparts-homepage-discount-en;discount-480x118.jpg,discount-770x80.jpg,discount-960x85.jpg,discount-1400x80.jpg
+;spareparts-homepage-spalsh-en;banner_480x320.jpg,banner_770x350.jpg,banner_960x330.jpg,banner_1400x440.jpg
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+;;SparepartsHompageDiscountBannerComponent;spareparts-homepage-discount-en
+;;SparepartsHompageSplashBannerComponent;spareparts-homepage-spalsh-en
+
+# Home page slot 2A
+# Media Content
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+;tablet;;carlights_200x150.jpg;$siteResource/images/banners/homepage/responsive/carlights_200x150.jpg;;carlights_200x150.jpg;;"Car Light"
+;tablet;;break_200x150.jpg;$siteResource/images/banners/homepage/responsive/break_200x150.jpg;;break_200x150.jpg;;"Break & Suspension"
+;desktop;;carlights_240x180.jpg;$siteResource/images/banners/homepage/responsive/carlights_240x180.jpg;;carlights_240x180.jpg;;"Car Light"
+;desktop;;break_240x180.jpg;$siteResource/images/banners/homepage/responsive/break_240x180.jpg;;break_240x180.jpg;;"Break & Suspension"
+;widescreen;;carlights_350x262.jpg;$siteResource/images/banners/homepage/responsive/carlights_350x262.jpg;;carlights_350x262.jpg;;"Car Light"
+;widescreen;;break_350x262.jpg;$siteResource/images/banners/homepage/responsive/break_350x262.jpg;;break_350x262.jpg;;"Brake & Suspension"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+;spareparts-homepage-Brake-en;break_200x150.jpg,break_240x180.jpg,break_350x262.jpg
+;spareparts-homepage-car-light-en;carlights_200x150.jpg,carlights_240x180.jpg,carlights_350x262.jpg
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+;;SparepartsHompageBrakeBannerComponent;spareparts-homepage-Brake-en
+;;SparepartsHompageCarLightBannerComponent;spareparts-homepage-car-light-en
+
+# Home section 2B
+
+# Media Content
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+;tablet;;carparts_200x150.jpg;$siteResource/images/banners/homepage/responsive/carparts_200x150.jpg;;carparts_200x150.jpg;;"Car Parts"
+;tablet;;carengine_200x150.jpg;$siteResource/images/banners/homepage/responsive/carengine_200x150.jpg;;carengine_200x150.jpg;;"Car Engine"
+;desktop;;carparts_240x180.jpg;$siteResource/images/banners/homepage/responsive/carparts_240x180.jpg;;carparts_240x180.jpg;;"Car Parts"
+;desktop;;carengine_240x180.jpg;$siteResource/images/banners/homepage/responsive/carengine_240x180.jpg;;carengine_240x180.jpg;;"Car Engine"
+;widescreen;;carparts_350x262.jpg;$siteResource/images/banners/homepage/responsive/carparts_350x262.jpg;;carparts_350x262.jpg;;"Car Parts"
+;widescreen;;carengine_350x262.jpg;$siteResource/images/banners/homepage/responsive/carengine_350x262.jpg;;carengine_350x262.jpg;;"Car Engine"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+;spareparts-homepage-car-parts-en;carparts_200x150.jpg,carparts_240x180.jpg,carparts_350x262.jpg
+;spareparts-homepage-car-engine-en;carengine_200x150.jpg,carengine_240x180.jpg,carengine_350x262.jpg
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+;;SparepartsHompageCarBodypartsBannerComponent;spareparts-homepage-car-parts-en
+;;SparepartsHompageCarEngineBannerComponent;spareparts-homepage-car-engine-en
+
+
+
+# Section 4
+
+# Media Content
+
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+;tablet;;steering_200x200.jpg;$siteResource/images/banners/homepage/responsive/steering_200x200.jpg;;steering_200x200.jpg;;"steering"
+;tablet;;suspension_200x200.jpg;$siteResource/images/banners/homepage/responsive/suspension_200x200.jpg;;suspension_200x200.jpg;;"suspension"
+;tablet;;tailLights_200x200.jpg;$siteResource/images/banners/homepage/responsive/tailLights_200x200.jpg;;tailLights_200x200.jpg;;"Tail Lights"
+;tablet;;tire_200x200.jpg;$siteResource/images/banners/homepage/responsive/tire_200x200.jpg;;tire_200x200.jpg;;"tire"
+
+;desktop;;steering_240x240.jpg;$siteResource/images/banners/homepage/responsive/steering_240x240.jpg;;steering_240x240.jpg;;"steering"
+;desktop;;suspension_240x240.jpg;$siteResource/images/banners/homepage/responsive/suspension_240x240.jpg;;suspension_240x240.jpg;;"suspension"
+;desktop;;tailLights_240x240.jpg;$siteResource/images/banners/homepage/responsive/tailLights_240x240.jpg;;tailLights_240x240.jpg;;"Tail Lights"
+;desktop;;tire_240x240.jpg;$siteResource/images/banners/homepage/responsive/tire_240x240.jpg;;tire_240x240.jpg;;"tire"
+
+;widescreen;;steering_350x350.jpg;$siteResource/images/banners/homepage/responsive/steering_350x350.jpg;;steering_350x350.jpg;;"steering"
+;widescreen;;suspension_350x350.jpg;$siteResource/images/banners/homepage/responsive/suspension_350x350.jpg;;suspension_350x350.jpg;;"suspension"
+;widescreen;;tailLights_350x350.jpg;$siteResource/images/banners/homepage/responsive/tailLights_350x350.jpg;;tailLights_350x350.jpg;;"Tail Lights"
+;widescreen;;tire_350x350.jpg;$siteResource/images/banners/homepage/responsive/tire_350x350.jpg;;tire_350x350.jpg;;"tire"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+;spareparts-homepage-image1-en;steering_200x200.jpg,steering_240x240.jpg,steering_350x350.jpg
+;spareparts-homepage-image2-en;suspension_200x200.jpg,suspension_240x240.jpg,suspension_350x350.jpg
+;spareparts-homepage-image3-en;tailLights_200x200.jpg,tailLights_240x240.jpg,tailLights_350x350.jpg
+;spareparts-homepage-image4-en;tire_200x200.jpg,tire_240x240.jpg,tire_350x350.jpg
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+;;SparepartsHompageImage1BannerComponent;spareparts-homepage-image1-en
+;;SparepartsHompageImage2Component;spareparts-homepage-image2-en
+;;SparepartsHompageImage3BannerComponent;spareparts-homepage-image3-en
+;;SparepartsHompageImage4BannerComponent;spareparts-homepage-image4-en
+
+# Section 5
+
+# Media Content
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+;widescreen;;Elec_1400x50_HomeFreeDel_EN_01_1400W.jpg;$siteResource/images/banners/homepage/responsive/Elec_1400x50_HomeFreeDel_EN_01_1400W.jpg;;Elec_1400x50_HomeFreeDel_EN_01_1400W.jpg;;"Free Shipping on All Orders This Weekend"
+;mobile;;Elec_475x119_HomeFreeDel_EN_01_475W.jpg;$siteResource/images/banners/homepage/responsive/Elec_475x119_HomeFreeDel_EN_01_475W.jpg;;Elec_475x119_HomeFreeDel_EN_01_475W.jpg;;"Free Shipping on All Orders This Weekend"
+;tablet;;Elec_770x50_HomeFreeDel_EN_01_770W.jpg;$siteResource/images/banners/homepage/responsive/Elec_770x50_HomeFreeDel_EN_01_770W.jpg;;Elec_770x50_HomeFreeDel_EN_01_770W.jpg;;"Free Shipping on All Orders This Weekend"
+;desktop;;Elec_960x50_HomFreeDel_EN_01_960W.jpg;$siteResource/images/banners/homepage/responsive/Elec_960x50_HomFreeDel_EN_01_960W.jpg;;Elec_960x50_HomFreeDel_EN_01_960W.jpg;;"Free Shipping on All Orders This Weekend"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+;spareparts-homepage-free-del-en;Elec_475x119_HomeFreeDel_EN_01_475W.jpg,Elec_770x50_HomeFreeDel_EN_01_770W.jpg,Elec_960x50_HomFreeDel_EN_01_960W.jpg,Elec_1400x50_HomeFreeDel_EN_01_1400W.jpg
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+;;SparepartsHompageFreeDelBannerComponent;spareparts-homepage-free-del-en
+
+
+# CMS Footer Navigation Component
+UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];notice[lang=en][translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator,dateFormat=yyyy]
+;;FooterNavigationComponent;"Copyright ©2023 Spareparts, Inc. All Rights Reserved."
+

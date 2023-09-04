@@ -1,0 +1,131 @@
+#nav bar from cms-responsive-content
+
+$contentCatalog=sparepartsContentCatalog
+$contentCatalogName=Spareparts Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCatalog=sparepartsProductCatalog
+$productCatalogName=Spareparts Product Catalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV);
+$product=product(code, $productCV)
+$category=category(code, $productCV)
+$media=media(code, $contentCV);
+$siteResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/cockpits/cmscockpit
+
+
+
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
+;;HomepageNavLink;Home Page Nav Link;/;HomepageNavLink;HomepageNavLink;;;;
+;;StoreFinderLink;Store Finder Link;/store-finder;StoreFinderLink;StoreFinderLink;;;;
+;;LoginLink;Login Link;/login;LoginLink;LoginLink;;;;
+;;BrakeSuspensionCategoryLink; Brake Suspension Category Link;/Brake-Suspension/c/BP001;BrakeSuspensionCategoryLink;BrakeSuspensionCategoryLink;;BP001;;
+;;BrakePadCategoryLink;Brake Pad Category Link;/Brake/brake-pad/c/A01;BrakePadCategoryLink;BrakePadCategoryLink;;A01;;
+;;BrakeDiscRoaterCategoryLink;Brake Disc Roater Category Link;/Brake/brake-pad/c/A02;BrakeDiscRoaterCategoryLink;BrakeDiscRoaterCategoryLink;;A02;;
+;;LowerLinkBushKitCategoryLink;Lower Link Bush Kit Category Link;/Brake-suspension/bush-kit/c/A03;LowerLinkBushKitCategoryLink;LowerLinkBushKitCategoryLink;;A03;;
+;;ControlArmsCategoryLink;Control Arms Category Link;Suspension/control-arms/c/A04;ControlArmsCategoryLink;ControlArmsCategoryLink;;A04;;
+;;CarPartsCategoryLink;Car Parts Category Link;/Car-parts/c/BP002;CarPartsCategoryLink;CarPartsCategoryLink;;BP002;;
+;;CarEngineCategoryLink;Car Engine Category Link;/Car-engine/c/BP003;CarEngineCategoryLink;CarEngineCategoryLink;;BP003;;
+;;CarLightsCategoryLink;Car Lights Category Link;/Car-lights/c/BP004;CarLightsCategoryLink;CarLightsCategoryLink;;BP004;;
+;;BumperLightsCategoryLink;Bumper Lights Category Link;/Car-lights/bumper-lights/c/A14;BumperLightsCategoryLink;BumperLightsCategoryLink;;A14;;
+;;HeadLightsCategoryLink;Head Lights Category Link;/Car-lights/head-lights/c/A13;HeadLightsCategoryLink;HeadLightsCategoryLink;;A13;;
+;;IndicatorLightsCategoryLink;Indicator Lights Category Link;/Car-lights/indicator-lights/c/A15;IndicatorLightsCategoryLink;IndicatorLightsCategoryLink;;A15;;
+
+# CMS Navigation Nodes #
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;children(uid,$contentCV)[mode=append]
+;root;;root;;
+
+# CMS Navigation Nodes
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
+;SiteRootNode;;SiteRootNode;root;;SiteRootNode
+;SparepartsNavNode;;Spareparts Site;SiteRootNode;HomepageNavLink;SparepartsNavNode
+;BrakeSuspensionNavNode;;Brake Suspension Navigation Node;;BrakeSuspensionCategoryLink;BrakeSuspensionNavNode
+;BrakeSuspensionLinkNavNode;;Brake Suspension Links;BrakeSuspensionNavNode;BrakePadCategoryLink,BrakeDiscRoaterCategoryLink,LowerLinkBushKitCategoryLink,ControlArmsCategoryLink;BrakeSuspensionLinkNavNode
+;CarPartsNavNode;;Car Parts Navigation Node;;CarPartsCategoryLink;CarPartsNavNode
+;CarEngineNavNode;;Car Engine Navigation Node;;CarEngineCategoryLink;CarEngineNavNode
+;CarLightsNavNode;;Car Lights Navigation Node;;CarLightsCategoryLink;CarLightsNavNode
+;CarLightsLinkNavNode;;Car Lights Link;CarLightsNavNode;BumperLightsCategoryLink,HeadLightsCategoryLink,IndicatorLightsCategoryLink;CarLightsLinkNavNode
+
+INSERT_UPDATE CategoryNavigationComponent;$contentCV[unique=true];uid[unique=true];name;styleClass;&componentRef;navigationNode(&nodeRef);wrapAfter
+;;SparepartsCategoryNavComponent;Category Navigation Component;;SparepartsCategoryNavComponent;SparepartsCategoryNavNode;10
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid, $contentCV)
+;;NavigationBarSlot;SparepartsCategoryNavComponent,breadcrumbComponent
+
+
+## level 1. SiteRoot ##
+## level 2. children of SiteRoot ##
+# the following order of children is the display order on the site
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)
+;SparepartsCategoryNavNode;;Categories;SparepartsNavNode;SparepartsCategoryNavNode;BrakeSuspensionNavNode,CarPartsNavNode,CarEngineNavNode,CarLightsNavNode
+
+## level 3. children of Category Nav ##
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
+;BrakeSuspensionNavNode;;Brake Suspension Category;BrakeSuspensionNavNode;BrakePadNavNode,BrakeDiscRoaterNavNode,LowerLinkBushNavNode,ControlArmsNavNode
+;CarPartsNavNode;;Car parts category;CarPartsNavNode
+;CarEngineNavNode;;Car Engine Category;CarEngineNavNode
+;CarLightsNavNode;;Car Lights Category;CarLightsNavNode;BumperLightsNavNode,HeadLightsNavNode,IndicatorLightsNavNode
+
+
+## entries of the above navigation nodes ##
+INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
+;BrakeSuspensionNavNodeEntry;;Brake Suspension Navigation Node Entry;BrakeSuspensionNavNode;BrakeSuspensionCategoryLink;
+;CarPartsNavNodeEntry;;Car Parts Navigation Node Entry;CarPartsNavNode;CarPartsCategoryLink;
+;CarEngineNavNodeEntry;;Car Engine Navigation Node Entry;CarEngineNavNode;CarEngineCategoryLink;
+;CarLightsNavNodeEntry;;Car Lights Node Entry;CarLightsNavNode;CarLightsCategoryLink;
+
+
+## level 4. children of NavNode (the following order of children is the display order on the site) ##
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
+## children of BrakeSuspensionNavNode
+;BrakePadNavNode;;Brake Pad Links;BrakePadNavNode
+;BrakeDiscRoaterNavNode;;Brake Disc Roater Links;BrakeDiscRoaterNavNode
+;LowerLinkBushNavNode;;Lower Link Bush Link;LowerLinkBushNavNode
+;ControlArmsNavNode;;Control Arms Links;ControlArmsNavNode
+## children of CarLightsNavNode
+;BumperLightsNavNode;; Bumper Lights Links;BumperLightsNavNode
+;HeadLightsNavNode;;Head Lights Links;HeadLightsNavNode
+;IndicatorLightsNavNode;;Indicator Lights Links;IndicatorLightsNavNode
+
+## entries of the above navigation nodes ##
+INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
+#Entries of Break Suspension node
+;BrakePadNavNodeEntry;;Brake Pad Navigation Node Entry;BrakePadNavNode;BrakePadCategoryLink;
+;BrakeDiscRoaterNavNodeEntry;;Brake Disc Roater Navigation Node Entry;BrakeDiscRoaterNavNode;BrakeDiscRoaterCategoryLink;
+;LowerLinkBushNavNodeEntry;;Lower Link Bush Navigation Node Entry;LowerLinkBushNavNode;LowerLinkBushKitCategoryLink;
+;ControlArmsNavNodeEntry;;Control Arms Navigation Node Entry;ControlArmsNavNode;ControlArmsCategoryLink;
+;BumperLightsNavNodeEntry;; Bumber Lights Navigation Node Entry;BumperLightsNavNode;BumperLightsCategoryLink
+;HeadLightsNavNodeEntry;;Head Lights Navigation Node Entry;HeadLightsNavNode;HeadLightsCategoryLink
+;IndicatorLightsNavNodeEntry;;Indicator Lights Navigation Node Entry;IndicatorLightsNavNode;IndicatorLightsCategoryLink
+
+
+# CMS Link Components to show data on storefront
+UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
+;;BrakeSuspensionCategoryLink;"Brakes& Suspension"
+;;CarPartsCategoryLink;"Car Body Parts"
+;;CarEngineCategoryLink;"Engine"
+;;CarLightsCategoryLink;"Car Lights"
+;;BrakePadCategoryLink;"Brake Pads"
+;;BrakeDiscRoaterCategoryLink;"Brake Disc Rotor"
+;;LowerLinkBushKitCategoryLink;"Suspension bushes, kits&parts"
+;;ControlArmsCategoryLink;"Control Arms"
+;;BumperLightsCategoryLink;"Bumper Lights"
+;;HeadLightsCategoryLink;"Head Lights"
+;;IndicatorLightsCategoryLink;"Indicator Lights"
+
+# CMS Navigation Nodes to show data on storefront
+UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;BrakeSuspensionNavNode;"Brakes& Suspension"
+;;CarPartsNavNode;"Car Body Parts"
+;;CarEngineNavNode;"Engine"
+;;CarLightsNavNode;"Car Lights" 
+;;BrakePadNavNode;"Brake Pads"
+;;BrakeDiscRoaterNavNode;"Brake Disc Roater"
+;;LowerLinkBushNavNode;"Suspension bushes, kits&parts"
+;;ControlArmsNavNode;"Control Arms"
+;;BumperLightsNavNode;"Bumper Lights"
+;;HeadLightsNavNode;"Head Lights"
+;;IndicatorLightsNavNode;"Indicator Lights"

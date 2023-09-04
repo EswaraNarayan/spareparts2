@@ -1,0 +1,77 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Categories into SpareParts Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=sparepartsProductCatalog
+$productCatalogName=Spareparts Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=source(code, $catalogVersion)[unique=true]
+$categories=target(code, $catalogVersion)[unique=true]
+$lang= en
+
+# Insert Categories
+INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='customergroup'];$catalogVersion
+ ;BP001 
+ ;BP002 
+ ;BP003 
+ ;BP004 
+ ;BP005 
+ ;BP006 
+ 
+INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories
+;A01;BP001
+;A02;BP001
+;A03;BP001
+;A04;BP001
+;A05;BP002
+;A06;BP002
+;A07;BP002
+;A08;BP002
+;A09;BP003
+;A10;BP003
+;A11;BP003
+;A12;BP003
+;A13;BP003
+;A14;BP003
+;A15;BP003
+;A16;BP004
+;A17;BP004
+;A18;BP004
+;A19;BP004
+;A20;BP005
+;A21;BP006
+
+
+
+# Create Categories
+INSERT_UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
+;BP001;;Breaks and Suspension
+;BP002;;Car Body Parts
+;BP003;;Car Engine
+;BP004;;Car Lights
+;BP005;;Car Wheels
+;BP006;;Filters
+;A01;;Break Pad
+;A02;;Break Disc Roater
+;A03;;Lower Link Busk Kit
+;A04;;Suspension Control Lower Arm
+;A05;;Bumper
+;A06;;Gear Knob
+;A07;;Instrument Cluster
+;A08;;Fuel tank Cap
+;A09;;Gear Shiter Cabel
+;A10;;Accelerator Padel with Sensor
+;A11;;Tie Rod End
+;A12;;Clutch Plate
+;A13;;Clutch Cabel
+;A14;;Clutch Bearing
+;A15;;Fuel Pump
+;A16;;Bumper Light
+;A17;;Indicator Light
+;A18;;Head Light
+;A19;;Back Light
+;A20;;Car Wheels
+;A21;;Filter
+
