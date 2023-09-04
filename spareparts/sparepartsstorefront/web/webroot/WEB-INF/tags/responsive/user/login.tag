@@ -21,8 +21,10 @@
 	</p>
 </c:if>
 
-<form:form action="${action}" method="post" modelAttribute="loginForm">
-	<c:if test="${not empty message}">
+<form:form action="${action}" method="post" modelAttribute="loginForm" style="
+    width: 70%;
+	">
+	<c:if test="${not empty message}" >
 		<span class="has-error"> <spring:theme code="${message}" />
 		</span>
 	</c:if>	
@@ -41,7 +43,12 @@
 				</ycommerce:testId>
 			</div>
 		<ycommerce:testId code="loginAndCheckoutButton">
-			<button type="submit" class="btn btn-primary btn-block">
+			<button type="submit" class="btn btn-primary btn-block" style="
+			background:#7daeb19e;
+			border: 2px solid #47b6b1;
+    width: 22rem;
+    margin: 0 0 0 7rem;
+			">
 				<spring:theme code="${actionNameKey}" />
 			</button>
 		</ycommerce:testId>
