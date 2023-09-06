@@ -23,4 +23,7 @@
 		<property name="countryOfOrigin" type="String"/>
 	</bean>
 	
+	<bean class="de.hybris.platform.commercefacades.user.data.RegisterData">
+		<property name="mobileNumber" type="String"/>
+	</bean>
 </beans>

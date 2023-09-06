@@ -1,3 +1,4 @@
+
 # # cms-content-responsive_en
 #-----------------------------------------------------------------------
 # Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
@@ -13,6 +14,7 @@ $mediaContainer=media(qualifier, $contentCV);
 $product=product(code, $productCV)
 $category=category(code, $productCV)
 $media=media(code, $contentCV);
+$picture=media(code, $contentCV);
 $siteResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/contentCatalogs/$contentCatalog
 $productResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/productCatalogs/$productCatalog
 $jarResourceCms=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/cockpits/cmscockpit
@@ -89,22 +91,17 @@ UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
 
 # CMS Navigation Nodes
 UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-;;BrakeSuspensionCategoryLink;"Brakes& Suspension"
-;;CarPartsCategoryLink;"Car Body Parts"
-;;CarEngineCategoryLink;"Engine"
-;;CarLightsCategoryLink;"Car Lights"
-;;BrakePadCategoryLink;"Brake Pads"
-;;BrakeDiscRoaterCategoryLink;"Brake Disc Rotor"
-;;LowerLinkBushKitCategoryLink;"Suspension bushes, kits&parts"
-;;ControlArmsCategoryLink;"Control Arms"
-;;BumperLightsCategoryLink;"Bumper Lights"
-;;HeadLightsCategoryLink;"Head Lights"
-;;IndicatorLightsCategoryLink;"Indicator Lights"
-;;SparepartsNavNode;"Spareparts Site"
-;;FollowUsNavNode;"Follow Us"
-;;SAPCommerceNavNode;"SAP Commerce Cloud"
-;;SAPCustomerExperienceNavNode;"SAP Customer Experience"
-;;SiteRootNode;"SiteRoot"
+;;BrakeSuspensionNavNode;"Brakes& Suspension"
+;;CarPartsNavNode;"Car Body Parts"
+;;CarEngineNavNode;"Engine"
+;;CarLightsNavNode;"Car Lights" 
+;;BrakePadNavNode;"Brake Pads"
+;;BrakeDiscRoaterNavNode;"Brake Disc Roater"
+;;LowerLinkBushNavNode;"Suspension bushes, kits&parts"
+;;ControlArmsNavNode;"Control Arms"
+;;BumperLightsNavNode;"Bumper Lights"
+;;HeadLightsNavNode;"Head Lights"
+;;IndicatorLightsNavNode;"Indicator Lights"
 
 # Spareparts FAQ Page 
 

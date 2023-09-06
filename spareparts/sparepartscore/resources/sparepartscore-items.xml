@@ -110,32 +110,6 @@
 			</itemtype>
 		</typegroup>
 		
-		
-
-<typegroup name="sparepart">
-
-             <itemtype code="Customer"
-
-                  autocreate="false"
-
-                  generate="false">
-
-            <attributes>
-
-                <attribute autocreate="true" qualifier="mobileNumber" type="java.lang.String">
-
-                    <modifiers read="true" write="true" search="true" optional="false"/>
-
-                    <persistence type="property"/>
-
-                </attribute>
-
-            </attributes>
-
-        </itemtype>
-
-        </typegroup>
-
 		<typegroup name="Spareparts">
 			<itemtype code="SparepartsProduct" extends="Product" autocreate="true" generate="true"
 				jaloclass="com.hybris.spareparts.core.jalo.SparepartsProduct">
@@ -183,6 +157,15 @@
 
 				</attributes>
 			</itemtype>
+			
+			<itemtype code="Customer" autocreate="false" generate="false">
+            <attributes>
+                <attribute autocreate="true" generate = "true" qualifier="mobileNumber" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="false"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+           </itemtype>
 		</typegroup>
 
 	</itemtypes>

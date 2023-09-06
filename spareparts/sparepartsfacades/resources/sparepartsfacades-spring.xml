@@ -197,4 +197,13 @@
           </list>
        </property>
     </bean>
+    
+    <alias name="SparepartCustomerFacadeImpl" alias="sparepartCustomerFacade" />
+	<bean id="SparepartCustomerFacadeImpl" class="com.hybris.spareparts.facades.customer.impl.SparepartCustomerFacadeImpl" >
+		<property name="modelService" ref="modelService"/>
+		<property name="userService" ref="userService"/>
+		<property name="customerNameStrategy" ref="customerNameStrategy"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="customerAccountService" ref="customerAccountService"/>
+	</bean>   
 </beans>
