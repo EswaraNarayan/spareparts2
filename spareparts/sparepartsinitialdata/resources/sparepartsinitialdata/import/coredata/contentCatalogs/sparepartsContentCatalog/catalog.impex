@@ -2,7 +2,7 @@
 # Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 # -----------------------------------------------------------------------
 #
-# Import the Electronics Content Catalog
+# Import the Spareparts Content Catalog
 #
 $contentCatalog=sparepartsContentCatalog
 $languages=ja,en,de,zh

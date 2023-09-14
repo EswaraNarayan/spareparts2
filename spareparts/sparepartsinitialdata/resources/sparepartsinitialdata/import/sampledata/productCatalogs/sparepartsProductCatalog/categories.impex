@@ -9,7 +9,8 @@ $productCatalogName=Spareparts Product Catalog
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $supercategories=source(code, $catalogVersion)[unique=true]
 $categories=target(code, $catalogVersion)[unique=true]
-$lang= en
+
+
 
 # Insert Categories
 INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='customergroup'];$catalogVersion
@@ -19,7 +20,29 @@ INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='custome
  ;BP004 
  ;BP005 
  ;BP006 
- 
+ ;A01
+ ;A02
+ ;A03
+ ;A04
+ ;A05
+ ;A06
+ ;A07
+ ;A08
+ ;A09
+ ;A10
+ ;A11
+ ;A12
+ ;A13
+ ;A14
+ ;A15
+ ;A16
+ ;A17
+ ;A18
+ ;A19
+ ;A20
+ ;A21
+
+# Insert Category Structure
 INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories
 ;A01;BP001
 ;A02;BP001
@@ -45,33 +68,4 @@ INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories
 
 
 
-# Create Categories
-INSERT_UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
-;BP001;;Breaks and Suspension
-;BP002;;Car Body Parts
-;BP003;;Car Engine
-;BP004;;Car Lights
-;BP005;;Car Wheels
-;BP006;;Filters
-;A01;;Break Pad
-;A02;;Break Disc Roater
-;A03;;Lower Link Busk Kit
-;A04;;Suspension Control Lower Arm
-;A05;;Bumper
-;A06;;Gear Knob
-;A07;;Instrument Cluster
-;A08;;Fuel tank Cap
-;A09;;Gear Shiter Cabel
-;A10;;Accelerator Padel with Sensor
-;A11;;Tie Rod End
-;A12;;Clutch Plate
-;A13;;Clutch Cabel
-;A14;;Clutch Bearing
-;A15;;Fuel Pump
-;A16;;Bumper Light
-;A17;;Indicator Light
-;A18;;Head Light
-;A19;;Back Light
-;A20;;Car Wheels
-;A21;;Filter
 

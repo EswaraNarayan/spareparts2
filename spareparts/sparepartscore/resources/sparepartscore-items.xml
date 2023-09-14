@@ -161,7 +161,7 @@
 			<itemtype code="Customer" autocreate="false" generate="false">
             <attributes>
                 <attribute autocreate="true" generate = "true" qualifier="mobileNumber" type="java.lang.String">
-                    <modifiers read="true" write="true" search="true" optional="false"/>
+                    <modifiers read="true" write="true" search="true" optional="true"/>
                     <persistence type="property"/>
                 </attribute>
             </attributes>

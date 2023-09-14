@@ -207,8 +207,8 @@ UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[l
 
 # Media Content
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];folder(qualifier)[default='images'];altText
-;;Elec_148x300_Sec4_LensesBanner_EN_01.jpg;$siteResource/images/banners/site/Elec_148x300_Sec4_LensesBanner_EN_01.jpg;;;"SLR Lenses - Professional lenses for all occasions"
-;;Elec_788x120_DigiSLR_EN_01.jpg;$siteResource/images/banners/site/Elec_788x120_DigiSLR_EN_01.jpg;;;"Get the perfect picture everytime with a digital SLR camera"
+#;;Elec_148x300_Sec4_LensesBanner_EN_01.jpg;$siteResource/images/banners/site/Elec_148x300_Sec4_LensesBanner_EN_01.jpg;;;"SLR Lenses - Professional lenses for all occasions"
+#;;Elec_788x120_DigiSLR_EN_01.jpg;$siteResource/images/banners/site/Elec_788x120_DigiSLR_EN_01.jpg;;;"Get the perfect picture everytime with a digital SLR camera"
 
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]#;;PerfectPictureBanner;Elec_788x120_DigiSLR_EN_01.jpg
 #;;SLRLensesBanner;Elec_148x300_Sec4_LensesBanner_EN_01.jpg

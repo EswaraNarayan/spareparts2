@@ -1,3 +1,9 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Products
+
+
 $productCatalog=sparepartsProductCatalog
 $productCatalogName=Spareparts Product Catalog
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
@@ -10,4 +16,47 @@ $lang=en
 # Insert Products
 INSERT_UPDATE SparepartsProduct;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);brandName;compatibility;weight;condition;vehicleModel;modelYear;countryOfOrigin;ean;variantType(code);$catalogVersion;$approved
 ;P0001;A01;Tata;TT-CD400;pieces;Tata Tiago;Compatible with Tata Tiago Car Models;650gms;New;Tata Tiago EV ;2023;INDIA
-;P0002;A02;Tata;TA-IL32;pieces;Tata Tiago;Compatible with Tata Tiago Car Models;520gms;New;Tata Tiago XT;2023;INDIA005;;Tata Tiago Head Light;Tata Tiago Head Light;High quality engineered product range.These Headlights are made up of Hard Coated Lens which provides Enhanced resistance to scratches.
+;P0002;A02;Tata;TA-IL32;pieces;Tata Tiago;Compatible with Tata Tiago Car Models;520gms;New;Tata Tiago XT;2023;INDIA
+;P0003;A03;Maruti;MT-OA91;pieces;Maruti Suzuki;Compatible with Maruti Suzuki Car Models;420gms;New;Maruti Suzuki Baleno facelift;2019;INDIA
+;P0004;A04;Maruti;MT-OA91;pieces;Maruti Suzuki;This Product is compatible with Maruti Suzuki Car Models;420gms;New;Maruti Suzuki Ertiga ZXI Plus;2021;INDIA
+;P0005;A05;Maruti;MT-OC31;pieces;Maruti Suzuki;This Product is compatible with Maruti Suzuki Car Models;890gms;New;Maruti Suzuki Ertiga ZXI Plus;2021;INDIA
+;P0006;A06;Maruti;MT-OH051;pieces;Maruti Suzuki;This Product is compatible with Maruti Suzuki Car Models;970gms;New;Maruti Suzuki Dzire LXI ;2019;INDIA
+;P0007;A07;Tata;TA-11A90;pieces;Tata Tiago;This Instrument cluster is compatible with Tata Tiago Car Models;1.7kgs;New;Tata Tiago XT ;2023;INDIA
+;P0008;A08;Tata;TA-PA091;pieces;Tata Tiago;This product is compatible with Tata Tiago Car Models;100gms;New;Tata Tiago XZ+ ;2023;INDIA
+;P0009;A09;Tata;TT-OA091;pieces;Tata Tiago;This gear shifter cable is compatible with Tata Tiago Car Models;1.7kgs;New;Tata Tiago XT ;2023;INDIA
+;P0010;A10;Maruti;MT-FF901;pieces;Maruti Suzuki;Compatible with Maruti Suzuki Car Models;420gms;New;Maruti Suzuki Baleno facelift;2019;INDIA
+;P0011;A11;Tata;TT-CC911;pieces;Tata Tiago;Compatible with Tata Tiago Car Models;650gms;New;Tata Tiago EV ;2023;INDIA
+;P0012;A12;Maruti;MT-KQ187;pieces;Maruti Suzuki;Compatible with Maruti Suzuki Car Models;420gms;New;Maruti Suzuki Baleno facelift;2019;INDIA
+;P0013;A13;Maruti;MA-CV612;pieces;Maruti Suzuki;This Product is compatible with Maruti Suzuki Car Models;890gms;New;Maruti Suzuki Ertiga ZXI Plus;2021;INDIA
+;P0014;A14;Maruti;MA-ER492;pieces;Maruti Suzuki;This Product is compatible with Maruti Suzuki Car Models;300gms;New;Maruti Suzuki Ertiga ZXI Plus;2021;INDIA
+;P0015;A15;Maruti;MA-LS992;pieces;Maruti Suzuki;This Product is compatible with Maruti Suzuki Car Models;970gms;New;Maruti Suzuki Dzire LXI ;2019;INDIA
+;P0016;A16;Tata;TT-PZ926;pieces;Tata Tiago;Compatible with Tata Tiago Car Models;650gms;New;Tata Tiago EV ;2023;INDIA
+;P0017;A17;Maruti;MT-UT092;pieces;Maruti Suzuki;This Product is compatible with Maruti Suzuki Car Models;970gms;New;Maruti Suzuki Dzire LXI ;2019;INDIA
+;P0018;A18;Tata;TA-UT092;pieces;Tata Tiago;This product is compatible with Tata Tiago Car Models;590gms;New;Tata Tiago EV ;2023;INDIA
+;P0019;A19;Tata;TA-SQ182;pieces;Tata Tiago;Compatible with Tata Tiago Car Models;650gms;New;Tata Tiago XT ;2023;INDIA
+;P0020;A20;KIA;KA-TB227;pieces;KIA ;This product is compatible with KIA Car Models;990gms;New;KIA Carens Prestige;2019;South Korea
+;P0021;A20;KIA;KA-E55KL;pieces;KIA ;This product is compatible with KIA Car Models;980gms;New;KIA Sonet X Line;2019;South Korea
+;P0022;A21;KIA;KA-HD981;pieces;KIA ;This product is compatible with KIA Car Models;12.kgs;New;KIA Sonet HTX;2022;South Korea
+;P0023;A21;KIA;KA-RQ743;pieces;KIA ;This product is compatible with KIA Car Models;1.7kgs;New;KIA Sonet HTX;2022;South Korea
+;P0024;A01;PEESIX;PS-DE910;pieces;PEESIX;This product is compatible with Volkswagen Vento Car Models;970gms;New;Volkswagen Vento;2022;INDIA
+;P0025;A01;BOSCH;BS-LE010;pieces;Bosch;This product is compatible with Skoda Laura Car Models;970gms;New;Skoda Laura Elegance;2009;GERMANY
+;P0026;A02;PEESIX;PS-YT960;pieces;Peesix Gears;This product is compatible with Ford Car Models;860gms;New;Ford Fiesta;2022;INDIA
+;P0027;A02;Rotex;RX-UY410;pieces;Rotex Engineering;This product is compatible with Maruti 800 Car Models;970gms;New;Maruti 800;2009;INDIA
+;P0028;A03;Power X;PW-YR976;pieces;Power X;This product is compatible with Renault Car Models;450gms;New;Renault Kiger,Renault Triber;,2021,2022,2023;INDIA
+;P0029;A03;Nueflex;NW-YS776;pieces;Nueflex;This product is compatible with Maruti Suzuki Wagon-R K-Series;800gms;New;Maruti Wagon R Lxi, Maruti Wagon R Vxi;2019,2021,2022,2023;UK
+;P0030;A04;Tata Motors;TA-RU060;pieces;Tata Motors;This product is compatible with Tata Car Models;4.5kg;New;Tata Tiago , Tata Tigor;2019,2020, 2021,2022;INDIA
+;P0031;A04;PEESIX;PS-QA930;pieces;Peesix Gears;This product is compatible with Toyota Car Models;3.9Kgs;New;Toyota Vellfire , Toyota Glanza;2020,2023;INDIA
+;P0032;A05;Autopearl;AO-EW642;pieces;Autopearl;This product is compatible with Toyota Car Models;400gms;New;Toyota Innova Crysta;2022,2023;INDIA'
+;P0033;A05;Deivestylish;DS-QA930;pieces;Deivestylish;This product is compatible with KIA Car Models;10Kgs;New;KIA Seltos;2023;INDIA
+;P0034;A06;Aksmit;AS-KO930;pieces;Aksmit;This product is compatible with Maruti Suzuki Car Models;400gms;New;Maruti Suzuki Swift;,2019,2022,2023;INDIA
+;P0035;A06;Aksmit;AS-KL380;pieces;Aksmit;This product is compatible with Maruti Suzuki Car Models;400gms;New;Maruti Suzuki Baleno Zeta;,2021,2022,2023;INDIA
+;P0036;A07;Cax Audio;CA-KT980;pieces;Cax Audio;This product is compatible with BMW 5 Series Car Models;3.5kgms;New;BMW G30 ,BMW G31 ;2021,2022,2023;HONG KONG
+;P0037;A08;CAROMATIC;CM-YN790;pieces;CAROMATIC;This product is compatible with Maruti Suzuki Car Models;200gms;New;Baleno Zeta,Baleno Delta ,Baleno Sigma ;2018,2019,2021,2022;INDIA
+;P0038;A11;PEESIX;PS-EF419;pieces;PEESIX GEARS;This product is compatible with Maruti Suzuki Car Models;1.4kgs;New;Maruti Suzuki Baleno facelift;2018,2019;INDIA
+;P0039;A12;Generic;GR-RQ176;pieces;Generic;This product is compatible with Honda car models;2.7kgs;New;Honda Amaze VX,Honda Amaze VX,CVT;2022,2023;INDIA
+;P0040;A12;Valeo;VL-FD639;pieces;Valeo;This Product is compatible with Tata Car Models;3.2kgs;New;Tata Tiago,Tata Tigor;2019,2022,2023;INDIA
+
+
+
+
+

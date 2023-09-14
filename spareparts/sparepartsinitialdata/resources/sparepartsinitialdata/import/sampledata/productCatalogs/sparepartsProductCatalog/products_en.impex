@@ -12,6 +12,52 @@ $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[defa
 # Language
 $lang=en
 
+# Update allProducts with localisations
 UPDATE SparepartsProduct;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang]
 ;P0001;;Tata Tiago Brake Pad;Tata Tiago Break Pad;Breaking Components & Assemblies by Tata Tiago Genuine Parts ensure Safe Driving for your vehicle.
-;P0002;;Tata Tiago Brake Disc Roater;Tata Tiago Disc Roater;Brake Disc Rotor Pad Replacement Part Accessories For Tata Tiago
+;P0002;;Tata Tiago Brake Disc Roater;Tata Tiago Disc Roater;Brake Disc Rotor Pad Replacement Part Accessories For Tata Tiago.
+;P0003;;Maruti Suzuki lower link bush kit;Maruti Suzuki lower link bush kit; Lower Link Bush  For Lower Link Bush Product |Long life. High precision, Highly efficient.
+;P0004;;Maruti Suzuki Suspension Control Lower Arm;Maruti Suzuki Suspension Control Lower arm;Front left lower control arm restores proper suspension handling and braking stability.Manufactured according to the original production specifications, in line with strict quality standards.
+;P0005;;Maruti Suzuki bumper;Maruti Suzuki Bumper;Modern design with aerodynamic looks offer a perfect complement to your car style statement |Only two bolts have to be tightened into the silencer through the holes already punched into the accessory thus making it easily installable |Front bumper
+;P0006;;Maruti Suzuki Gear Knob;Maruti Suzuki Gear Knob;Fits perfectly to your gear knob stick |Easy installation. Direct replacement, no modification is required
+;P0007;;Tata Tiago Instrument cluster;Tata Tiago Instrument cluster;Compatible  with Tata Tiago | UNBREAKABLE & SHATTERPROOF Screen |Easy Installation, No Need Cut Nor Modify Wires, No Need Extra Coding, Plug And Play.
+;P0008;;Tata Tiago fuel tank cap;Tata Tiago fuel tank cap;Easy to install |Custom designed for a direct-replacement fit | no rewiring soldering or splicing required.
+;P0009;;Tata Tiago Gear shiter cabel ;Tata Tiago  Gear shiter cabel;Gear Shifter Cable suitable for Tata Tiago| Made of iron material, waterproof, corrosion resistant and ensures longevity.Simple installation, no complicated tools required, convenient to use.
+;P0010;;Maruti Suzuki  Accelerator padel ;Maruti Suzuki  Accelerator padel;Accelerator Padel suitable for Maruti Suzuki |Useful Product | Good Quality |Foot speed control for vehicles
+;P0011;;Tata Tiago Tie Rod End;Tata Tiago Tie Rod End;Tie Rod End suitable for Tata Tiago , Material: Steel ,Set of Two.
+;P0012;;Maruti Suzuki clutch plate;Maruti Suzuki clutch plate;Clutch Plate For Mahindra Bolero Maruti Suzuki. The clutch plate is an excellent automotive product that is perfect for the Maruti. This clutch set is made with high quality materials and is priced reasonably low. It is bulky and perfect for those that need a durable clutch plate.
+;P0013;;Maruti Suzuki  clutch cabel;Maruti Suzuki  clutch cabel;Automobiles Clutch Cable Unit for Maruti Suzuki ,Durable in use and Precise machining size, Reliable performance , Friction free cable.
+;P0014;;Maruti Suzuki clutch bearing;Maruti Suzuki clutch bearing; Clutch Bearing suitable for Maruti suzuki | Reliable performance | High quality product |Best Price
+;P0015;;Maruti Gypsy Fuel Pump;Maruti Gypsy Fuel Pump;Fuel Pump assembly for optimized supply of fuel to your car engine for increased level of engine performance
+;P0016;;Tata Tiago  Bumper light;Tata Tiago  Bumper light;Suitable for Tata Tiago | Halogen Lights can withstand harsh climate conditions and works well in Rainy or Foggy Days| A perfect Way to add a stunning Custom look to your Car |Less Consumption of energy at minimal level and Improved the visibility| completely waterproof Dustproof and Shake proof.
+;P0017;;Maruti Suzuki Swift indicator light;Maruti Suzuki indicator light;Suitable for Swift T3 |Brightness is upto the mark |Superior quality
+;P0018;;Tata Tiago Head Light;Tata Tiago Head Light;High quality engineered product range.These Headlights are made up of Hard Coated Lens which provides Enhanced resistance to scratches.
+;P0019;;Tata Indigo Back Light;Tata Indigo Back Light;These headlights can withstands extreme weather conditions for longer time ensuring reduced change interval| We ensure high quality engineered product range |Headlights have Top Coated Reflectors and Break Proof Glass..100% Fitment. No fitting issue
+ ;P0020;;KIA Carens Wheel Rim;KIA  Carens Wheel Rim; Wheel rim properly casted alloy rim will withstand intense impacts yet maintain its perfect shape. No alteration needed for installation, alloys makes a perfect fit it can be replaced directly with the initial wheel rims.
+;P0021;;KIA Sonet Wheel Cover;KIA Sonet Wheel Cover;Wheel cover ,Fits on all cars having 16 Inch rim. It is designed  for 16 inch stock steel wheels, and will not fit over alloy wheels.
+;P0022;;KIA Sonet Air Filter;Kia Sonet Air Filter;Supplies Clean Air To The Engine With Exceptional Filtration |Enhances Performance of The Engine.
+;P0023;;KIA Sonet Oil Filter;Kia Sonet Oil Filter;Best & superior quality Oil Filter suited for KIA Cars |Protect engine from damages caused by dirt particles, soot or unburned fuel in the oil
+;P0024;;Heavy Duty BreakPad Vento;Heavy Duty BreakPad Vento;NON ASBESTOS |GREAT STOPPING POWER |VERY HIGH DURABILITY | GREAT NOISE PERFORMANCE
+;P0025;;Bosch Break Pad;Bosch Break Pad;Better NVH (Noise, vibration and harshness) characteristics |Excellent stopping distance |Safe and reliable braking performance |Better driving comfort |High stable co-efficient of friction
+;P0026;;PEESIX HEAVYDUTY DISC ROTORS;PEESIX HEAVYDUTY DISC ROTORS;HIGHLY DURABLE | EXCELLENT PERFORMANCE
+;P0027;;Rotex Brake Disc Rotor Front For Maruti Car 800;Rotex Brake Disc Rotor Front For Maruti Car 800;Reliable performance | High quality product |Best Price 
+;P0028;;Power X  Fluence Suspension Bush Kit;Power X  Fluence Suspension Bush Kit;Good rubber raw material to ensure high quality |Incredible Improvement In Control |same as OE part quality
+;P0029;;Nueflex Suspension Bush Kit ;Nueflex Suspension Bush Kit ;Made From Premium Quality Natural Rubber | Enhances Your Ride Comfort |Dampens Noise & Vibrations
+;P0030;;Tata LOWER LINK ASSEMBLY_RH FRONT SUSPENSION ;Tata LOWER LINK ASSEMBLY_RH FRONT SUSPENSION ;This product is from Tata Motors Original Parts. This Lower Link Assembly_ RH Front Suspension is compalitble with Tiago/Tigor
+;P0031;;Peesix Heavy Duty Suspension Control Arm;Peesix Heavy Duty Suspension Control Arm;PEESIX HEAVYDUTY SUSPENSION ARM / TRACK CONTROL ARM KWID LEFT SIE
+
+;P0032;;Autopearl Car Rear Bumper;Autopearl Car Rear Bumper;Auto Pearl - Premium Quality Car Rear Bumper Step Trim Guard For -Toyota Innova Crysta. 100 percent branded
+;P0033;;DriveStylish Front & Rear Bumper for Kia Seltos ;DriveStylish Front & Rear Bumper for Kia Seltos;The Front and Back Bumper Guard are well-engineered. They protect your bumper top to bottom, against minor bumps and scratches. Bumper protectors are designed to complement the sculpted lines of today's luxury car. 
+
+;P0034;;Gear Knob For Swift;Gear Knob For Swift;Automatic Stylish Shift Knob Head is designed to add style, delight and function to your driving experience.The offered Grip shift knob is constructed from real aluminum metal and engineered to fit most manual or automatic shift levers
+;P0035;;Gear Knob For Baleno Zeta;Gear Knob For Baleno Zeta;The Knob gives you better control over your vehicle, especially during tight turns and parking. Its compact size and smooth rotation allow for effortless handling, ensuring a safer and more comfortable driving experience.
+
+;P0036;;Instrument Cluster For BMW Series 5;BMW Series 5  Instrument Cluster ;Support Orginal Tire,oil/water Tempreture,oil Pressure,fule Consumption,car Body Balance And So On |Easy Installation, No Need Cut Nor Modify Wires, No Need Extra Coding, Plug And Play
+;P0037;;Fuel Tank for Maruti suzuki Baleno;Fuel Tank for Maruti suzuki Baleno;ABS Cap for Car Fuel tank |Comes with Belt for best fitment
+
+
+;P0038;;Baleno Tie Rod End;Tie Rod End For Baleno;Constructed from high quality ABS and metal materials with high reliability, have a long service life
+
+;P0039;;Honda Clutch Plate;Clutch Plate for Honda Cars;original clutch set for Honda Cars |Package contents 1 clutch plate and pressure plate
+;P0040;;Tata Clutch Plate;Clutch Plate for Tata ;Valeo original clutch set|Package contents: 1 clutch plate and pressure plate
+

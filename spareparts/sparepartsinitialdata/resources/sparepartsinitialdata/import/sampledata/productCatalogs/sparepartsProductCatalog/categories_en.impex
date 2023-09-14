@@ -4,13 +4,41 @@
 # ImpEx for Importing Categories
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
-$productCatalogName=__PRODUCT_CATALOG_FULL_NAME__
+$productCatalog=sparepartsProductCatalog
+$productCatalogName=Spareparts Product Catalog
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 
 # Language
 $lang=en
 
+
 # Create Categories
-UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
+INSERT_UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
+;BP001;;Brake and Suspension
+;BP002;;Car Body Parts
+;BP003;;Car Engine
+;BP004;;Car Lights
+;BP005;;Car Wheels
+;BP006;;Filters
+;A01;;Brake Pad
+;A02;;Brake Disc Roater
+;A03;;Lower Link Busk Kit
+;A04;;Suspension Control Lower Arm
+;A05;;Bumper
+;A06;;Gear Knob
+;A07;;Instrument Cluster
+;A08;;Fuel tank Cap
+;A09;;Gear Shiter Cabel
+;A10;;Accelerator Padel with Sensor
+;A11;;Tie Rod End
+;A12;;Clutch Plate
+;A13;;Clutch Cabel
+;A14;;Clutch Bearing
+;A15;;Fuel Pump
+;A16;;Bumper Light
+;A17;;Indicator Light
+;A18;;Head Light
+;A19;;Back Light
+;A20;;Car Wheels
+;A21;;Filter

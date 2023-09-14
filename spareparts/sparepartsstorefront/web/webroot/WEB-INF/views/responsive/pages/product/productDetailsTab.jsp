@@ -10,7 +10,14 @@
 		<div class="row">
 			<div class="col-md-6 col-lg-4">
 				<div class="tab-container">
-					<product:productDetailsTab product="${product}" />
+					
+					<div style="margin-top:10px" class="description">Compatibility: ${product.compatibility}</div>
+					<div style="margin-top:10px" class="description">Weight: ${product.weight}</div>
+					<div style="margin-top:10px" class="description">Condition: ${product.condition}</div>
+					<div style="margin-top:10px" class="description">Brand Name: ${product.brandName}</div>
+					<div style="margin-top:10px" class="description">Vehicle Model: ${product.vehicleModel}</div>
+					<div style="margin-top:10px" class="description">Model Year: ${product.modelYear}</div>	
+					<div style="margin-top:10px" class="description">Country Of Origin: ${product.countryOfOrigin}</div>
 				</div>
 			</div>
 		</div>

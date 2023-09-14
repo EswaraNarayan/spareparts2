@@ -1,12 +1,402 @@
-# -----------------------------------------------------------------------
-# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
-# -----------------------------------------------------------------------
-# ImpEx for Importing Product Reviews
- 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
+
+$product-catalog=sparepartsProductCatalog
+$productCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$product-catalog]),CatalogVersion.version[default=Online])[default=$product-catalog:Online]
+
+ 
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
 
+ 
+
 # Reviews from Customers
-INSERT_UPDATE CustomerReview;product(code,$catalogVersion)[unique=true];user(uid)[unique=true];alias;approvalStatus(code);blocked;comment;headline;language(isocode);rating
+
+INSERT_UPDATE Customer;groups(uid);uid[unique=true];name;customerId
+"#% beforeEach:
+import java.util.UUID;
+line.put(Integer.valueOf(4), UUID.randomUUID().toString());
+"
+;"customergroup";"keenreviewer1@hybris.com";"Kenneth Reviewer";;
+;"customergroup";"keenreviewer2@hybris.com";"Ken Reviewer";;
+;"customergroup";"keenreviewer3@hybris.com";"John Reviewer";;
+;"customergroup";"keenreviewer4@hybris.com";"Steve Reviewer";;
+;"customergroup";"keenreviewer5@hybris.com";"Adam Reviewer";;
+;"customergroup";"keenreviewer6@hybris.com";"Honda Reviewer";;
+;"customergroup";"keenreviewer7@hybris.com";"Roger Reviewer";;
+;"customergroup";"keenreviewer8@hybris.com";"Ronald Reviewer";;
+;"customergroup";"keenreviewer9@hybris.com";"Klaus Reviewer";;
+;"customergroup";"keenreviewer10@hybris.com";"Stefan Reviewer";;
+;"customergroup";"keenreviewer11@hybris.com";"Rick Reviewer";;
+;"customergroup";"keenreviewer12@hybris.com";"Richard Reviewer";;
+;"customergroup";"keenreviewer13@hybris.com";"Aseem Reviewer";;
+;"customergroup";"keenreviewer14@hybris.com";"Toby Reviewer";;
+;"customergroup";"keenreviewer15@hybris.com";"Brendan Reviewer";;
+;"customergroup";"keenreviewer16@hybris.com";"Katie Reviewer";;
+;"customergroup";"keenreviewer17@hybris.com";"Flavia Reviewer";;
+;"customergroup";"keenreviewer18@hybris.com";"Thomas Reviewer";;
+;"customergroup";"keenreviewer19@hybris.com";"Axel Reviewer";;
+;"customergroup";"keenreviewer20@hybris.com";"Moritz Reviewer";;
+;"customergroup";"keenreviewer21@hybris.com";"Alistair Reviewer";;
+;"customergroup";"keenreviewer22@hybris.com";"Nicko Reviewer";;
+;"customergroup";"keenreviewer23@hybris.com";"Claudius Reviewer";;
+;"customergroup";"keenreviewer24@hybris.com";"Doris Reviewer";;
+;"customergroup";"keenreviewer25@hybris.com";"George Reviewer";;
+;"customergroup";"keenreviewer26@hybris.com";"Henry Reviewer";;
+;"customergroup";"keenreviewer27@hybris.com";"Frederick Reviewer";;
+;"customergroup";"keenreviewer28@hybris.com";"Deepak Reviewer";;
+;"customergroup";"keenreviewer29@hybris.com";"Elizabeth Reviewer";;
+;"customergroup";"keenreviewer30@hybris.com";"Dorothy Reviewer";;
+
+ 
+
+INSERT_UPDATE CustomerReview;product(code, $productCV)[unique=true]; rating; user(uid)[unique=true];headline;comment;approvalStatus(code)[default='approved'];language(isocode)[default='en']
+;P0001;5;keenreviewer1@hybris.com;Good Quality Product , Must Buy;
+;P0001;4;keenreviewer2@hybris.com;Amazing Product.its must go for product;
+;P0001;5;keenreviewer3@hybris.com;Good Fit for Tata Cars .Must Buy;
+;P0001;5;keenreviewer4@hybris.com;Amazing Product.its must go for product.;
+;P0001;5;keenreviewer5@hybris.com;Amazing Product.its must go for product.;
+;P0001;5;keenreviewer6@hybris.com;Good Quality Product , Must Buy.;
+;P0001;4;keenreviewer7@hybris.com;Good Quality Product , Must Buy;
+;P0002;4;keenreviewer1@hybris.com;Good Fit for Tata Cars .Must Buy;
+;P0002;5;keenreviewer2@hybris.com;Amazing Quality Product.its must go for product..;
+;P0002;4;keenreviewer3@hybris.com;Amazing Quality Product.its must go for product.;
+;P0002;5;keenreviewer4@hybris.com;Amazing Quality Product.its must go for product.;
+;P0002;4;keenreviewer5@hybris.com;Good Quality Product , Must Buy;
+;P0003;5;keenreviewer8@hybris.com;Good Quality Product , Must Buy;
+;P0003;5;keenreviewer9@hybris.com;Amazing Quality Product.its must go for product.;
+;P0003;4;keenreviewer10@hybris.com;Great quality autopart ...its must go for product;
+;P0003;5;keenreviewer11@hybris.com;Great quality autopart ...its must go for product.;
+;P0003;5;keenreviewer12@hybris.com;Great quality autopart ...its must go for product;
+;P0003;5;keenreviewer13@hybris.com;Good Quality Product , Must Buy.;
+;P0003;5;keenreviewer14@hybris.com;Good Quality Product , Must Buy..;
+;P0003;4;keenreviewer15@hybris.com;Amazing Quality Product.its must go for product.;
+;P0003;4;keenreviewer16@hybris.com;Amazing Quality Product.its must go for product.;
+;P0003;5;keenreviewer17@hybris.com;Good Quality Product , Must Buy;
+;P0003;4;keenreviewer18@hybris.com;Good Quality Product , Must Buy;
+;P0003;5;keenreviewer19@hybris.com;Amazing Quality Product.its must go for product.;
+;P0003;4;keenreviewer20@hybris.com;Amazing Quality Product.its must go for product.;
+;P0003;4;keenreviewer21@hybris.com;Amazing Quality Product.its must go for product.;
+;P0003;4;keenreviewer22@hybris.com;Amazing Quality Product.its must go for product.;
+;P0003;5;keenreviewer23@hybris.com;Amazing Quality Product.its must go for product.;
+;P0003;5;keenreviewer24@hybris.com;Amazing Quality Product.its must go for product.;
+
+ 
+
+;P0004;5;keenreviewer1@hybris.com;The Product Quality is good.Easy to assemble  ;
+;P0004;5;keenreviewer2@hybris.com;The Product Quality is good.Easy to assemble .;
+;P0004;5;keenreviewer3@hybris.com;The Product Quality is good.Easy to assemble .;
+;P0005;5;keenreviewer1@hybris.com;Amazing Quality Product.its must go for product.;
+;P0005;5;keenreviewer2@hybris.com;Amazing Quality Product.its must go for product.;
+;P0005;5;keenreviewer3@hybris.com;Amazing Quality Product.its must go for product.;
+;P0006;5;keenreviewer1@hybris.com;Great quality autopart ...its must go for product.;
+;P0006;4;keenreviewer2@hybris.com;Great quality autopart ...its must go for product;
+;P0006;4;keenreviewer3@hybris.com;Great quality autopart ...its must go for product;
+;P0006;5;keenreviewer4@hybris.com;Great quality autopart ...its must go for product.;
+;P0006;4;keenreviewer5@hybris.com;Great quality autopart ...its must go for product;
+;P0006;5;keenreviewer6@hybris.com;Amazing Quality Product.its must go for product.;
+;P0006;4;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0006;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product.;
+;P0007;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0007;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0007;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0007;4;keenreviewer12@hybris.com;The Product Quality is good.Easy to assemble;
+;P0007;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+;P0007;5;keenreviewer14@hybris.com;Amazing Quality Product.its must go for product.;
+;P0007;5;keenreviewer15@hybris.com;Amazing Quality Product.its must go for product..;
+;P0007;4;keenreviewer16@hybris.com;Amazing Quality Product.its must go for product.;
+;P0007;5;keenreviewer17@hybris.com;Good Quality Product , Must Buy;
+;P0008;5;keenreviewer6@hybris.com;Amazing Quality Product.its must go for product.;
+;P0008;4;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0008;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product.;
+;P0008;5;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0008;5;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble.;
+
+;P0009;5;keenreviewer1@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0009;4;keenreviewer2@hybris.com;The Product Quality is good.Easy to assemble;
+;P0009;5;keenreviewer3@hybris.com;Amazing Quality Product.its must go for product.;
+;P0009;4;keenreviewer4@hybris.com;Amazing Quality Product.its must go for product.;
+;P0010;4;keenreviewer5@hybris.com;Amazing Quality Product.its must go for product.;
+;P0010;5;keenreviewer11@hybris.com;Good Quality Product , Must Buy;
+;P0010;5;keenreviewer12@hybris.com;Good Quality Product , Must Buy;
+;P0010;5;keenreviewer13@hybris.com;Good Quality Product , Must Buy;
+;P0011;5;keenreviewer1@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0011;5;keenreviewer2@hybris.com;The Product Quality is good.Easy to assemble;
+;P0011;5;keenreviewer3@hybris.com;The Product Quality is good.Easy to assemble;
+;P0011;4;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble;
+;P0012;4;keenreviewer5@hybris.com;Good Quality Product , Must Buy;
+;P0012;5;keenreviewer6@hybris.com;Good Quality Product , Must Buy.;
+;P0012;4;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product;
+;P0012;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product
+;P0012;5;keenreviewer9@hybris.com;Amazing Quality Product.its must go for product;
+
+
+;P0013;4;keenreviewer10@hybris.com;Good Quality Product , Must Buy;
+;P0013;5;keenreviewer11@hybris.com;Good Quality Product , Must Buy;
+;P0013;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0013;4;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product;
+;P0013;5;keenreviewer14@hybris.com;Amazing Quality Product.its must go for product;
+;P0014;5;keenreviewer15@hybris.com;Amazing Quality Product.its must go for product.;
+;P0014;4;keenreviewer16@hybris.com;The Product Quality is good.Easy to assemble;
+;P0014;4;keenreviewer17@hybris.com;The Product Quality is good.Easy to assemble;
+;P0015;5;keenreviewer1@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0015;5;keenreviewer2@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0015;5;keenreviewer3@hybris.com;The Product Quality is good.Easy to assemble;
+;P0015;5;keenreviewer4@hybris.com;Great quality autopart ...its must go for product.;
+;P0015;4;keenreviewer5@hybris.com;Great quality autopart ...its must go for product;
+;P0015;5;keenreviewer6@hybris.com;Great quality autopart ...its must go for product;
+;P0016;5;keenreviewer7@hybris.com;Great quality autopart ...its must go for product;
+;P0016;5;keenreviewer8@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0016;5;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0016;5;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0017;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0017;4;keenreviewer12@hybris.com;The Product Quality is good.Easy to assemble;
+;P0017;5;keenreviewer13@hybris.com;The Product Quality is good.Easy to assemble;
+;P0017;5;keenreviewer14@hybris.com;Great quality autopart ...its must go for product.;
+;P0017;5;keenreviewer15@hybris.com;The Product Quality is good.Easy to assemble;
+;P0018;4;keenreviewer11@hybris.com;Great quality autopart ...its must go for product;
+;P0018;4;keenreviewer12@hybris.com;Great quality autopart ...its must go for product;
+;P0018;5;keenreviewer13@hybris.com;Great quality autopart ...its must go for product;
+;P0018;5;keenreviewer14@hybris.com;Great quality autopart ...its must go for product;
+;P0018;5;keenreviewer15@hybris.com;The Product Quality is good.Easy to assemble;
+;P0019;5;keenreviewer16@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0019;4;keenreviewer17@hybris.com;The Product Quality is good.Easy to assemble;
+;P0020;4;keenreviewer1@hybris.com;The Product Quality is good.Easy to assemble;
+;P0020;4;keenreviewer2@hybris.com;Amazing Quality Product.its must go for product.;
+;P0020;4;keenreviewer3@hybris.com;Amazing Quality Product.its must go for product.;
+;P0020;4;keenreviewer4@hybris.com;Amazing Quality Product.its must go for product.;
+;P0020;5;keenreviewer5@hybris.com;Amazing Quality Product.its must go for product.;
+;P0021;5;keenreviewer6@hybris.com;Amazing Quality Product.its must go for product..;
+;P0021;4;keenreviewer7@hybris.com;The Product Quality is good.Easy to assemble;
+;P0021;4;keenreviewer8@hybris.com;The Product Quality is good.Easy to assemble;
+;P0021;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0021;5;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0021;5;keenreviewer11@hybris.com;Great quality autopart ...its must go for product.;
+;P0021;5;keenreviewer12@hybris.com;Great quality autopart ...its must go for product.;
+;P0021;5;keenreviewer13@hybris.com;Great quality autopart ...its must go for product.;
+;P0021;5;keenreviewer14@hybris.com;Great quality autopart ...its must go for product;
+;P0022;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy;
+;P0022;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy.;
+;P0022;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy;
+;P0022;5;keenreviewer4@hybris.com;Good Quality Product , Must Buy.;
+;P0022;4;keenreviewer5@hybris.com;Amazing Quality Product.its must go for product.;
+;P0023;5;keenreviewer6@hybris.com;Amazing Quality Product.its must go for product.;
+;P0023;4;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0023;5;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product..;
+;P0023;5;keenreviewer9@hybris.com;Great quality autopart ...its must go for product..;
+;P0023;5;keenreviewer10@hybris.com;Great quality autopart ...its must go for product..;
+;P0023;5;keenreviewer11@hybris.com;Great quality autopart ...its must go for product.;
+;P0024;5;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0024;4;keenreviewer7@hybris.com;The Product Quality is good.Easy to assemble;
+;P0024;5;keenreviewer8@hybris.com;The Product Quality is good.Easy to assemble;
+;P0024;5;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0024;5;keenreviewer10@hybris.com;Great quality autopart ...its must go for product.;
+;P0024;5;keenreviewer11@hybris.com;Great quality autopart ...its must go for product.;
+;P0025;5;keenreviewer6@hybris.com;Great quality autopart ...its must go for product.;
+;P0025;4;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0025;5;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product..;
+;P0025;5;keenreviewer9@hybris.com;Amazing Quality Product.its must go for product..;
+;P0025;5;keenreviewer10@hybris.com;Good Quality Product , Must Buy;
+;P0025;5;keenreviewer11@hybris.com;Good Quality Product , Must Buy;
+;P0026;5;keenreviewer6@hybris.com;Great Quality Product , Must Buy.;
+;P0026;4;keenreviewer7@hybris.com;Good Quality Product , Must Buy;
+;P0026;5;keenreviewer8@hybris.com;Great quality autopart ...its must go for product..;
+;P0026;5;keenreviewer9@hybris.com;Great quality autopart ...its must go for product.;
+;P0026;5;keenreviewer10@hybris.com;Great quality autopart ...its must go for product..;
+;P0026;5;keenreviewer11@hybris.com;Great quality autopart ...its must go for product..;
+
+ 
+;P0027;4;keenreviewer12@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0027;5;keenreviewer13@hybris.com;The Product Quality is good.Easy to assemble..;
+;P0027;5;keenreviewer14@hybris.com;The Product Quality is good.Easy to assemble..;
+;P0027;5;keenreviewer15@hybris.com;Great quality autopart ...its must go for product..;
+;P0027;5;keenreviewer16@hybris.com;Great quality autopart ...its must go for product.;
+;P0027;4;keenreviewer17@hybris.com;Great quality autopart ...its must go for product.;
+;P0027;5;keenreviewer18@hybris.com;Great quality autopart ...its must go for product..;
+;P0027;4;keenreviewer19@hybris.com;The Product Quality is good.Easy to assemble;
+;P0027;4;keenreviewer20@hybris.com;The Product Quality is good.Easy to assemble;
+;P0027;4;keenreviewer21@hybris.com;The Product Quality is good.Easy to assemble;
+;P0027;4;keenreviewer22@hybris.com;Great quality autopart ...its must go for product.;
+;P0027;4;keenreviewer23@hybris.com;Great quality autopart ...its must go for product.;
+;P0027;5;keenreviewer24@hybris.com;Good Quality Product , Must Buy;
+;P0028;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy;
+;P0028;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy.;
+;P0028;4;keenreviewer3@hybris.com;Amazing Quality Product.its must go for product.;
+;P0028;5;keenreviewer4@hybris.com;Amazing Quality Product.its must go for product..;
+;P0028;4;keenreviewer5@hybris.com;Amazing Quality Product.its must go for product.;
+;P0028;4;keenreviewer6@hybris.com;Amazing Quality Product.its must go for product.;
+;P0028;5;keenreviewer7@hybris.com;Great quality autopart ...its must go for product.;
+;P0028;5;keenreviewer8@hybris.com;Great quality autopart ...its must go for product..;
+;P0028;4;keenreviewer9@hybris.com;Great quality autopart ...its must go for product.;
+;P0028;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0029;5;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0029;5;keenreviewer2@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0029;4;keenreviewer3@hybris.com;The Product Quality is good.Easy to assemble;
+;P0029;4;keenreviewer4@hybris.com;Good Quality Product , Must Buy;
+;P0029;5;keenreviewer5@hybris.com;Good Quality Product , Must Buy.;
+;P0029;4;keenreviewer6@hybris.com;Good Quality Product , Must Buy;
+;P0029;5;keenreviewer7@hybris.com;Great quality autopart ...its must go for product.;
+;P0029;4;keenreviewer8@hybris.com;Great quality autopart ...its must go for product;
+;P0029;5;keenreviewer9@hybris.com;Good Quality Product , Must Buy;
+;P0029;5;keenreviewer10@hybris.com;Amazing Quality Product.its must go for product.;
+;P0029;5;keenreviewer11@hybris.com;Amazing Quality Product.its must go for product.;
+;P0029;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product.;
+;P0029;5;keenreviewer13@hybris.com;Good Quality Product , Must Buy.;
+;P0029;4;keenreviewer14@hybris.com;Amazing Quality Product.its must go for product;
+;P0029;4;keenreviewer15@hybris.com;Good Quality Product , Must Buy;
+;P0029;4;keenreviewer16@hybris.com;Good Quality Product , Must Buy;
+;P0029;5;keenreviewer17@hybris.com;Good Quality Product , Must Buy.;
+;P0029;5;keenreviewer18@hybris.com;Amazing Quality Product.its must go for product..;
+;P0029;4;keenreviewer19@hybris.com;Amazing Quality Product.its must go for product;
+;P0029;5;keenreviewer20@hybris.com;Amazing Quality Product.its must go for product.;
+;P0029;5;keenreviewer21@hybris.com;Amazing Quality Product.its must go for product.;
+;P0029;4;keenreviewer22@hybris.com;Amazing Quality Product.its must go for product;
+;P0029;5;keenreviewer23@hybris.com;The Product Quality is good.Easy to assemble;
+;P0029;4;keenreviewer24@hybris.com;The Product Quality is good.Easy to assemble;
+;P0029;5;keenreviewer25@hybris.com;The Product Quality is good.Easy to assemble;
+;P0029;4;keenreviewer26@hybris.com;Good Quality Product , Must Buy.;
+;P0030;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0030;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0030;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0030;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0030;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0030;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0030;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0030;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0030;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0030;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0030;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0030;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0030;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+;P0031;4;keenreviewer1@hybris.com;The Product Quality is good.Easy to assemble;
+;P0031;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0031;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0031;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0031;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0031;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0031;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0031;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0031;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0031;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0031;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0031;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0031;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0032;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0032;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0032;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0032;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0032;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0032;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0032;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0032;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0032;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0032;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0032;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0032;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0032;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+;P0033;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0033;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0033;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0033;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0033;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0033;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0033;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0033;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0033;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0033;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0033;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0033;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0033;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+;P0034;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0034;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0034;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0034;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0034;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0034;5;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0034;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0034;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0034;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0034;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0034;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0034;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0034;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+;P0035;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0035;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0035;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0035;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0035;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0035;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0035;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0035;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0035;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0035;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0035;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0035;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0035;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+;P0036;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0036;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0036;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0036;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0036;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0036;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0036;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0036;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0036;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0036;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0036;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0036;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0036;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.666666666
+;P0037;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0037;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0037;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0037;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0037;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0037;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0037;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0037;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0037;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0037;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0037;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0037;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0037;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+;P0038;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0038;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0038;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0038;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0038;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0038;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0038;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0038;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0038;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0038;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0038;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0038;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0038;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+;P0039;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0039;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0039;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0039;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0039;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0039;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0039;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0039;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0039;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0039;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0039;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0039;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0039;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.
+;P0040;4;keenreviewer1@hybris.com;Good Quality Product , Must Buy.;
+;P0040;5;keenreviewer2@hybris.com;Good Quality Product , Must Buy..;
+;P0040;4;keenreviewer3@hybris.com;Good Quality Product , Must Buy.;
+;P0040;5;keenreviewer4@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0040;5;keenreviewer5@hybris.com;The Product Quality is good.Easy to assemble.;
+;P0040;4;keenreviewer6@hybris.com;The Product Quality is good.Easy to assemble;
+;P0040;5;keenreviewer7@hybris.com;Amazing Quality Product.its must go for product.;
+;P0040;4;keenreviewer8@hybris.com;Amazing Quality Product.its must go for product;
+;P0040;4;keenreviewer9@hybris.com;The Product Quality is good.Easy to assemble;
+;P0040;4;keenreviewer10@hybris.com;The Product Quality is good.Easy to assemble;
+;P0040;4;keenreviewer11@hybris.com;The Product Quality is good.Easy to assemble;
+;P0040;5;keenreviewer12@hybris.com;Amazing Quality Product.its must go for product;
+;P0040;5;keenreviewer13@hybris.com;Amazing Quality Product.its must go for product.;
+
+
+

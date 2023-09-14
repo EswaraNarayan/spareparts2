@@ -693,7 +693,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 #################    HOME PAGE START     #################
 
-###  Home page splash Slot 1  #######
+###  Home page 
+ Slot 1  #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
 ;;SparepartsHompageSplashBannerComponent;Spareparts Homepage Splash Banner Component;/Breaks/break/c/BP001;SparepartsHompageSplashBannerComponent
 
