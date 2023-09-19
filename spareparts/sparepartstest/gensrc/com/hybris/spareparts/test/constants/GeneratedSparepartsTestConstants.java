@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 14-Sep-2023, 5:47:01 pm                     ---
+ * --- Generated at 18-Sep-2023, 12:29:41 pm                    ---
  * ----------------------------------------------------------------
  */
 package com.hybris.spareparts.test.constants;

@@ -6,16 +6,29 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
+
+
+
+
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <div class="cart-header border">
     <div class="row">
         <div class="col-xs-12 col-sm-5">
-            <h1 class="cart-headline" style="font-style: italic; ">
+            <h1 class="cart-headline"
+            style="
+    border-style: ridge;
+    font-style: italic;
+"
+>
                 <spring:theme code="text.cart"/>
                 <c:if test="${not empty cartData.code}">
-                    <span class="cart__id--label"  style="  color: red;" >
-                        <spring:theme code="basket.page.cartIdShort"/><span class="cart__id">${fn:escapeXml(cartData.code)}</span>
+                    <span class="cart__id--label">
+                        <spring:theme code="basket.page.cartIdShort"/><span class="cart__id"
+                        style="
+    color: #951111; 
+"
+>${fn:escapeXml(cartData.code)}</span>
                     </span>
                 </c:if>
             </h1>
@@ -55,7 +68,12 @@
                 <div class="row">
                     <div class="col-sm-4 col-md-3 pull-right">
                         <ycommerce:testId code="checkoutButton">
-                            <button class="btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button" data-checkout-url="${fn:escapeXml(checkoutUrl)}">
+                            <button class="btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button" data-checkout-url="${fn:escapeXml(checkoutUrl)}" 
+                          style="
+    /* background: linear-gradient(45deg, black, transparent); */
+    /* border-color: #ffffff; */
+    font-style: italic;
+" >
                                 <spring:theme code="checkout.checkout"/>
                             </button>
                         </ycommerce:testId>
@@ -69,10 +87,15 @@
                         </div>
                     </c:if>
 
-                                        <div class="col-sm-4 col-md-3 pull-right">
+                    <div class="col-sm-4 col-md-3 pull-right">
                         <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}"
-                        style=" background-color: brown;">
-                            <spring:theme code="Keep Shopping"/>
+  style="
+  style=;
+  /* background: linear-gradient(45deg, #580000, transparent); */
+  /* border-color: white; */
+  font-style: bold;
+  " >
+                            <spring:theme code="Find More Items"/>
                         </button>
                     </div>
                 </div>

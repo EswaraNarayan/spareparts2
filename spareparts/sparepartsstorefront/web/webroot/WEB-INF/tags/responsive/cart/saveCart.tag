@@ -1,9 +1,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="cart" tagdir="/WEB-INF/tags/responsive/cart" %>
 
+
+
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<a href="#" class="save__cart--link cart__head--link js-save-cart-link">
+<a href="#" class="save__cart--link cart__head--link js-save-cart-link" style="
+    font-size: medium;
+    color: black;
+" >
     <spring:theme code="basket.save.cart" />
 </a>
     

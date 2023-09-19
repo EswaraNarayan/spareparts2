@@ -5,6 +5,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
+
 <spring:htmlEscape defaultHtmlEscape="true"/>
 
 <spring:url value="/cart/voucher/apply" var="applyVoucherAction" htmlEscape="false"/>
@@ -17,7 +19,6 @@
         <c:otherwise></c:otherwise>
     </c:choose>
 </c:set>
-
 <c:if test="${empty cartData.quoteData}">
 <div class="form-group js-voucher-respond ${containerClass}">
     <spring:theme code="text.voucher.apply.input.placeholder" var="voucherInputPlaceholder" htmlEscape="false"/>
@@ -28,7 +29,11 @@
                     id="js-voucher-code-text" maxlength="100" placeholder="${voucherInputPlaceholder}"
                     path="voucherCode" disabled="${disableUpdate}"/>
 		<c:if test="${not disableUpdate}">
-        <button type="button" id="js-voucher-apply-btn" class="btn btn-primary btn-small cart-voucher__btn" style=" border-color: #bcbcbc; background-color: black;" >
+	        <button type="button" id="js-voucher-apply-btn" class="btn btn-primary btn-small cart-voucher__btn"
+	    style="
+    border-color: #808080;
+    background-color: black;
+" >
 	            <spring:theme code="text.voucher.apply.button.label"/></button>
 		</c:if>
     </form:form>

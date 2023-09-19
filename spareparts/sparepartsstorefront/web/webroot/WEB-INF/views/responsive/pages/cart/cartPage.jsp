@@ -7,6 +7,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
+
+
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <template:page pageTitle="${pageTitle}">
@@ -17,8 +19,15 @@
 	<div class="cart-top-bar">
         <div class="text-right">
             <spring:theme var="textHelpHtml" code="text.help" />
-            <a href="" class="help js-cart-help" data-help="${fn:escapeXml(textHelpHtml)}">${textHelpHtml}
-                <span class="glyphicon glyphicon-info-sign"></span>
+            <a href="" class="help js-cart-help" style="
+    color: black;
+    font-style: oblique;
+"
+ data-help="${fn:escapeXml(textHelpHtml)}">${textHelpHtml}
+                <span class="glyphicon glyphicon-info-sign" style="
+    font-size: x-large;
+    color: #40647e;
+" ></span>
             </a>
             <div class="help-popup-content-holder js-help-popup-content">
                 <div class="help-popup-content">
@@ -30,7 +39,28 @@
             </div>
 		</div>
 	</div>
+                       <h1  style="
+    background-color: whitesmoke;
+    font-style: italic;
+" >   Special Instructions : </h1>
+                       <p> ~ If the product arrives damaged, kindly include a return label for the return process.</p>
+                                 
 
+    <style>
+
+        body {
+
+            font-family: sans-serif;
+
+            font-size: 14px;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+       </style>
 	<div>
 		<div>
             <cms:pageSlot position="TopContent" var="feature">

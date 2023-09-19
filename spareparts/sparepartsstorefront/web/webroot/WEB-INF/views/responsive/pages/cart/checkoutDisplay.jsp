@@ -5,6 +5,8 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
+
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <c:url value="/cart/checkout" var="checkoutUrl" scope="session"/>
@@ -37,11 +39,14 @@
     <div class="row">
         <div class="col-sm-4 col-md-3 pull-right">
             <ycommerce:testId code="checkoutButton">
-                  <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}"
-            style="  background-color: brown;">
-                <spring:theme code="Find More Items"/>
+                <button class="btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button" data-checkout-url="${fn:escapeXml(checkoutUrl)}"
+               style="
+    /* background: linear-gradient(45deg, black, transparent); */
+    /* border-color: #ffffff; */
+    font-style: oblique;
+    " >
+                    <spring:theme code="checkout.checkout"/>
                 </button>
-               
             </ycommerce:testId>
         </div>
 
@@ -56,8 +61,14 @@
         </sec:authorize>
 
         <div class="col-sm-4 col-md-3 pull-right">
-            <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}">
-                <spring:theme code="cart.page.continue"/>
+            <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}"
+  style="
+  style=;
+  /* background: linear-gradient(45deg, #580000, transparent); */
+  border-color: white;
+  /* font-style: italic; */
+  ">
+                <spring:theme code="keep shopping"/>
             </button>
         </div>
     </div>

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 14-Sep-2023, 11:27:57 pm                    ---
+ * --- Generated at 18-Sep-2023, 12:29:41 pm                    ---
  * ----------------------------------------------------------------
  */
 package com.hybris.spareparts.core.jalo;

@@ -13,6 +13,8 @@
 <%@ taglib prefix="order" tagdir="/WEB-INF/tags/responsive/order" %>
 
 
+
+
 <%--
     Represents single cart item on cart page
  --%>
@@ -49,7 +51,11 @@
         <c:set var="showEditableGridClass" value=""/>
         <c:url value="${entry.product.url}" var="productUrl"/>
 
-        <li class="item__list--item">
+        <li class="item__list--item" style="
+    font-style: italic;
+    background-color: #d2c8c1;
+    border-block-color: black;
+">
             <%-- chevron for multi-d products --%>
             <div class="hidden-xs hidden-sm item__toggle">
                 <c:if test="${entry.product.multidimensional}" >
@@ -69,7 +75,9 @@
             <%-- product name, code, promotions --%>
             <div class="item__info">
                 <ycommerce:testId code="cart_product_name">
-                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name">${fn:escapeXml(entry.product.name)}</span></a>
+                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name" style="
+    color: darkred;
+" >${fn:escapeXml(entry.product.name)}</span></a>
                 </ycommerce:testId>
 
                 <div class="item__code">${productCodeHtml}</div>
