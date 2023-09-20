@@ -2,7 +2,7 @@
 # Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 # -----------------------------------------------------------------------
 #
-# Import the Solr configuration for the Electronics store
+# Import the Solr configuration for the Spareparts store
 #
 $productCatalog=sparepartsProductCatalog
 $catalogVersions=catalogVersions(catalog(id),version);
@@ -94,7 +94,7 @@ INSERT_UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true];name[
 
 # Other facet properties
 INSERT_UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true];name[unique=true];type(code);sortableType(code);currency[default=false];localized[default=false];multiValue[default=false];facet[default=true];facetType(code);facetSort(code);priority;visible;useForSpellchecking[default=false];useForAutocomplete[default=false];fieldValueProvider;facetDisplayNameProvider;customFacetSortProvider;topValuesProvider;rangeSets(name)
-;$solrIndexedType; price        	;double ;	 ;true ;     ;     ;     ;MultiSelectOr ;Alpha ; 4000;true;     ;     ;productPriceValueProvider 	;;;defaultTopValuesProvider;electronicsPriceRangeUSD,electronicsPriceRangeJPY
+;$solrIndexedType; price        	;double ;	 ;true ;     ;     ;     ;MultiSelectOr ;Alpha ; 4000;true;     ;     ;productPriceValueProvider 	;;;defaultTopValuesProvider;sparepartsPriceRangeUSD,sparepartsPriceRangeJPY
 ;$solrIndexedType; allPromotions	;string ;	 ;     ;     ;true ;     ;MultiSelectOr ;Alpha ; 0   ;false;     ;     ;promotionCodeValueProvider	;promotionFacetDisplayNameProvider;                         ;
 ;$solrIndexedType; availableInStores;string	;	 ;     ;     ;true ;     ;MultiSelectOr ;Custom;10000;true;     ;     ;productStoreStockValueProvider;electronicsPointOfServiceFacetDisplayNameProvider;distanceAttributeSortProvider
 

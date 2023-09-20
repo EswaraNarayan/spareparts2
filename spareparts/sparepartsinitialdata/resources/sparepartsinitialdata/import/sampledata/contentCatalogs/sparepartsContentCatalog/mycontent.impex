@@ -12,7 +12,7 @@ $media=media(code, $contentCV);
 $siteResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/contentCatalogs/$contentCatalog
 $productResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/productCatalogs/$productCatalog
 $jarResourceCms=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/cockpits/cmscockpit
-
+$lang=en
 
 # CMS Site Settings
 UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id)
@@ -27,6 +27,14 @@ INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@medi
 # Site Logo Component
 INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
 ;;SiteLogoComponent;Site Logo Component;SiteLogoComponent;"/"
+
+
+# CMS PurchasedCategorySuggestion Components
+INSERT_UPDATE PurchasedCategorySuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;category(code, $productCV);&componentRef
+;;PurchasedCategorySuggestions;Purchased Category Suggestions;OTHERS;10;true;BP003;PurchasedCategorySuggestions
+
+UPDATE PurchasedCategorySuggestionComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;PurchasedCategorySuggestions;"You may also like..."
 
 
 #################    HOME PAGE START     #################
@@ -66,14 +74,26 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 ;;Section2CSlot-Homepage;
 
 ## Home section 3
-#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
-#;;SparepartsHomepageProductCarouselComponent;SparepartsHomepageProductCarouselComponent
 
-#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-#;;NewSparepartsHomepageProductCarouselComponent;What's New Spareparts Homepage Product Carousel;P0001,P0002,P0003,P0004,P0005;allVisible;true;NewSparepartsHomepageProductCarouselComponent
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+;;SparepartsHomepageProductCarouselComponent;Spareparts Homepage Product Carousel;P0031,P0024,P0033,P0034,P0035,P0036,P0037,P0027;allVisible;false;SparepartsHomepageProductCarouselComponent
 
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-#;;Section3Slot-Homepage;SparepartsHomepageProductCarouselComponent,NewSparepartsHomepageProductCarouselComponent
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+;;NewSparepartsHomepageProductCarouselComponent;Spareparts Homepage Product Carousel;P0001,P0002,P0003,P0004,P0005,P0011,P0013,P0014,P0016,P0018;allVisible;false;NewSparepartsHomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+;;Section3Slot-Homepage;SparepartsHomepageProductCarouselComponent,NewSparepartsHomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;Section3-Homepage;Section3;;Section3Slot-Homepage
+
+
+UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;SparepartsHomepageProductCarouselComponent;Our Bestselling Products
+
+UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;NewSparepartsHomepageProductCarouselComponent;What's New
+
 
 #### Section 4
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
