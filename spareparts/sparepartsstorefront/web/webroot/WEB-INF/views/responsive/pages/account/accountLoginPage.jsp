@@ -3,7 +3,7 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
 <template:page pageTitle="${pageTitle}">
-	<div class="row" style="background: #7daeb19e;padding-bottom: 30px;">
+	<div class="row" style="background: #a8d3d59e;padding-bottom: 30px;">
 		<div class="col-md-6" style="padding-left: 30px;">
 			<cms:pageSlot position="RightContentSlot" var="feature" element="div" class="login-right-content-slot">
 				<cms:component component="${feature}"  element="div" class="login-right-content-component"/>

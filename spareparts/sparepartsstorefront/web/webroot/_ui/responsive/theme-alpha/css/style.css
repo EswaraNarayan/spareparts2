@@ -14457,7 +14457,7 @@ form .forgotten-password {
   }
 }
 .checkout-headline {
-  color: #154259;
+  color: #000000;
   font-size: 24px;
   line-height: 35px;
   font-weight: 700;
@@ -14486,7 +14486,7 @@ form .forgotten-password {
   top: 2px;
 }
 .checkout-summary-headline {
-  color: #154259;
+  color: #000000;
   font-size: 24px;
   line-height: 35px;
   font-weight: 700;
@@ -14554,9 +14554,10 @@ form .forgotten-password {
   margin-top: 10px;
 }
 .checkout-steps .step-head.active {
-  background: #a6a6a6;
+  background: linear-gradient(45deg, black, transparent);
   color: #ffffff;
-  border-color: #cccccc;
+  border-color: #ffffff;
+  font-style: italic;
 }
 .checkout-steps .step-head .title {
   vertical-align: middle;
