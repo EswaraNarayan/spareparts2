@@ -44,8 +44,14 @@
 
 		<c:if test="${not empty product.summary}">
 			<div class="product__listing--description">${ycommerce:sanitizeHTML(product.summary)}</div>
+			
 		</c:if>
+          
+          <div class="product__listing--description">Brand Name :${ycommerce:sanitizeHTML(product.brandName)}</div>
+			<div class="product__listing--description">Vehicle Model: ${ycommerce:sanitizeHTML(product.vehicleModel)}</div>
 
+
+          
 
 
 		<c:set var="product" value="${product}" scope="request"/>

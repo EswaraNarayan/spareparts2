@@ -306,6 +306,77 @@ INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default
 ;30Wx30H;/30Wx30H/TataClutchPlate.jpg;$siteResource/images/30Wx30H/TataClutchPlate.jpg;;;images
 
 
+
+;1200Wx1200H;/1200Wx1200H/ToyotaInnovaFrontBreakPad.jpg;$siteResource/images/1200Wx1200H/ToyotaInnovaFrontBreakPad.jpg;;;images
+;515Wx515H;/515Wx515H/ToyotaInnovaFrontBreakPad.jpg;$siteResource/images/515Wx515H/ToyotaInnovaFrontBreakPad.jpg;;;images
+;300Wx300H;/300Wx300H/ToyotaInnovaFrontBreakPad.jpg;$siteResource/images/300Wx300H/ToyotaInnovaFrontBreakPad.jpg;;;images
+;96Wx96H;/96Wx96H/ToyotaInnovaFrontBreakPad.jpg;$siteResource/images/96Wx96H/ToyotaInnovaFrontBreakPad.jpg;;;images
+;65Wx65H;/65Wx65H/ToyotaInnovaFrontBreakPad.jpg;$siteResource/images/65Wx65H/ToyotaInnovaFrontBreakPad.jpg;;;images
+;30Wx30H;/30Wx30H/ToyotaInnovaFrontBreakPad.jpg;$siteResource/images/30Wx30H/ToyotaInnovaFrontBreakPad.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/ToyotaInnovaLight.jpg;$siteResource/images/1200Wx1200H/ToyotaInnovaLight.jpg;;;images
+;515Wx515H;/515Wx515H/ToyotaInnovaLight.jpg;$siteResource/images/515Wx515H/ToyotaInnovaLight.jpg;;;images
+;300Wx300H;/300Wx300H/ToyotaInnovaLight.jpg;$siteResource/images/300Wx300H/ToyotaInnovaLight.jpg;;;images
+;96Wx96H;/96Wx96H/ToyotaInnovaLight.jpg;$siteResource/images/96Wx96H/ToyotaInnovaLight.jpg;;;images
+;65Wx65H;/65Wx65H/ToyotaInnovaLight.jpg;$siteResource/images/65Wx65H/ToyotaInnovaLight.jpg;;;images
+;30Wx30H;/30Wx30H/ToyotaInnovaLight.jpg;$siteResource/images/30Wx30H/ToyotaInnovaLight.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/ToyotaInnovaAirFilter.jpg;$siteResource/images/1200Wx1200H/ToyotaInnovaAirFilter.jpg;;;images
+;515Wx515H;/515Wx515H/ToyotaInnovaAirFilter.jpg;$siteResource/images/515Wx515H/ToyotaInnovaAirFilter.jpg;;;images
+;300Wx300H;/300Wx300H/ToyotaInnovaAirFilter.jpg;$siteResource/images/300Wx300H/ToyotaInnovaAirFilter.jpg;;;images
+;96Wx96H;/96Wx96H/ToyotaInnovaAirFilter.jpg;$siteResource/images/96Wx96H/ToyotaInnovaAirFilter.jpg;;;images
+;65Wx65H;/65Wx65H/ToyotaInnovaAirFilter.jpg;$siteResource/images/65Wx65H/ToyotaInnovaAirFilter.jpg;;;images
+;30Wx30H;/30Wx30H/ToyotaInnovaAirFilter.jpg;$siteResource/images/30Wx30H/ToyotaInnovaAirFilter.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/BrakeDiscForSwift.jpg;$siteResource/images/1200Wx1200H/BrakeDiscForSwift.jpg;;;images
+;515Wx515H;/515Wx515H/BrakeDiscForSwift.jpg;$siteResource/images/515Wx515H/BrakeDiscForSwift.jpg;;;images
+;300Wx300H;/300Wx300H/BrakeDiscForSwift.jpg;$siteResource/images/300Wx300H/BrakeDiscForSwift.jpg;;;images
+;96Wx96H;/96Wx96H/BrakeDiscForSwift.jpg;$siteResource/images/96Wx96H/BrakeDiscForSwift.jpg;;;images
+;65Wx65H;/65Wx65H/BrakeDiscForSwift.jpg;$siteResource/images/65Wx65H/BrakeDiscForSwift.jpg;;;images
+;30Wx30H;/30Wx30H/BrakeDiscForSwift.jpg;$siteResource/images/30Wx30H/BrakeDiscForSwift.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/ClutchSetForHyundai.jpg;$siteResource/images/1200Wx1200H/ClutchSetForHyundai.jpg;;;images
+;515Wx515H;/515Wx515H/ClutchSetForHyundai.jpg;$siteResource/images/515Wx515H/ClutchSetForHyundai.jpg;;;images
+;300Wx300H;/300Wx300H/ClutchSetForHyundai.jpg;$siteResource/images/300Wx300H/ClutchSetForHyundai.jpg;;;images
+;96Wx96H;/96Wx96H/ClutchSetForHyundai.jpg;$siteResource/images/96Wx96H/ClutchSetForHyundai.jpg;;;images
+;65Wx65H;/65Wx65H/ClutchSetForHyundai.jpg;$siteResource/images/65Wx65H/ClutchSetForHyundai.jpg;;;images
+;30Wx30H;/30Wx30H/ClutchSetForHyundai.jpg;$siteResource/images/30Wx30H/ClutchSetForHyundai.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/FrontSuspensionBushKitForSwift.jpg;$siteResource/images/1200Wx1200H/FrontSuspensionBushKitForSwift.jpg;;;images
+;515Wx515H;/515Wx515H/FrontSuspensionBushKitForSwift.jpg;$siteResource/images/515Wx515H/FrontSuspensionBushKitForSwift.jpg;;;images
+;300Wx300H;/300Wx300H/FrontSuspensionBushKitForSwift.jpg;$siteResource/images/300Wx300H/FrontSuspensionBushKitForSwift.jpg;;;images
+;96Wx96H;/96Wx96H/FrontSuspensionBushKitForSwift.jpg;$siteResource/images/96Wx96H/FrontSuspensionBushKitForSwift.jpg;;;images
+;65Wx65H;/65Wx65H/FrontSuspensionBushKitForSwift.jpg;$siteResource/images/65Wx65H/FrontSuspensionBushKitForSwift.jpg;;;images
+;30Wx30H;/30Wx30H/FrontSuspensionBushKitForSwift.jpg;$siteResource/images/30Wx30H/FrontSuspensionBushKitForSwift.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/ToyotaWheelCover.jpg;$siteResource/images/1200Wx1200H/ToyotaWheelCover.jpg;;;images
+;515Wx515H;/515Wx515H/ToyotaWheelCover.jpg;$siteResource/images/515Wx515H/ToyotaWheelCover.jpg;;;images
+;300Wx300H;/300Wx300H/ToyotaWheelCover.jpg;$siteResource/images/300Wx300H/ToyotaWheelCover.jpg;;;images
+;96Wx96H;/96Wx96H/ToyotaWheelCover.jpg;$siteResource/images/96Wx96H/ToyotaWheelCover.jpg;;;images
+;65Wx65H;/65Wx65H/ToyotaWheelCover.jpg;$siteResource/images/65Wx65H/ToyotaWheelCover.jpg;;;images
+;30Wx30H;/30Wx30H/ToyotaWheelCover.jpg;$siteResource/images/30Wx30H/ToyotaWheelCover.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/TyreForMarutiSuzuki.jpg;$siteResource/images/1200Wx1200H/TyreForMarutiSuzuki.jpg;;;images
+;515Wx515H;/515Wx515H/TyreForMarutiSuzuki.jpg;$siteResource/images/515Wx515H/TyreForMarutiSuzuki.jpg;;;images
+;300Wx300H;/300Wx300H/TyreForMarutiSuzuki.jpg;$siteResource/images/300Wx300H/TyreForMarutiSuzuki.jpg;;;images
+;96Wx96H;/96Wx96H/TyreForMarutiSuzuki.jpg;$siteResource/images/96Wx96H/TyreForMarutiSuzuki.jpg;;;images
+;65Wx65H;/65Wx65H/TyreForMarutiSuzuki.jpg;$siteResource/images/65Wx65H/TyreForMarutiSuzuki.jpg;;;images
+;30Wx30H;/30Wx30H/TyreForMarutiSuzuki.jpg;$siteResource/images/30Wx30H/TyreForMarutiSuzuki.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/JKTyreForCars.jpg;$siteResource/images/1200Wx1200H/JKTyreForCars.jpg;;;images
+;515Wx515H;/515Wx515H/JKTyreForCars.jpg;$siteResource/images/515Wx515H/JKTyreForCars.jpg;;;images
+;300Wx300H;/300Wx300H/JKTyreForCars.jpg;$siteResource/images/300Wx300H/JKTyreForCars.jpg;;;images
+;96Wx96H;/96Wx96H/JKTyreForCars.jpg;$siteResource/images/96Wx96H/JKTyreForCars.jpg;;;images
+;65Wx65H;/65Wx65H/JKTyreForCars.jpg;$siteResource/images/65Wx65H/JKTyreForCars.jpg;;;images
+;30Wx30H;/30Wx30H/JKTyreForCars.jpg;$siteResource/images/30Wx30H/JKTyreForCars.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/GoodyearTyre.jpg;$siteResource/images/1200Wx1200H/GoodyearTyre.jpg;;;images
+;515Wx515H;/515Wx515H/GoodyearTyre.jpg;$siteResource/images/515Wx515H/GoodyearTyre.jpg;;;images
+;300Wx300H;/300Wx300H/GoodyearTyre.jpg;$siteResource/images/300Wx300H/GoodyearTyre.jpg;;;images
+;96Wx96H;/96Wx96H/GoodyearTyre.jpg;$siteResource/images/96Wx96H/GoodyearTyre.jpg;;;images
+;65Wx65H;/65Wx65H/GoodyearTyre.jpg;$siteResource/images/65Wx65H/GoodyearTyre.jpg;;;images
+;30Wx30H;/30Wx30H/GoodyearTyre.jpg;$siteResource/images/30Wx30H/GoodyearTyre.jpg;;;images
+
 # Create Media Containers
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
 ;Tata Tiago BrakePad;/1200Wx1200H/TataTiagoBrakePad.jpg,/515Wx515H/TataTiagoBrakePad.jpg,/300Wx300H/TataTiagoBrakePad.jpg,/96Wx96H/TataTiagoBrakePad.jpg,/65Wx65H/TataTiagoBrakePad.jpg,/30Wx30H/TataTiagoBrakePad.jpg;
@@ -373,6 +444,26 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
 ;BalenoTieRodEnd;/1200Wx1200H/BalenoTieRodEnd.jpg,/515Wx515H/BalenoTieRodEnd.jpg,/300Wx300H/BalenoTieRodEnd.jpg,/96Wx96H/BalenoTieRodEnd.jpg,/65Wx65H/BalenoTieRodEnd.jpg,/30Wx30H/BalenoTieRodEnd.jpg;
 ;HondaClutchPlate;/1200Wx1200H/HondaClutchPlate.jpg,/515Wx515H/HondaClutchPlate.jpg,/300Wx300H/HondaClutchPlate.jpg,/96Wx96H/HondaClutchPlate.jpg,/65Wx65H/HondaClutchPlate.jpg,/30Wx30H/HondaClutchPlate.jpg;
 ;TataClutchPlate;/1200Wx1200H/TataClutchPlate.jpg,/515Wx515H/TataClutchPlate.jpg,/300Wx300H/TataClutchPlate.jpg,/96Wx96H/TataClutchPlate.jpg,/65Wx65H/TataClutchPlate.jpg,/30Wx30H/TataClutchPlate.jpg;
+
+;ToyotaInnovaLight;/1200Wx1200H/ToyotaInnovaLight.jpg,/515Wx515H/ToyotaInnovaLight.jpg,/300Wx300H/ToyotaInnovaLight.jpg,/96Wx96H/ToyotaInnovaLight.jpg,/65Wx65H/ToyotaInnovaLight.jpg,/30Wx30H/ToyotaInnovaLight.jpg;
+
+;ToyotaInnovaFrontBreakPad;/1200Wx1200H/ToyotaInnovaFrontBreakPad.jpg,/515Wx515H/ToyotaInnovaFrontBreakPad.jpg,/300Wx300H/ToyotaInnovaFrontBreakPad.jpg,/96Wx96H/ToyotaInnovaFrontBreakPad.jpg,/65Wx65H/ToyotaInnovaFrontBreakPad.jpg,/30Wx30H/ToyotaInnovaFrontBreakPad.jpg;
+
+;ToyotaInnovaAirFilter;/1200Wx1200H/ToyotaInnovaAirFilter.jpg,/515Wx515H/ToyotaInnovaAirFilter.jpg,/300Wx300H/ToyotaInnovaAirFilter.jpg,/96Wx96H/ToyotaInnovaAirFilter.jpg,/65Wx65H/ToyotaInnovaAirFilter.jpg,/30Wx30H/ToyotaInnovaAirFilter.jpg;
+
+;BrakeDiscForSwift;/1200Wx1200H/BrakeDiscForSwift.jpg,/515Wx515H/BrakeDiscForSwift.jpg,/300Wx300H/BrakeDiscForSwift.jpg,/96Wx96H/BrakeDiscForSwift.jpg,/65Wx65H/BrakeDiscForSwift.jpg,/30Wx30H/BrakeDiscForSwift.jpg;
+
+;ClutchSetForHyundai;/1200Wx1200H/ClutchSetForHyundai.jpg,/515Wx515H/ClutchSetForHyundai.jpg,/300Wx300H/ClutchSetForHyundai.jpg,/96Wx96H/ClutchSetForHyundai.jpg,/65Wx65H/ClutchSetForHyundai.jpg,/30Wx30H/ClutchSetForHyundai.jpg;
+
+;FrontSuspensionBushKitForSwift;/1200Wx1200H/FrontSuspensionBushKitForSwift.jpg,/515Wx515H/FrontSuspensionBushKitForSwift.jpg,/300Wx300H/FrontSuspensionBushKitForSwift.jpg,/96Wx96H/FrontSuspensionBushKitForSwift.jpg,/65Wx65H/FrontSuspensionBushKitForSwift.jpg,/30Wx30H/FrontSuspensionBushKitForSwift.jpg;
+
+;ToyotaWheelCover;/1200Wx1200H/ToyotaWheelCover.jpg,/515Wx515H/ToyotaWheelCover.jpg,/300Wx300H/ToyotaWheelCover.jpg,/96Wx96H/ToyotaWheelCover.jpg,/65Wx65H/ToyotaWheelCover.jpg,/30Wx30H/ToyotaWheelCover.jpg;
+
+;TyreForMarutiSuzuki;/1200Wx1200H/TyreForMarutiSuzuki.jpg,/515Wx515H/TyreForMarutiSuzuki.jpg,/300Wx300H/TyreForMarutiSuzuki.jpg,/96Wx96H/TyreForMarutiSuzuki.jpg,/65Wx65H/TyreForMarutiSuzuki.jpg,/30Wx30H/TyreForMarutiSuzuki.jpg;
+
+;JKTyreForCars;/1200Wx1200H/JKTyreForCars.jpg,/515Wx515H/JKTyreForCars.jpg,/300Wx300H/JKTyreForCars.jpg,/96Wx96H/JKTyreForCars.jpg,/65Wx65H/JKTyreForCars.jpg,/30Wx30H/JKTyreForCars.jpg;
+
+;GoodyearTyre;/1200Wx1200H/GoodyearTyre.jpg,/515Wx515H/GoodyearTyre.jpg,/300Wx300H/GoodyearTyre.jpg,/96Wx96H/GoodyearTyre.jpg,/65Wx65H/GoodyearTyre.jpg,/30Wx30H/GoodyearTyre.jpg;
 
 
 # Update Products with Media and Media Containers
@@ -444,5 +535,28 @@ UPDATE SparepartsProduct;code[unique=true];$picture;$thumbnail;$detail;$others;$
 ;P0039;/300Wx300H/HondaClutchPlate.jpg;/96Wx96H/HondaClutchPlate.jpg;;/515Wx515H/HondaClutchPlate.jpg,/65Wx65H/HondaClutchPlate.jpg,/30Wx30H/HondaClutchPlate.jpg;/300Wx300H/HondaClutchPlate.jpg;/96Wx96H/HondaClutchPlate.jpg;HondaClutchPlate;
 
 ;P0040;/300Wx300H/TataClutchPlate.jpg;/96Wx96H/TataClutchPlate.jpg;;/515Wx515H/TataClutchPlate.jpg,/65Wx65H/TataClutchPlate.jpg,/30Wx30H/TataClutchPlate.jpg;/300Wx300H/TataClutchPlate.jpg;/96Wx96H/TataClutchPlate.jpg;TataClutchPlate;
+
+;P0041;/300Wx300H/ToyotaInnovaFrontBreakPad.jpg;/96Wx96H/ToyotaInnovaFrontBreakPad.jpg;;/515Wx515H/ToyotaInnovaFrontBreakPad.jpg,/65Wx65H/ToyotaInnovaFrontBreakPad.jpg,/30Wx30H/ToyotaInnovaFrontBreakPad.jpg;/300Wx300H/ToyotaInnovaFrontBreakPad.jpg;/96Wx96H/ToyotaInnovaFrontBreakPad.jpg;ToyotaInnovaFrontBreakPad;
+
+;P0042;/300Wx300H/ToyotaInnovaLight.jpg;/96Wx96H/ToyotaInnovaLight.jpg;;/515Wx515H/ToyotaInnovaLight.jpg,/65Wx65H/ToyotaInnovaLight.jpg,/30Wx30H/ToyotaInnovaLight.jpg;/300Wx300H/ToyotaInnovaLight.jpg;/96Wx96H/ToyotaInnovaLight.jpg;ToyotaInnovaLight;
+
+;P0043;/300Wx300H/ToyotaInnovaAirFilter.jpg;/96Wx96H/ToyotaInnovaAirFilter.jpg;;/515Wx515H/ToyotaInnovaAirFilter.jpg,/65Wx65H/ToyotaInnovaAirFilter.jpg,/30Wx30H/ToyotaInnovaAirFilter.jpg;/300Wx300H/ToyotaInnovaAirFilter.jpg;/96Wx96H/ToyotaInnovaAirFilter.jpg;ToyotaInnovaAirFilter;
+
+;P0044;/300Wx300H/BrakeDiscForSwift.jpg;/96Wx96H/BrakeDiscForSwift.jpg;;/515Wx515H/BrakeDiscForSwift.jpg,/65Wx65H/BrakeDiscForSwift.jpg,/30Wx30H/BrakeDiscForSwift.jpg;/300Wx300H/BrakeDiscForSwift.jpg;/96Wx96H/BrakeDiscForSwift.jpg;BrakeDiscForSwift;
+
+;P0045;/300Wx300H/ClutchSetForHyundai.jpg;/96Wx96H/ClutchSetForHyundai.jpg;;/515Wx515H/ClutchSetForHyundai.jpg,/65Wx65H/ClutchSetForHyundai.jpg,/30Wx30H/ClutchSetForHyundai.jpg;/300Wx300H/ClutchSetForHyundai.jpg;/96Wx96H/ClutchSetForHyundai.jpg;ClutchSetForHyundai;
+
+;P0046;/300Wx300H/FrontSuspensionBushKitForSwift.jpg;/96Wx96H/FrontSuspensionBushKitForSwift.jpg;;/515Wx515H/FrontSuspensionBushKitForSwift.jpg,/65Wx65H/FrontSuspensionBushKitForSwift.jpg,/30Wx30H/FrontSuspensionBushKitForSwift.jpg;/300Wx300H/FrontSuspensionBushKitForSwift.jpg;/96Wx96H/FrontSuspensionBushKitForSwift.jpg;FrontSuspensionBushKitForSwift;
+
+;P0047;/300Wx300H/ToyotaWheelCover.jpg;/96Wx96H/ToyotaWheelCover.jpg;;/515Wx515H/ToyotaWheelCover.jpg,/65Wx65H/ToyotaWheelCover.jpg,/30Wx30H/ToyotaWheelCover.jpg;/300Wx300H/ToyotaWheelCover.jpg;/96Wx96H/ToyotaWheelCover.jpg;ToyotaWheelCover;
+
+;P0048;/300Wx300H/TyreForMarutiSuzuki.jpg;/96Wx96H/TyreForMarutiSuzuki.jpg;;/515Wx515H/TyreForMarutiSuzuki.jpg,/65Wx65H/TyreForMarutiSuzuki.jpg,/30Wx30H/TyreForMarutiSuzuki.jpg;/300Wx300H/TyreForMarutiSuzuki.jpg;/96Wx96H/TyreForMarutiSuzuki.jpg;TyreForMarutiSuzuki;
+
+;P0049;/300Wx300H/JKTyreForCars.jpg;/96Wx96H/JKTyreForCars.jpg;;/515Wx515H/JKTyreForCars.jpg,/65Wx65H/JKTyreForCars.jpg,/30Wx30H/JKTyreForCars.jpg;/300Wx300H/JKTyreForCars.jpg;/96Wx96H/JKTyreForCars.jpg;JKTyreForCars;
+
+
+;P0050;/300Wx300H/GoodyearTyre.jpg;/96Wx96H/GoodyearTyre.jpg;;/515Wx515H/GoodyearTyre.jpg,/65Wx65H/GoodyearTyre.jpg,/30Wx30H/GoodyearTyre.jpg;/300Wx300H/GoodyearTyre.jpg;/96Wx96H/GoodyearTyre.jpg;GoodyearTyre;
+
+
 
 

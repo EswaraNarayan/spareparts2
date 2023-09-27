@@ -28,6 +28,8 @@ INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@medi
 INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
 ;;SiteLogoComponent;Site Logo Component;SiteLogoComponent;"/"
 
+UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
+;;SiteLogoComponent;/images/theme/SpareParts-1.svg
 
 # CMS PurchasedCategorySuggestion Components
 INSERT_UPDATE PurchasedCategorySuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;category(code, $productCV);&componentRef
@@ -66,8 +68,8 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
 ;;SparepartsHompageCarBodypartsBannerComponent;Spareparts Homepage Car Bodyparts Component Child;/Car-engine/c/BP003;SparepartsHompageCarBodypartsBannerComponent
 
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#;;Section2BSlot-Homepage;true;SparepartsHompageCarBodypartsBannerComponent,SparepartsHompageCarEngineBannerComponent
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+;;Section2BSlot-Homepage;true;SparepartsHompageCarBodypartsBannerComponent,SparepartsHompageCarEngineBannerComponent
 
 ## Home section 2C
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
@@ -104,7 +106,7 @@ UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[l
 
 
 #INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#;;Section4Slot-Homepage;true;SparepartsHompageImage1BannerComponent,SparepartsHompageImage2Component,SparepartsHompageImage3BannerComponent,SparepartsHompageImage4BannerComponent
+#;;Section4SlotHomepage;true;SparepartsHompageImage1BannerComponent,SparepartsHompageImage2Component,SparepartsHompageImage3BannerComponent,SparepartsHompageImage4BannerComponent
 
 ### Section 5
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef

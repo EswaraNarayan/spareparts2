@@ -14,7 +14,7 @@ $media=media(code, $contentCV);
 $siteResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/contentCatalogs/$contentCatalog
 $productResource=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/productCatalogs/$productCatalog
 $jarResourceCms=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitialDataConstants&/sparepartsinitialdata/import/sampledata/cockpits/cmscockpit
-
+$lang=en
 
 
 # CMS Link Components
@@ -26,13 +26,28 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
 ;;BrakePadCategoryLink;Brake Pad Category Link;/Brake/brake-pad/c/A01;BrakePadCategoryLink;BrakePadCategoryLink;;A01;;
 ;;BrakeDiscRoaterCategoryLink;Brake Disc Roater Category Link;/Brake/brake-pad/c/A02;BrakeDiscRoaterCategoryLink;BrakeDiscRoaterCategoryLink;;A02;;
 ;;LowerLinkBushKitCategoryLink;Lower Link Bush Kit Category Link;/Brake-suspension/bush-kit/c/A03;LowerLinkBushKitCategoryLink;LowerLinkBushKitCategoryLink;;A03;;
-;;ControlArmsCategoryLink;Control Arms Category Link;Suspension/control-arms/c/A04;ControlArmsCategoryLink;ControlArmsCategoryLink;;A04;;
+;;ControlArmsCategoryLink;Control Arms Category Link;/Suspension/control-arms/c/A04;ControlArmsCategoryLink;ControlArmsCategoryLink;;A04;;
 ;;CarPartsCategoryLink;Car Parts Category Link;/Car-parts/c/BP002;CarPartsCategoryLink;CarPartsCategoryLink;;BP002;;
+;;BumperCategoryLink;Bumper Category Link;/car-parts/bumper/c/A05;BumperCategoryLink;BumperCategoryLink;;A05;;
+;;GearKnobCategoryLink;Gear Knob Category Link;/car-parts/gear-knob/c/A06;GearKnobCategoryLink;GearKnobCategoryLink;;A06;;
+;;InstrumentClusterCategoryLink;Instrument Cluster Category Link;/car-parts/Intrument-cluster/c/A07;InstrumentClusterCategoryLink;InstrumentClusterCategoryLink;;A07;;
+;;FuelTankCapCategoryLink;Fuel Tank Cap Category Link;/car-parts/fuel-tank-cap/c/A08;FuelTankCapCategoryLink;FuelTankCapCategoryLink;;A08;;
 ;;CarEngineCategoryLink;Car Engine Category Link;/Car-engine/c/BP003;CarEngineCategoryLink;CarEngineCategoryLink;;BP003;;
+;;GearShiterCabelCategoryLink;Gear Shiter Cabel Category Link;/car-engine/gear-shiter/c/A09;GearShiterCabelCategoryLink;GearShiterCabelCategoryLink;;A09;;
+;;AcceleratorPadelCategoryLink;Accelerator Padel Category Link;/car-engine/accelerator-padel/c/A10;AcceleratorPadelCategoryLink;AcceleratorPadelCategoryLink;;A10;;
+;;TieRodEndCategoryLink;Tie Rod End Category Link;/car-engine/tie-rod-end/c/A11;TieRodEndCategoryLink;TieRodEndCategoryLink;;A11;;
+;;ClutchPlateCategoryLink;Clutch Plate Category Link;/car-engine/clutch-plate/c/A12;ClutchPlateCategoryLink;ClutchPlateCategoryLink;;A12;;
+;;ClutchCabelCategoryLink;Gear Knob Category Link;/car-engine/clutch-cabel/c/A13;ClutchCabelCategoryLink;ClutchCabelCategoryLink;;A13;;
+;;ClutchBearingCategoryLink;Clutch Bearing Category Link;/car-engine/clutch-bearing/c/A14;ClutchBearingCategoryLink;ClutchBearingCategoryLink;;A14;;
+;;FuelPumpCategoryLink;Fuel Pump Category Link;/car-engine/fuel-pump/c/A15;FuelPumpCategoryLink;FuelPumpCategoryLink;;A15;;
 ;;CarLightsCategoryLink;Car Lights Category Link;/Car-lights/c/BP004;CarLightsCategoryLink;CarLightsCategoryLink;;BP004;;
-;;BumperLightsCategoryLink;Bumper Lights Category Link;/Car-lights/bumper-lights/c/A14;BumperLightsCategoryLink;BumperLightsCategoryLink;;A14;;
-;;HeadLightsCategoryLink;Head Lights Category Link;/Car-lights/head-lights/c/A13;HeadLightsCategoryLink;HeadLightsCategoryLink;;A13;;
-;;IndicatorLightsCategoryLink;Indicator Lights Category Link;/Car-lights/indicator-lights/c/A15;IndicatorLightsCategoryLink;IndicatorLightsCategoryLink;;A15;;
+;;BumperLightsCategoryLink;Bumper Lights Category Link;/Car-lights/bumper-lights/c/A16;BumperLightsCategoryLink;BumperLightsCategoryLink;;A16;;
+;;HeadLightsCategoryLink;Head Lights Category Link;/Car-lights/head-lights/c/A17;HeadLightsCategoryLink;HeadLightsCategoryLink;;A17;;
+;;IndicatorLightsCategoryLink;Indicator Lights Category Link;/Car-lights/indicator-lights/c/A18;IndicatorLightsCategoryLink;IndicatorLightsCategoryLink;;A18;;
+;;BackLightsCategoryLink;Back Lights Category Link;/Car-lights/back-lights/c/A19;BackLightsCategoryLink;BackLightsCategoryLink;;A19;;
+;;CarWheelsCategoryLink;Car Wheels Category Link;/Car-wheels/c/BP005;CarWheelsCategoryLink;CarWheelsCategoryLink;;BP005;;
+;;FiltersCategoryLink;Filters Category Link;/filters/c/BP006;FiltersCategoryLink;FiltersCategoryLink;;BP006;;
+
 
 # CMS Navigation Nodes #
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;children(uid,$contentCV)[mode=append]
@@ -45,12 +60,17 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
 ;BrakeSuspensionNavNode;;Brake Suspension Navigation Node;;BrakeSuspensionCategoryLink;BrakeSuspensionNavNode
 ;BrakeSuspensionLinkNavNode;;Brake Suspension Links;BrakeSuspensionNavNode;BrakePadCategoryLink,BrakeDiscRoaterCategoryLink,LowerLinkBushKitCategoryLink,ControlArmsCategoryLink;BrakeSuspensionLinkNavNode
 ;CarPartsNavNode;;Car Parts Navigation Node;;CarPartsCategoryLink;CarPartsNavNode
+;CarPartsLinkNavNode;;Car Parts Links;CarPartsNavNode;BumperCategoryLink,GearKnobCategoryLink,InstrumentClusterCategoryLink,FuelTankCapCategoryLink;CarPartsLinkNavNode
 ;CarEngineNavNode;;Car Engine Navigation Node;;CarEngineCategoryLink;CarEngineNavNode
+;CarEngineLinkNavNode;;Car Engine Links;CarEngineLinkNavNode;GearShiterCabelCategoryLink,AcceleratorPadelCategoryLink,TieRodEndCategoryLink,ClutchPlateCategoryLink,ClutchCabelCategoryLink,ClutchBearingCategoryLink,FuelPumpCategoryLink;CarEngineLinkNavNode
 ;CarLightsNavNode;;Car Lights Navigation Node;;CarLightsCategoryLink;CarLightsNavNode
-;CarLightsLinkNavNode;;Car Lights Link;CarLightsNavNode;BumperLightsCategoryLink,HeadLightsCategoryLink,IndicatorLightsCategoryLink;CarLightsLinkNavNode
+;CarLightsLinkNavNode;;Car Lights Link;CarLightsNavNode;BumperLightsCategoryLink,HeadLightsCategoryLink,IndicatorLightsCategoryLink,BackLightsCategoryLink;CarLightsLinkNavNode
+;CarWheelsNavNode;;Car Wheels Navigation Node;;CarWheelsCategoryLink;CarWheelsNavNode
+;FiltersNavNode;;Filters Navigation Node;;FiltersCategoryLink;FiltersNavNode
+
 
 INSERT_UPDATE CategoryNavigationComponent;$contentCV[unique=true];uid[unique=true];name;styleClass;&componentRef;navigationNode(&nodeRef);wrapAfter
-;;SparepartsCategoryNavComponent;Category Navigation Component;;SparepartsCategoryNavComponent;SparepartsCategoryNavNode;10
+;;SparepartsCategoryNavComponent;Category Navigation Component;;SparepartsCategoryNavComponent;SparepartsCategoryNavNode;15
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid, $contentCV)
 ;;NavigationBarSlot;SparepartsCategoryNavComponent,breadcrumbComponent
@@ -60,23 +80,25 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 ## level 2. children of SiteRoot ##
 # the following order of children is the display order on the site
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)
-;SparepartsCategoryNavNode;;Categories;SparepartsNavNode;SparepartsCategoryNavNode;BrakeSuspensionNavNode,CarPartsNavNode,CarEngineNavNode,CarLightsNavNode
+;SparepartsCategoryNavNode;;Categories;SparepartsNavNode;SparepartsCategoryNavNode;BrakeSuspensionNavNode,CarPartsNavNode,CarEngineNavNode,CarLightsNavNode,CarWheelsNavNode,FiltersNavNode
 
 ## level 3. children of Category Nav ##
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
 ;BrakeSuspensionNavNode;;Brake Suspension Category;BrakeSuspensionNavNode;BrakePadNavNode,BrakeDiscRoaterNavNode,LowerLinkBushNavNode,ControlArmsNavNode
-;CarPartsNavNode;;Car parts category;CarPartsNavNode
-;CarEngineNavNode;;Car Engine Category;CarEngineNavNode
-;CarLightsNavNode;;Car Lights Category;CarLightsNavNode;BumperLightsNavNode,HeadLightsNavNode,IndicatorLightsNavNode
-
+;CarPartsNavNode;;Car parts category;CarPartsNavNode;BumperNavNode,GearKnobNavNode,InstrumentClusterNavNode,FuelTankCapNavNode
+;CarEngineNavNode;;Car Engine Category;CarEngineNavNode;GearShiterCabelNavNode,AcceleratorPadelNavNode,TieRodEndNavNode,ClutchPlateNavNode,ClutchCabelNavNode,ClutchBearingNavNode,FuelPumpNavNode
+;CarLightsNavNode;;Car Lights Category;CarLightsNavNode;BumperLightsNavNode,HeadLightsNavNode,IndicatorLightsNavNode,BackLightNavNode
+;CarWheelsNavNode;;Car Wheels Category;CarWheelsNavNode
+;FiltersNavNode;;Filters Category;FiltersNavNode
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
 ;BrakeSuspensionNavNodeEntry;;Brake Suspension Navigation Node Entry;BrakeSuspensionNavNode;BrakeSuspensionCategoryLink;
 ;CarPartsNavNodeEntry;;Car Parts Navigation Node Entry;CarPartsNavNode;CarPartsCategoryLink;
 ;CarEngineNavNodeEntry;;Car Engine Navigation Node Entry;CarEngineNavNode;CarEngineCategoryLink;
-;CarLightsNavNodeEntry;;Car Lights Node Entry;CarLightsNavNode;CarLightsCategoryLink;
-
+;CarLightsNavNodeEntry;;Car Lights Navigation Node Entry;CarLightsNavNode;CarLightsCategoryLink;
+;CarWheelsNavNodeEntry;;Car Wheels Navigation Node Entry;CarWheelsNavNode;CarWheelsCategoryLink
+;FiltersNavNodeEntry;;Filters Navigation Node Entry;FiltersNavNode;FiltersCategoryLink
 
 ## level 4. children of NavNode (the following order of children is the display order on the site) ##
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
@@ -85,10 +107,29 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&n
 ;BrakeDiscRoaterNavNode;;Brake Disc Roater Links;BrakeDiscRoaterNavNode
 ;LowerLinkBushNavNode;;Lower Link Bush Link;LowerLinkBushNavNode
 ;ControlArmsNavNode;;Control Arms Links;ControlArmsNavNode
+
+## children of CarPartsNavNode
+;BumperNavNode;;Bumper Links;BumperNavNode
+;GearKnobNavNode;;Gear Knob Links;GearKnobNavNode
+;InstrumentClusterNavNode;;Instrument Cluster Links;InstrumentClusterNavNode
+;FuelTankCapNavNode;;Fuel Tank Cap Links;FuelTankCapNavNode
+
+
+## children of CarEngineNavNode
+;GearShiterCabelNavNode;;Gear Shiter Cabel Links;GearShiterCabelNavNode
+;AcceleratorPadelNavNode;;Accelerator Padel Links;AcceleratorPadelNavNode
+;TieRodEndNavNode;;Tie Rod End Links;TieRodEndNavNode
+;ClutchPlateNavNode;;Clutch Plate Links;ClutchPlateNavNode
+;ClutchCabelNavNode;;Clutch Cabel Links;ClutchCabelNavNode
+;ClutchBearingNavNode;;Clutch Bearing Links;ClutchBearingNavNode
+;FuelPumpNavNode;;Fuel Pump Links;FuelPumpNavNode
+
 ## children of CarLightsNavNode
 ;BumperLightsNavNode;; Bumper Lights Links;BumperLightsNavNode
 ;HeadLightsNavNode;;Head Lights Links;HeadLightsNavNode
 ;IndicatorLightsNavNode;;Indicator Lights Links;IndicatorLightsNavNode
+;BackLightNavNode;;Back Light Links;BackLightNavNode
+
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
@@ -97,10 +138,21 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
 ;BrakeDiscRoaterNavNodeEntry;;Brake Disc Roater Navigation Node Entry;BrakeDiscRoaterNavNode;BrakeDiscRoaterCategoryLink;
 ;LowerLinkBushNavNodeEntry;;Lower Link Bush Navigation Node Entry;LowerLinkBushNavNode;LowerLinkBushKitCategoryLink;
 ;ControlArmsNavNodeEntry;;Control Arms Navigation Node Entry;ControlArmsNavNode;ControlArmsCategoryLink;
+;BumperNavNodeEntry;;Bumper Navigation Node Entry;BumperNavNode;BumperCategoryLink;  
+;GearKnobNavNodeEntry;;Gear Knob Navigation Node Entry;GearKnobNavNode;GearKnobCategoryLink;
+;InstrumentClusterNavNodeEntry;; Instrument Cluster Navigation Node Entry;InstrumentClusterNavNode;InstrumentClusterCategoryLink;          
+;FuelTankCapNavNodeEntry;;Fuel Tank Navigation Node Entry;FuelTankCapNavNode;FuelTankCapCategoryLink;
+;GearShiterCabelNavNodeEntry;; Gear Shiter Cabel Navigation Node ENtry;GearShiterCabelNavNode;GearShiterCabelCategoryLink;
+;AcceleratorPadelNavNodeEntry;;Accelerator Padel Navigation Node Entry;AcceleratorPadelNavNode;AcceleratorPadelCategoryLink;
+;TieRodEndNavNodeEntry;;Tie Rod End Navigation Node Entry;TieRodEndNavNode;TieRodEndCategoryLink;
+;ClutchPlateNavNodeEntry;;Clutch Plate Navigation Node Entry;ClutchPlateNavNode;ClutchPlateCategoryLink;
+;ClutchCabelNavNodeEntry;;Clutch Cabel Navigation Node Entry;ClutchCabelNavNode;ClutchCabelCategoryLink;
+;ClutchBearingNavNodeEntry;;Clush Bearing Navigation Node Entry;ClutchBearingNavNode;ClutchBearingCategoryLink;
+;FuelPumpNavNodeEntry;;Fuel Pump Navigation Node Entry;FuelPumpNavNode;FuelPumpCategoryLink;
 ;BumperLightsNavNodeEntry;; Bumber Lights Navigation Node Entry;BumperLightsNavNode;BumperLightsCategoryLink
 ;HeadLightsNavNodeEntry;;Head Lights Navigation Node Entry;HeadLightsNavNode;HeadLightsCategoryLink
 ;IndicatorLightsNavNodeEntry;;Indicator Lights Navigation Node Entry;IndicatorLightsNavNode;IndicatorLightsCategoryLink
-
+;BackLightNavNodeEntry;;Back Lights Navigation Node Entry;BackLightNavNode;BackLightsCategoryLink
 
 # CMS Link Components to show data on storefront
 UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
@@ -108,13 +160,27 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
 ;;CarPartsCategoryLink;"Car Body Parts"
 ;;CarEngineCategoryLink;"Engine"
 ;;CarLightsCategoryLink;"Car Lights"
+;;CarWheelsCategoryLink;"Car Wheels"
+;;FiltersCategoryLink;"Filters"
 ;;BrakePadCategoryLink;"Brake Pads"
 ;;BrakeDiscRoaterCategoryLink;"Brake Disc Rotor"
 ;;LowerLinkBushKitCategoryLink;"Suspension bushes, kits&parts"
 ;;ControlArmsCategoryLink;"Control Arms"
+;;BumperCategoryLink;"Bumper"
+;;GearKnobCategoryLink;"Gear Knob"
+;;InstrumentClusterCategoryLink;"Intrument Cluster"
+;;FuelTankCapCategoryLink;"Fuel Tank Cap"
+;;GearShiterCabelCategoryLink;"Gear Shiter Cabel"
+;;AcceleratorPadelCategoryLink;"Accelerator Cabel"
+;;TieRodEndCategoryLink;"Tie Rod End"
+;;ClutchPlateCategoryLink;"Clutch Plate"
+;;ClutchCabelCategoryLink;"Clutch Cabel"
+;;ClutchBearingCategoryLink;"Clutch Bearing"
+;;FuelPumpCategoryLink;"Fuel Pump"
 ;;BumperLightsCategoryLink;"Bumper Lights"
 ;;HeadLightsCategoryLink;"Head Lights"
 ;;IndicatorLightsCategoryLink;"Indicator Lights"
+;;BackLightsCategoryLink;"Back Lights"
 
 # CMS Navigation Nodes to show data on storefront
 UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
@@ -122,10 +188,26 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
 ;;CarPartsNavNode;"Car Body Parts"
 ;;CarEngineNavNode;"Engine"
 ;;CarLightsNavNode;"Car Lights" 
+;;CarWheelsNavNode;"Car Wheels"
+;;FiltersNavNode;"Filters"
 ;;BrakePadNavNode;"Brake Pads"
 ;;BrakeDiscRoaterNavNode;"Brake Disc Roater"
 ;;LowerLinkBushNavNode;"Suspension bushes, kits&parts"
 ;;ControlArmsNavNode;"Control Arms"
+;;BumperNavNode;"Bumper"
+;;GearKnobNavNode;"Gear knob"
+;;InstrumentClusterNavNode;"Instrument Cluster"
+;;FuelTankCapNavNode;"Fuel Tank Cap"
+;;GearShiterCabelNavNode;"Gear Shiter Cabel"
+;;AcceleratorPadelNavNode;"Accelerator padel"
+;;TieRodEndNavNode;"Tie rod End"
+;;ClutchPlateNavNode;"Clutch Plate"
+;;ClutchCabelNavNode;"Clutch Cabel"
+;;ClutchBearingNavNode;"Clutch Bearing"
+;;FuelPumpNavNode;"Fuel Pump"
 ;;BumperLightsNavNode;"Bumper Lights"
 ;;HeadLightsNavNode;"Head Lights"
 ;;IndicatorLightsNavNode;"Indicator Lights"
+;;BackLightNavNode;"Back Lights"
+;;CarWheelsNavNode;"Car Wheels"
+;;FiltersNavNode;"Filters"

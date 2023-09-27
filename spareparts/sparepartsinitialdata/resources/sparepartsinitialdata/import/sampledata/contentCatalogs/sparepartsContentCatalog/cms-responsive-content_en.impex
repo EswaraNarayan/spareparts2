@@ -21,6 +21,12 @@ $jarResourceCms=jar:com.hybris.spareparts.initialdata.constants.SparepartsInitia
 # Language
 $lang=en
 
+
+UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id)
+;spareparts;BP001;P0001;$productCatalog
+
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/svg+xml'];altText;folder(qualifier)[default='images']
+;;/images/theme/SpareParts-1.svg;SpareParts-1.svg;$siteResource/images/theme/SpareParts-1.svg;image/svg+xml;SpareParts-1;
 # Site Logo Component
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
 ;;SiteLogoComponent;/images/theme/SpareParts-1.svg
@@ -33,13 +39,27 @@ UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$
 ;;CarPartsCategoryLink;"Car Body Parts"
 ;;CarEngineCategoryLink;"Engine"
 ;;CarLightsCategoryLink;"Car Lights"
+;;CarWheelsCategoryLink;"Car Wheels"
+;;FiltersCategoryLink;"Filters"
 ;;BrakePadCategoryLink;"Brake Pads"
 ;;BrakeDiscRoaterCategoryLink;"Brake Disc Rotor"
 ;;LowerLinkBushKitCategoryLink;"Suspension bushes, kits&parts"
 ;;ControlArmsCategoryLink;"Control Arms"
+;;BumperCategoryLink;"Bumper"
+;;GearKnobCategoryLink;"Gear Knob"
+;;InstrumentClusterCategoryLink;"Intrument Cluster"
+;;FuelTankCapCategoryLink;"Fuel Tank Cap"
+;;GearShiterCabelCategoryLink;"Gear Shiter Cabel"
+;;AcceleratorPadelCategoryLink;"Accelerator Cabel"
+;;TieRodEndCategoryLink;"Tie Rod End"
+;;ClutchPlateCategoryLink;"Clutch Plate"
+;;ClutchCabelCategoryLink;"Clutch Cabel"
+;;ClutchBearingCategoryLink;"Clutch Bearing"
+;;FuelPumpCategoryLink;"Fuel Pump"
 ;;BumperLightsCategoryLink;"Bumper Lights"
 ;;HeadLightsCategoryLink;"Head Lights"
 ;;IndicatorLightsCategoryLink;"Indicator Lights"
+;;BackLightsCategoryLink;"Back Lights"
 ;;ContactUsLink;"Contact Us"
 ;;FAQLink;"FAQ"
 ;;FacebookLink;"Facebook"
@@ -95,13 +115,30 @@ UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$la
 ;;CarPartsNavNode;"Car Body Parts"
 ;;CarEngineNavNode;"Engine"
 ;;CarLightsNavNode;"Car Lights" 
+;;CarWheelsNavNode;"Car Wheels"
+;;FiltersNavNode;"Filters"
 ;;BrakePadNavNode;"Brake Pads"
 ;;BrakeDiscRoaterNavNode;"Brake Disc Roater"
 ;;LowerLinkBushNavNode;"Suspension bushes, kits&parts"
 ;;ControlArmsNavNode;"Control Arms"
+;;BumperNavNode;"Bumper"
+;;GearKnobNavNode;"Gear knob"
+;;InstrumentClusterNavNode;"Instrument Cluster"
+;;FuelTankCapNavNode;"Fuel Tank Cap"
+;;GearShiterCabelNavNode;"Gear Shiter Cabel"
+;;AcceleratorPadelNavNode;"Accelerator padel"
+;;TieRodEndNavNode;"Tie rod End"
+;;ClutchPlateNavNode;"Clutch Plate"
+;;ClutchCabelNavNode;"Clutch Cabel"
+;;ClutchBearingNavNode;"Clutch Bearing"
+;;FuelPumpNavNode;"Fuel Pump"
 ;;BumperLightsNavNode;"Bumper Lights"
 ;;HeadLightsNavNode;"Head Lights"
 ;;IndicatorLightsNavNode;"Indicator Lights"
+;;BackLightNavNode;"Back Lights"
+;;CarWheelsNavNode;"Car Wheels"
+;;FiltersNavNode;"Filters"
+
 
 # Spareparts FAQ Page 
 
@@ -123,79 +160,12 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 ;;termsAndConditionsTextParagraph;"<a name=""00""></a><div class=""textpage textpage-termsAndConditions""><div class=""item_container"">		<h2><a name=""a00""></a>Registration</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""b00""></a>Eligibility to purchase</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>	<div class=""item_container"">		<h2><a name=""c00""></a>Orders</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>	<div class=""item_container"">		<h2><a name=""d00""></a>Pricing policy</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>	<div class=""item_container"">		<h2><a name=""e00""></a>Sales price adjustment policy</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>	<div class=""item_container"">		<h2><a name=""f00""></a>Acceptance of your order</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>	<div class=""item_container"">		<h2><a name=""g00""></a>Payment</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""h00""></a>Insurance and delivery</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""i00""></a>Returns and exchanges</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""j00""></a>Intellectual property rights</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""k00""></a>Content</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""l00""></a>No commercial use</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""m00""></a>Your activity</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""n00""></a>Third party</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""o00""></a>General</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""p00""></a>Indemnification</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div>		<div class=""item_container"">		<h2><a name=""q00""></a>General legal terms</h2>		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lorem augue, luctus interdum pellentesque ut, luctus congue ligula. Sed adipiscing lacus sit amet libero accumsan volutpat. Sed porta semper dui ut interdum. Suspendisse vitae eleifend quam. Nunc eu felis in diam ultricies ultricies nec at arcu. Etiam vehicula enim arcu, vel viverra arcu. Vivamus varius adipiscing posuere.</br>Maecenas interdum varius metus, sed feugiat lorem iaculis non. Donec congue, nulla quis ultrices euismod, dui odio fringilla risus, ac ultrices sapien ipsum sed lectus. Quisque accumsan ligula tincidunt arcu condimentum at dignissim lacus dapibus. Pellentesque fermentum nunc eget lectus vestibulum sagittis. Aenean iaculis, nulla sit amet condimentum suscipit, sapien odio pretium dui, sed euismod nunc risus cursus nibh. Sed volutpat, ante in scelerisque cursus, elit elit pellentesque magna, eu semper tellus magna et massa. Nullam erat lorem, porttitor eget mollis tempus, blandit quis velit. Curabitur turpis orci, sollicitudin eget dapibus a, pulvinar sed lorem. Sed ac felis metus, sed tempor odio.</p>		<a class=""pagetop-link"" href=""#00"">back to top</a>	</div></div>";
 
 # Spareparts Homepage 
-
-# Media Content
-INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
-#;;Elec_228x178_HomeCat_Accessories_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_Accessories_EN_01.jpg;;Elec_228x178_HomeCat_Accessories_EN_01.jpg;;"Everything you need to accessorise your camera"
-#;;Elec_228x178_HomeCat_DigiCom_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_DigiCom_EN_01.jpg;;Elec_228x178_HomeCat_DigiCom_EN_01.jpg;;"Find the perfect camera to capture those special moments"
-#;;Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;;Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;;"See the latest DSLR technology from the leading brands"
-#;;Elec_228x178_HomeCat_Memory_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x178_HomeCat_Memory_EN_01.jpg;;Elec_228x178_HomeCat_Memory_EN_01.jpg;;"Exclusive discounts on our memory cards"
-#;;Elec_228x228_HomeCamcorders_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x228_HomeCamcorders_EN_01.jpg;;Elec_228x228_HomeCamcorders_EN_01.jpg;;"Camcorders. HD fun in the palm of your hand >"
-#;;Elec_228x228_HomeLenses_EN_01.jpg;$siteResource/images/banners/homepage/Elec_228x228_HomeLenses_EN_01.jpg;;Elec_228x228_HomeLenses_EN_01.jpg;;"Lenses"
-#;;Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;;Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;;"New - Ignite your passion for film with the latest HD camcorder..."
-#;;Elec_468x418_HomeCarouselCyber_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselCyber_EN_01.jpg;;Elec_468x418_HomeCarouselCyber_EN_01.jpg;;"What colour are you? Sony Cybershot - a colour for any mood."
-#;;Elec_468x418_HomeCarouselFun_EN_01.jpg;$siteResource/images/banners/homepage/Elec_468x418_HomeCarouselFun_EN_01.jpg;;Elec_468x418_HomeCarouselFun_EN_01.jpg;;"Fun on the run  - Never miss a memory!"
-#;;Elec_948x60_HomeBrandsGalore_EN_01.jpg;$siteResource/images/banners/homepage/Elec_948x60_HomeBrandsGalore_EN_01.jpg;;Elec_948x60_HomeBrandsGalore_EN_01.jpg;;"Brands Galore"
-#;;Elec_948x60_HomeDeliveryBanner_EN_01.jpg;$siteResource/images/banners/homepage/Elec_948x60_HomeDeliveryBanner_EN_01.jpg;;Elec_948x60_HomeDeliveryBanner_EN_01.jpg;;"Order before 6pm for next day delivery >"
-
-UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
-#;;BrandsGaloreBanner;Elec_948x60_HomeBrandsGalore_EN_01.jpg
-#;;CamcordersBanner;Elec_228x228_HomeCamcorders_EN_01.jpg
-#;;LensesBanner;Elec_228x228_HomeLenses_EN_01.jpg
-#;;NextDayDeliveryBanner;Elec_948x60_HomeDeliveryBanner_EN_01.jpg
-
-UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];headline[lang=$lang];$picture[lang=$lang];content[lang=$lang]
-#;;AccessoriesBannerComponent;Camera Accessories and Supplies;Elec_228x178_HomeCat_Accessories_EN_01.jpg;"Everything you need to accessorise your camera"
-#;;CanonPowershotBannerComponent;Canon PowerShot A480;1934793_1719.jpg;"Affordable, intuitive and fun!"
-#;;CarouselCamcorderBanner;New - Ignite your passion for film with the latest HD camcorder...;Elec_468x418_HomeCarouselCamcorder_EN_01.jpg;""
-#;;CarouselCyberBanner;What colour are you? Sony Cybershot - a colour for any mood.;Elec_468x418_HomeCarouselCyber_EN_01.jpg;""
-#;;CarouselFunBanner;Fun on the run  - Never miss a memory!;Elec_468x418_HomeCarouselFun_EN_01.jpg;""
-#;;DigitalCompactCamerasBannerComponent;Digital Compact Cameras;Elec_228x178_HomeCat_DigiCom_EN_01.jpg;"Find the perfect camera to capture those special moments"
-#;;DigitalSLRCamerasBannerComponent;Digital SLR Cameras;Elec_228x178_HomeCat_DigiSLR_EN_01.jpg;"See the latest DSLR technology from the leading brands"
-#;;KodakEasyshareBannerComponent;Kodak EASYSHARE V1253;1320808-1767.jpg;"Seize the moment with 12 megapixel photos!"
-#;;MemoryBannerComponent;Camera and Camcorder Memory;Elec_228x178_HomeCat_Memory_EN_01.jpg;"Exclusive discounts on our memory cards"
-#;;SonyCybershotBannerComponent;Sony Cybershot DSC-S930;1992695-Sony-DSC-S930P-11441.jpg;"Compact, easy to use and amazingly affordable."
-#;;SonyDSCBannerComponent;Sony DSC-H20;1978440-Sony-DSC-H20-114081.jpg;"Perfect for serious performance in a compact design."
+UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;SparepartsHomepageProductCarouselComponent;Our Bestselling Products
 
 UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-;;SparepartsHomepageProductCarouselComponent;Bestselling Products
+;;NewSparepartsHomepageProductCarouselComponent;What's New
 
-# Spareparts Camera Accessories and Supplies Category Landing Page
-
-UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-#;;CamerasAccessoriesAndSuppliesCategoryPage;Cameras Accessories & Supplies
-
-# Media Content
-INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];folder(qualifier)[default='images'];altText
-#;;Elec_788x120_Save_EN_01.jpg;$siteResource/images/banners/homepage/Elec_788x120_Save_EN_01.jpg;;;"Buy online & save. Look out for huge savings across our store"
-#;;Elec_96x96_CatBWFilm_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatBWFilm_EN_01.jpg;;;""
-#;;Elec_96x96_CatColFilm_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatColFilm_EN_01.jpg;;;""
-#;;Elec_96x96_CatFlash_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatFlash_EN_01.jpg;;;""
-#;;Elec_96x96_CatLenses_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatLenses_EN_01.jpg;;;""
-#;;Elec_96x96_CatTripod_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatTripod_EN_01.jpg;;;""
-#;;Elec_96x96_CatVTapes_EN_01.jpg;$siteResource/images/banners/homepage/Elec_96x96_CatVTapes_EN_01.jpg;;;""
-
-UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang];$picture[lang=$lang];description[lang=$lang]
-#;;BlackAndWhiteFilmsFeatureComponent;Black & White Films;Elec_96x96_CatBWFilm_EN_01.jpg;"Find the right film for authentic photo art"
-#;;BlankVideoTapesFeatureComponent;Blank Video Tapes;Elec_96x96_CatVTapes_EN_01.jpg;"High quality VHS and 8mm Camcorder Tapes"
-#;;CameraFlashesFeatureComponent;Camera Flashes;Elec_96x96_CatFlash_EN_01.jpg;"Bring extra quality to your pictures with a Flashgun..."
-#;;CameraLensesFeatureComponent;Camera Lenses;Elec_96x96_CatLenses_EN_01.jpg;"Change lenses to suit a huge range of scenes & situations"
-#;;ColourFilmsFeatureComponent;Colour Films;Elec_96x96_CatColFilm_EN_01.jpg;"Colour film to make you feel like a true photo hero"
-#;;TripodFeatureComponent;Tripods;Elec_96x96_CatTripod_EN_01.jpg;"The photo and film enthusiasts 3-legged friend"
-
-UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
-#;;BuyOnlineBanner;Elec_788x120_Save_EN_01.jpg
-
-# Spareparts Search Results Page
-
-# Media Content
-INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];folder(qualifier)[default='images'];altText
-#;;Elec_148x300_Sec4_LensesBanner_EN_01.jpg;$siteResource/images/banners/site/Elec_148x300_Sec4_LensesBanner_EN_01.jpg;;;"SLR Lenses - Professional lenses for all occasions"
-#;;Elec_788x120_DigiSLR_EN_01.jpg;$siteResource/images/banners/site/Elec_788x120_DigiSLR_EN_01.jpg;;;"Get the perfect picture everytime with a digital SLR camera"
-
-UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
-#;;PerfectPictureBanner;Elec_788x120_DigiSLR_EN_01.jpg
-#;;SLRLensesBanner;Elec_148x300_Sec4_LensesBanner_EN_01.jpg
 
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=$lang]
 ;;EmptyCartParagraphComponent;"<h2>Your shopping cart is empty</h2><p>Suggestions</p><ul><li>Browse our products by selecting a category above</li></ul>"
@@ -217,24 +187,23 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 ;;HelpParagraphComponent;"<strong>Need Help with your checkout process?</strong> <span>Contact Us or Call phone number.</span>"
 
 #above is the desktop data, below is the responsive data
-UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-;;NewSparepartsHomepageProductCarouselComponent;What's New
 
-# Home Page Splash
+# Home Page Splash 
 #Media Content
+
 INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-;widescreen;;spareparts-banner-1400x440.jpg;$siteResource/images/banners/homepage/responsive/spareparts-banner-1400x440.jpg;;spareparts-banner-1400x440.jpg;;"spareparts "
+;widescreen;;banner_1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner_1400x440.jpg;;banner_1400x440.jpg;;"spareparts "
 ;widescreen;;discount-1400x80.jpg;$siteResource/images/banners/homepage/responsive/discount-1400x80.jpg;;discount-1400x80.jpg;;"Assured Quality"
 ;mobile;;discount-480x118.jpg;$siteResource/images/banners/homepage/responsive/discount-480x118.jpg;;discount-480x118.jpg;;"Assured Quality"
-;mobile;;spareparts-banner-480x320.jpg;$siteResource/images/banners/homepage/responsive/spareparts-banner-480x320.jpg;;spareparts-banner-480x320.jpg;;"spareparts "
-;tablet;;spareparts-banner-770x350.jpg;$siteResource/images/banners/homepage/responsive/spareparts-banner-770x350.jpg;;spareparts-banner-770x350.jpg;;"spareparts "
+;mobile;;banner_480x320.jpg;$siteResource/images/banners/homepage/responsive/banner_480x320.jpg;;banner_480x320.jpg;;"spareparts "
+;tablet;;banner_770x350.jpg;$siteResource/images/banners/homepage/responsive/banner_770x350.jpg;;banner_770x350.jpg;;"spareparts "
 ;tablet;;discount-770x80.jpg;$siteResource/images/banners/homepage/responsive/discount-770x80.jpg;;discount-770x80.jpg;;"Assured Quality"
-;desktop;;spareparts-banner-960x330.jpg;$siteResource/images/banners/homepage/responsive/spareparts-banner-960x330.jpg;;spareparts-banner-960x330.jpg;;"spareparts "
+;desktop;;banner_960x330.jpg;$siteResource/images/banners/homepage/responsive/banner_960x330.jpg;;banner_960x330.jpg;;"spareparts "
 ;desktop;;discount-960x85.jpg;$siteResource/images/banners/homepage/responsive/discount-960x85.jpg;;discount-960x85.jpg;;"Assured Quality"
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
 ;spareparts-homepage-discount-en;discount-480x118.jpg,discount-770x80.jpg,discount-960x85.jpg,discount-1400x80.jpg
-;spareparts-homepage-spalsh-en;spareparts-banner-480x320.jpg,spareparts-banner-770x350.jpg,spareparts-banner-960x330.jpg,spareparts-banner-1400x440.jpg
+;spareparts-homepage-spalsh-en;banner_480x320.jpg,banner_770x350.jpg,banner_960x330.jpg,banner_1400x440.jpg
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
 ;;SparepartsHompageDiscountBannerComponent;spareparts-homepage-discount-en
@@ -277,9 +246,12 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 ;;SparepartsHompageCarBodypartsBannerComponent;spareparts-homepage-car-parts-en
 ;;SparepartsHompageCarEngineBannerComponent;spareparts-homepage-car-engine-en
 
+
+
 # Section 4
 
 # Media Content
+
 INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
 #;tablet;;steering_200x200.jpg;$siteResource/images/banners/homepage/responsive/steering_200x200.jpg;;steering_200x200.jpg;;"steering"
 #;tablet;;suspension_200x200.jpg;$siteResource/images/banners/homepage/responsive/suspension_200x200.jpg;;suspension_200x200.jpg;;"suspension"
@@ -302,13 +274,12 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=tr
 #;spareparts-homepage-image3-en;tailLights_200x200.jpg,tailLights_240x240.jpg,tailLights_350x350.jpg
 #;spareparts-homepage-image4-en;tire_200x200.jpg,tire_240x240.jpg,tire_350x350.jpg
 
- 
-
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
 #;;SparepartsHompageImage1BannerComponent;spareparts-homepage-image1-en
 #;;SparepartsHompageImage2Component;spareparts-homepage-image2-en
 #;;SparepartsHompageImage3BannerComponent;spareparts-homepage-image3-en
 #;;SparepartsHompageImage4BannerComponent;spareparts-homepage-image4-en
+
 # Section 5
 
 # Media Content
@@ -330,111 +301,9 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 
 # Site Logo Component
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
-;;SiteLogoComponent;/images/theme/logo_hybris_responsive.svg
+;;SiteLogoComponent;/images/theme/SpareParts-1.svg
 
-# DSLR Category Page
-# Section 1
 
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#;desktop;;Elec_1400x440_Category11_EN_01_1400W.jpg;$siteResource/images/banners/category/responsive/Elec_1400x440_Category11_EN_01_1400W.jpg;;Elec_1400x440_Category11_EN_01_1400W.jpg;;"Shop All"
-#;mobile;;Elec_480x320_Category11_EN_01_480W.jpg;$siteResource/images/banners/category/responsive/Elec_480x320_Category11_EN_01_480W.jpg;;Elec_480x320_Category11_EN_01_480W.jpg;;"Shop All"
-#;tablet;;Elec_770x350_Category11_EN_01_770W.jpg;$siteResource/images/banners/category/responsive/Elec_770x350_Category11_EN_01_770W.jpg;;Elec_770x350_Category11_EN_01_770W.jpg;;"Shop All"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#;electronics-slr-category-splash-en;Elec_480x320_Category11_EN_01_480W.jpg,Elec_770x350_Category11_EN_01_770W.jpg,Elec_1400x440_Category11_EN_01_1400W.jpg
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-#;;ElectronicsSLRSplashBannerComponent;electronics-slr-category-splash-en
-
-# Section 2
-
-# A330
-
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#;tablet;;=.jpg;$siteResource/images/banners/category/responsive/Elec_200x200_Category02_EN_01_200W.jpg;;Elec_200x200_Category02_EN_01_200W.jpg;;"View"
-#;desktop;;Elec_350x350_Category02_EN_01_350W.jpg;$siteResource/images/banners/category/responsive/Elec_350x350_Category02_EN_01_350W.jpg;;Elec_350x350_Category02_EN_01_350W.jpg;;"View"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#;electronics-sony-A330-banner-en;Elec_350x350_Category02_EN_01_350W.jpg,Elec_200x200_Category02_EN_01_200W.jpg
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-#;;ElectronicsSonyA330BannerComponent;electronics-sony-A330-banner-en
-
-# Canon 500D
-
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#;tablet;;Elec_200x200_Category07_EN_01_200W.jpg;$siteResource/images/banners/category/responsive/Elec_200x200_Category07_EN_01_200W.jpg;;Elec_200x200_Category07_EN_01_200W.jpg;;"View"
-#;desktop;;Elec_350x350_Category07_EN_01_350W.jpg;$siteResource/images/banners/category/responsive/Elec_350x350_Category07_EN_01_350W.jpg;;Elec_350x350_Category07_EN_01_350W.jpg;;"View"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#;electronics-canon-500D-banner-en;Elec_350x350_Category07_EN_01_350W.jpg,Elec_200x200_Category07_EN_01_200W.jpg
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-#;;ElectronicsCanon500DBannerComponent;electronics-canon-500D-banner-en
-
-# Canon 450D
-
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#;tablet;;Elec_200x200_Category06_EN_01_200W.jpg;$siteResource/images/banners/category/responsive/Elec_200x200_Category06_EN_01_200W.jpg;;Elec_200x200_Category06_EN_01_200W.jpg;;"View"
-#;desktop;;Elec_350x350_Category06_EN_01_350W.jpg;$siteResource/images/banners/category/responsive/Elec_350x350_Category06_EN_01_350W.jpg;;Elec_350x350_Category06_EN_01_350W.jpg;;"View"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#;electronics-canon-450-banner-en;Elec_350x350_Category06_EN_01_350W.jpg,Elec_200x200_Category06_EN_01_200W.jpg
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-#;;ElectronicsCanon450DBannerComponent;electronics-canon-450-banner-en
-
-# Sony A100
-
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#;tablet;;Elec_200x200_Category05_EN_01_200W.jpg;$siteResource/images/banners/category/responsive/Elec_200x200_Category05_EN_01_200W.jpg;;Elec_200x200_Category05_EN_01_200W.jpg;;"View"
-#;desktop;;Elec_350x350_Category05_EN_01_350W.jpg;$siteResource/images/banners/category/responsive/Elec_350x350_Category05_EN_01_350W.jpg;;Elec_350x350_Category05_EN_01_350W.jpg;;"View"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#;electronics-sony-a100-banner-en;Elec_350x350_Category05_EN_01_350W.jpg,Elec_200x200_Category05_EN_01_200W.jpg
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-#;;ElectronicsSonyA100HBannerComponent;electronics-sony-a100-banner-en
-
-# Sony Alpha 200
-
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#;tablet;;Elec_200x200_Category03_EN_01_200W.jpg;$siteResource/images/banners/category/responsive/Elec_200x200_Category03_EN_01_200W.jpg;;Elec_200x200_Category03_EN_01_200W.jpg;;"View"
-#;desktop;;Elec_350x350_Category03_EN_01_350W.jpg;$siteResource/images/banners/category/responsive/Elec_350x350_Category03_EN_01_350W.jpg;;Elec_350x350_Category03_EN_01_350W.jpg;;"View"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#;electronics-sony-A200-banner-en;Elec_350x350_Category03_EN_01_350W.jpg,Elec_200x200_Category03_EN_01_200W.jpg
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-#;;ElectronicsSonyA200BannerComponent;electronics-sony-A200-banner-en
-
-# Sony Alpha 350
-
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#;tablet;;Elec_200x200_Category01_EN_01_200W.jpg;$siteResource/images/banners/category/responsive/Elec_200x200_Category01_EN_01_200W.jpg;;Elec_200x200_Category01_EN_01_200W.jpg;;"View"
-#;desktop;;Elec_350x350_Category01_EN_01_350W.jpg;$siteResource/images/banners/category/responsive/Elec_350x350_Category01_EN_01_350W.jpg;;Elec_350x350_Category01_EN_01_350W.jpg;;"View"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#;electronics-sony-Alpha-350-banner-en;Elec_350x350_Category01_EN_01_350W.jpg,Elec_200x200_Category01_EN_01_200W.jpg
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-#;;ElectronicsSonyAlpha350BannerComponent;electronics-sony-Alpha-350-banner-en
-
-# Section 3
-
-INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#;desktop;;Elec_1400x140_Category10_EN_01_1400W.jpg;$siteResource/images/banners/category/responsive/Elec_1400x140_Category10_EN_01_1400W.jpg;;Elec_1400x140_Category10_EN_01_1400W.jpg;;"Shop Now"
-#;mobile;;Elec_480x118_Category10_EN_01_480W.jpg;$siteResource/images/banners/category/responsive/Elec_480x118_Category10_EN_01_480W.jpg;;Elec_480x118_Category10_EN_01_480W.jpg;;"Shop Now"
-#;tablet;;Elec_770x80_Category10_EN_01_770W.jpg;$siteResource/images/banners/category/responsive/Elec_770x80_Category10_EN_01_770W.jpg;;Elec_770x80_Category10_EN_01_770W.jpg;;"Shop Now"
-
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#;electronics-save-big-banner-en;Elec_480x118_Category10_EN_01_480W.jpg,Elec_770x80_Category10_EN_01_770W.jpg,Elec_1400x140_Category10_EN_01_1400W.jpg
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-#;;ElectronicsSaveBigDLSRBannerComponent;electronics-save-big-banner-en
-
-# Site Logo Component
-UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
 
 # CMS Link Components
 UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
@@ -466,6 +335,7 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
 
 # CMS Footer Navigation Component
 UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];notice[lang=en][translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator,dateFormat=yyyy]
+;;FooterNavigationComponent;"Copyright ©2023 Spareparts, Inc. All Rights Reserved."
 
 # Responsive Error page
 
@@ -483,4 +353,4 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 
 # CMS Footer Navigation Component
 UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];notice[lang=en][translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator,dateFormat=yyyy]
-;;FooterNavigationComponent;"A Unit of SPAREPARTS LIMITED. All Rights Reserved."
+#;;FooterNavigationComponent;"A Unit of SPAREPARTS LIMITED. All Rights Reserved."

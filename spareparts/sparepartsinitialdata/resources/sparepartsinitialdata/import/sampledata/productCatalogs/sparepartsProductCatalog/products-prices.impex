@@ -55,6 +55,17 @@ UPDATE SparepartsProduct;code[unique=true];$approved;$catalogVersion;$taxGroup
 ;P0038
 ;P0039
 ;P0040
+;P0040
+;P0041
+;P0042
+;P0043
+;P0044
+;P0045
+;P0046
+;P0047
+;P0048
+;P0049
+;P0050
 
 INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
 ;P0001;pieces;USD;195;1;1;false
@@ -104,7 +115,7 @@ INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=piec
 ;P0004;pieces;JPY;132;1;1;false
 ;P0005;pieces;JPY;81;1;1;false
 ;P0006;pieces;JPY;423;1;1;false
-;P0007;pieces;JPY;180;1;1;false
+;P0007;pieces;USD;178;1;1;false
 ;P0008;pieces;JPY;634;1;1;false
 ;P0009;pieces;JPY;844;1;1;false
 ;P0010;pieces;JPY;123;1;1;false
@@ -116,7 +127,7 @@ INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=piec
 ;P0016;pieces;JPY;387,98;1;1;false
 ;P0017;pieces;JPY;142;1;1;false
 ;P0018;pieces;JPY;250;1;1;false
-;P0019;pieces;JPY;138,93;1;1;false
+;P0019;pieces;USD;150;1;1;false
 ;P0020;pieces;JPY;220;1;1;false
 ;P0021;pieces;JPY;1609;1;1;false
 ;P0022;pieces;JPY;126;1;1;false
@@ -138,3 +149,14 @@ INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=piec
 ;P0038;pieces;JPY;110;1;1;false
 ;P0039;pieces;JPY;235;1;1;false
 ;P0040;pieces;JPY;356;1;1;false
+
+;P0041;pieces;USD;178;1;1;false
+;P0042;pieces;USD;150;1;1;false
+;P0043;pieces;USD;110;1;1;false
+;P0044;pieces;USD;230;1;1;false
+;P0045;pieces;USD;357;1;1;false
+;P0046;pieces;USD;156;1;1;false
+;P0047;pieces;USD;167;1;1;false
+;P0048;pieces;USD;230;1;1;false
+;P0049;pieces;USD;189;1;1;false
+;P0050;pieces;USD;210;1;1;false

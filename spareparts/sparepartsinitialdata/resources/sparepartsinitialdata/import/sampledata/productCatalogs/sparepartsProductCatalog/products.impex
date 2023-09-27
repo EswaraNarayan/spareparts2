@@ -56,6 +56,17 @@ INSERT_UPDATE SparepartsProduct;code[unique=true];$supercategories;manufacturerN
 ;P0039;A12;Generic;GR-RQ176;pieces;Generic;This product is compatible with Honda car models;2.7kgs;New;Honda Amaze VX,Honda Amaze VX,CVT;2022,2023;INDIA
 ;P0040;A12;Valeo;VL-FD639;pieces;Valeo;This Product is compatible with Tata Car Models;3.2kgs;New;Tata Tiago,Tata Tigor;2019,2022,2023;INDIA
 
+;P0041;A01;Bosch;BS-LD809;pieces;Bosch;This Product is compatible with Toyota Car Models;1.5kgs;New;Toyota Innova;2019,2022,2023;INDIA
+;P0042;A19;PEESIX;PU-DD009;pieces;Peesix;This Product is compatible with Toyota Car Models;0.8kgs;New;Toyota Innova type 2;2022,2023;INDIA
+;P0043;A21;CAROMATIC;CM-DK909;pieces;CAROMATIC;This Product is compatible with Toyota Car Models;1.5kgs;New;Toyota Innova Crysta;2021,2022,2023;INDIA
+;P0044;A02;TVS Apache;AP-WK129;pieces;TVS Apache;This Product is compatible with Maruti Suzuki Car Models;1.9kgs;New;Swift Zxi;2019,2022,2023;INDIA
+;P0045;A12;PEESIX;PU-DD009;pieces;Peesix;This Product is compatible with Hyundai Car Models;0.8kgs;New;Hyundai Xcent;2019,2020;INDIA
+;P0046;A03;CAROMATIC;CC-RT099;pieces;CAROMATIC;This Product is compatible with Maruti Suzuki Car Models;2.5kgs;New;Swift Dzire;2021,2022,2023;INDIA
+;P0047;A20;PRIGAN ;KM-KK784;pieces;PRIGAN ;This Product is compatible with Toyota Car Models;1.5kgs;New;Toyota Innova Crysta;2021,2022,2023;INDIA
+;P0048;A20;Bridgestone ECOPIA;AP-WK129;pieces;Bridgestone ECOPIA;This Product is compatible with Maruti Suzuki Car Models;2.9kgs;New;Swift Zxi,Swift Dzire Lxi, Swift Dzire Vxi, Swift Dzire Zxi;2019,2022,2023;Germany
+;P0049;A20;JK Tyre;WZ-TD109;pieces;JK Tyre;This Product is compatible with Maruti Car Models;3.8kgs;New;Maruti WAGONR, Maruti CELERIO;2018,2019,2020;INDIA
+;P0050;A20;Goodyear;YC-LT204;pieces;Goodyear;This Product is compatible with Hyundai Car Models;2.9kgs;New;Hyundai NEW SANTRO, Hyundai i10, Hyundai GETZ;2021,2022,2023;INDIA
+
 
 
 

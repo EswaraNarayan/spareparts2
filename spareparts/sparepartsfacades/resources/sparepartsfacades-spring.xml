@@ -205,5 +205,12 @@
 		<property name="customerNameStrategy" ref="customerNameStrategy"/>
 		<property name="commonI18NService" ref="commonI18NService"/>
 		<property name="customerAccountService" ref="customerAccountService"/>
-	</bean>   
+	</bean> 
+	  
+	<!-- dependecy for Product Listing Page Populator -->
+	 <bean id="SparepartsProductSearchResultPopulator" class="com.hybris.spareparts.facades.populators.SparepartsProductSearchResultPopulator"/>
+     <bean parent="modifyPopulatorList">
+	<property name="list" ref="commerceSearchResultProductConverter"/>
+	<property name="add" ref="SparepartsProductSearchResultPopulator"/>
+	</bean>
 </beans>

@@ -46,13 +46,27 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url
 ;;BrakePadCategoryLink;Brake Pad Category Link;/Brake/brake-pad/c/A01;BrakePadCategoryLink;BrakePadCategoryLink;;A01;;
 ;;BrakeDiscRoaterCategoryLink;Brake Disc Roater Category Link;/Brake/brake-pad/c/A02;BrakeDiscRoaterCategoryLink;BrakeDiscRoaterCategoryLink;;A02;;
 ;;LowerLinkBushKitCategoryLink;Lower Link Bush Kit Category Link;/Brake-suspension/bush-kit/c/A03;LowerLinkBushKitCategoryLink;LowerLinkBushKitCategoryLink;;A03;;
-;;ControlArmsCategoryLink;Control Arms Category Link;Suspension/control-arms/c/A04;ControlArmsCategoryLink;ControlArmsCategoryLink;;A04;;
+;;ControlArmsCategoryLink;Control Arms Category Link;/Suspension/control-arms/c/A04;ControlArmsCategoryLink;ControlArmsCategoryLink;;A04;;
 ;;CarPartsCategoryLink;Car Parts Category Link;/Car-parts/c/BP002;CarPartsCategoryLink;CarPartsCategoryLink;;BP002;;
+;;BumperCategoryLink;Bumper Category Link;/car-parts/bumper/c/A05;BumperCategoryLink;BumperCategoryLink;;A05;;
+;;GearKnobCategoryLink;Gear Knob Category Link;/car-parts/gear-knob/c/A06;GearKnobCategoryLink;GearKnobCategoryLink;;A06;;
+;;InstrumentClusterCategoryLink;Instrument Cluster Category Link;/car-parts/Intrument-cluster/c/A07;InstrumentClusterCategoryLink;InstrumentClusterCategoryLink;;A07;;
+;;FuelTankCapCategoryLink;Fuel Tank Cap Category Link;/car-parts/fuel-tank-cap/c/A08;FuelTankCapCategoryLink;FuelTankCapCategoryLink;;A08;;
 ;;CarEngineCategoryLink;Car Engine Category Link;/Car-engine/c/BP003;CarEngineCategoryLink;CarEngineCategoryLink;;BP003;;
+;;GearShiterCabelCategoryLink;Gear Shiter Cabel Category Link;/car-engine/gear-shiter/c/A09;GearShiterCabelCategoryLink;GearShiterCabelCategoryLink;;A09;;
+;;AcceleratorPadelCategoryLink;Accelerator Padel Category Link;/car-engine/accelerator-padel/c/A10;AcceleratorPadelCategoryLink;AcceleratorPadelCategoryLink;;A10;;
+;;TieRodEndCategoryLink;Tie Rod End Category Link;/car-engine/tie-rod-end/c/A11;TieRodEndCategoryLink;TieRodEndCategoryLink;;A11;;
+;;ClutchPlateCategoryLink;Clutch Plate Category Link;/car-engine/clutch-plate/c/A12;ClutchPlateCategoryLink;ClutchPlateCategoryLink;;A12;;
+;;ClutchCabelCategoryLink;Gear Knob Category Link;/car-engine/clutch-cabel/c/A13;ClutchCabelCategoryLink;ClutchCabelCategoryLink;;A13;;
+;;ClutchBearingCategoryLink;Clutch Bearing Category Link;/car-engine/clutch-bearing/c/A14;ClutchBearingCategoryLink;ClutchBearingCategoryLink;;A14;;
+;;FuelPumpCategoryLink;Fuel Pump Category Link;/car-engine/fuel-pump/c/A15;FuelPumpCategoryLink;FuelPumpCategoryLink;;A15;;
 ;;CarLightsCategoryLink;Car Lights Category Link;/Car-lights/c/BP004;CarLightsCategoryLink;CarLightsCategoryLink;;BP004;;
-;;BumperLightsCategoryLink;Bumper Lights Category Link;/Car-lights/bumper-lights/c/A14;BumperLightsCategoryLink;BumperLightsCategoryLink;;A14;;
-;;HeadLightsCategoryLink;Head Lights Category Link;/Car-lights/head-lights/c/A13;HeadLightsCategoryLink;HeadLightsCategoryLink;;A13;;
-;;IndicatorLightsCategoryLink;Indicator Lights Category Link;/Car-lights/indicator-lights/c/A15;IndicatorLightsCategoryLink;IndicatorLightsCategoryLink;;A15;;
+;;BumperLightsCategoryLink;Bumper Lights Category Link;/Car-lights/bumper-lights/c/A16;BumperLightsCategoryLink;BumperLightsCategoryLink;;A16;;
+;;HeadLightsCategoryLink;Head Lights Category Link;/Car-lights/head-lights/c/A17;HeadLightsCategoryLink;HeadLightsCategoryLink;;A17;;
+;;IndicatorLightsCategoryLink;Indicator Lights Category Link;/Car-lights/indicator-lights/c/A18;IndicatorLightsCategoryLink;IndicatorLightsCategoryLink;;A18;;
+;;BackLightsCategoryLink;Back Lights Category Link;/Car-lights/back-lights/c/A19;BackLightsCategoryLink;BackLightsCategoryLink;;A19;;
+;;CarWheelsCategoryLink;Car Wheels Category Link;/Car-wheels/c/BP005;CarWheelsCategoryLink;CarWheelsCategoryLink;;BP005;;
+;;FiltersCategoryLink;Filters Category Link;/filters/c/BP006;FiltersCategoryLink;FiltersCategoryLink;;BP006;;
 ;;AboutSAPCommerceLink;About SAP Commerce Cloud Link;"http://www.cx.sap.com/products/commerce";AboutSAPCommerceLink;AboutSAPCommerceLink;newWindow;;;
 ;;DocumentationLink;Documentation Link;"https://help.hybris.com";DocumentationLink;DocumentationLink;newWindow;;;
 ;;VisitSAPLink;Visit SAP Link;"http://www.cx.sap.com";VisitSAPLink;VisitSAPLink;newWindow;;;
@@ -165,21 +179,6 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 #;;CrossSellingSlot;accessories
 ;;ProductLeftRefinements;RefinementFacetComponent
 
-INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
-#;;CamerasPagePreview;text/png;CamerasPage.png;$jarResourceCms/preview-images/spareparts/CamerasPage.png
-#;;DigitalCamerasPagePreview;text/png;DigitalCamerasPage.png;$jarResourceCms/preview-images/spareparts/DigitalCamerasPage.png
-#;;CameraAccessoriesPagePreview;text/png;CameraAccessoriesPage.png;$jarResourceCms/preview-images/spareparts/CameraAccessoriesPage.png
-
-# Category Pages
-INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved'];previewImage(code, $contentCV)
-#;;Cameras;Cameras;ProductListPageTemplate;false;;CamerasPagePreview
-#;;DigitalCameras;Digital Cameras;ProductListPageTemplate;false;;DigitalCamerasPagePreview
-
-# Category Page Restrictions
-INSERT_UPDATE CMSCategoryRestriction;$contentCV[unique=true];uid[unique=true];name;categories(code, $productCV);pages(uid, $contentCV)
-#;;Cameras-LandingPageRestriction;Restriction for Cameras page;571;Cameras
-#;;DigitalCameras-LandingPageRestriction;Restriction for Digital Cameras page;575;DigitalCameras
-
 # CMS Navigation Nodes #
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;children(uid,$contentCV)[mode=append]
 ;root;;root;;
@@ -191,165 +190,22 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;pa
 ;BrakeSuspensionNavNode;;Brake Suspension Navigation Node;;BrakeSuspensionCategoryLink;BrakeSuspensionNavNode
 ;BrakeSuspensionLinkNavNode;;Brake Suspension Links;BrakeSuspensionNavNode;BrakePadCategoryLink,BrakeDiscRoaterCategoryLink,LowerLinkBushKitCategoryLink,ControlArmsCategoryLink;BrakeSuspensionLinkNavNode
 ;CarPartsNavNode;;Car Parts Navigation Node;;CarPartsCategoryLink;CarPartsNavNode
+;CarPartsLinkNavNode;;Car Parts Links;CarPartsNavNode;BumperCategoryLink,GearKnobCategoryLink,InstrumentClusterCategoryLink,FuelTankCapCategoryLink;CarPartsLinkNavNode
 ;CarEngineNavNode;;Car Engine Navigation Node;;CarEngineCategoryLink;CarEngineNavNode
+;CarEngineLinkNavNode;;Car Engine Links;CarEngineLinkNavNode;GearShiterCabelCategoryLink,AcceleratorPadelCategoryLink,TieRodEndCategoryLink,ClutchPlateCategoryLink,ClutchCabelCategoryLink,ClutchBearingCategoryLink,FuelPumpCategoryLink;CarEngineLinkNavNode
 ;CarLightsNavNode;;Car Lights Navigation Node;;CarLightsCategoryLink;CarLightsNavNode
-;CarLightsLinkNavNode;;Car Lights Link;CarLightsNavNode;BumperLightsCategoryLink,HeadLightsCategoryLink,IndicatorLightsCategoryLink;CarLightsLinkNavNode
+;CarLightsLinkNavNode;;Car Lights Link;CarLightsNavNode;BumperLightsCategoryLink,HeadLightsCategoryLink,IndicatorLightsCategoryLink,BackLightsCategoryLink;CarLightsLinkNavNode
+;CarWheelsNavNode;;Car Wheels Navigation Node;;CarWheelsCategoryLink;CarWheelsNavNode
+;FiltersNavNode;;Filters Navigation Node;;FiltersCategoryLink;FiltersNavNode
 ;SAPCommerceNavNode;;SAP Commerce Cloud Pages;;AboutSAPCommerceLink,FAQLink;SAPCommerceNavNode
 ;SAPCustomerExperienceNavNode;;SAP Customer Experience Pages;;VisitSAPLink,ContactUsLink;SAPCustomerExperienceNavNode
 ;FollowUsNavNode;;Follow Us Pages;;AgileCommerceBlogLink,LinkedInLink,FacebookLink,TwitterLink;FollowUsNavNode
-
-
-# Preview Image for use in the CMS Cockpit for special ContentPages
-INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
-#;;addEditAddressPagePreview;text/png;AddEditAddressPage.png;$jarResourceCms/preview-images/spareparts/AddEditAddressPage.png
-#;;addressBookPagePreview;text/png;AddressBook.png;$jarResourceCms/preview-images/spareparts/AddressBookPage.png
-#;;cartPagePreview;text/png;CartPage.png;$jarResourceCms/preview-images/spareparts/CartPage.png
-#;;checkoutLoginPagePreview;text/png;CheckoutLoginPage.png;$jarResourceCms/preview-images/spareparts/CheckoutLoginPage.png
-#;;multiStepCheckoutSummaryPagePreview;text/png;MultiStepCheckoutSummaryPage.png;$jarResourceCms/preview-images/spareparts/MultiStepCheckoutSummaryPage.png
-#;;frequentlyAskedQuestionsPage;text/png;FrequentlyAskedQuestionsPage.png;$jarResourceCms/preview-images/spareparts/FrequentlyAskedQuestionsPage.png;;;
-#;;termsAndConditionsPage;text/png;TermsAndConditionsPage.png;$jarResourceCms/preview-images/spareparts/TermsAndConditionsPage.png;;;
-#;;homepagePreview;text/png;Homepage.png;$jarResourceCms/preview-images/spareparts/Homepage.png
-#;;loginPagePreview;text/png;LoginPage.png;$jarResourceCms/preview-images/spareparts/LoginPage.png
-#;;notFoundPagePreview;text/png;NotFoundPage.png;$jarResourceCms/preview-images/spareparts/NotFoundPage.png
-#;;orderConfirmationPagePreview;text/png;OrderConfirmationPage.png;$jarResourceCms/preview-images/spareparts/OrderConfirmationPage.png
-#;;orderDetailsPagePreview;text/png;OrderDetailsPage.png;$jarResourceCms/preview-images/spareparts/OrderDetailsPage.png
-#;;orderHistoryPagePreview;text/png;OrderHistoryPage.png;$jarResourceCms/preview-images/spareparts/OrderHistoryPage.png
-#;;paymentDetailsPagePreview;text/png;PaymentDetailsPage.png;$jarResourceCms/preview-images/spareparts/PaymentDetailsPage.png
-#;;productDetailsPagePreview;text/png;ProductDetailsPage.png;$jarResourceCms/preview-images/spareparts/ProductDetailsPage.png
-#;;productListPagePreview;text/png;ProductListPage.png;$jarResourceCms/preview-images/spareparts/ProductListPage.png
-#;;searchResultsEmptyPagePreview;text/png;SearchResultsEmptyPage.png;$jarResourceCms/preview-images/spareparts/SearchResultsEmptyPage.png
-#;;searchResultsPagePreview;text/png;SearchResultsPage.png;$jarResourceCms/preview-images/spareparts/SearchResultsPage.png
-#;;storefinderPagePreview;text/png;StoreFinderPage.png;$jarResourceCms/preview-images/spareparts/StoreFinderPage.png
-#;;updateForgottenPasswordPagePreview;text/png;UpdateForgottenPasswordPage.png;$jarResourceCms/preview-images/spareparts/UpdateForgottenPasswordPage.png
-#;;productGridPagePreview;text/png;ProductGridPage.png;$jarResourceCms/preview-images/spareparts/ProductGridPage.png
-#;;defaultCategoryPagePreview;text/png;DefaultCategoryPage.png;$jarResourceCms/preview-images/spareparts/DefaultCategoryPage.png
-#;;orderExpiredPagePreview;text/png;OrderExpiredPage.png;$jarResourceCms/preview-images/spareparts/OrderExpiredPage.png;;;
-
-# Site-wide Homepage
-UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV);linkComponents(&linkRef)
-#;;homepage;homepagePreview;HomepageNavLink
-
-# Functional Content Pages
-UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
-#;;multiStepCheckoutSummaryPage;multiStepCheckoutSummaryPagePreview
-#;;orderConfirmationPage;orderConfirmationPagePreview
-#;;cartPage;cartPagePreview
-#;;search;searchResultsPagePreview
-#;;address-book;addressBookPagePreview
-#;;add-edit-address;addEditAddressPagePreview
-#;;payment-details;paymentDetailsPagePreview
-#;;order;orderDetailsPagePreview
-#;;orders;orderHistoryPagePreview
-#;;storefinderPage;storefinderPagePreview
-#;;checkout-login;checkoutLoginPagePreview
-#;;login;loginPagePreview
-#;;notFound;notFoundPagePreview
-#;;searchEmpty;searchResultsEmptyPagePreview
-#;;updatePassword;updateForgottenPasswordPagePreview
-#;;orderExpired;orderExpiredPagePreview
-
-# Simple Content Pages
-UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV);linkComponents(&linkRef)
-#;;faq;frequentlyAskedQuestionsPage;FAQLink
-
-# Order Expired Page
-UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
-#;;orderExpired;orderExpiredPagePreview
-
-UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV);linkComponents(&linkRef)
-#;;termsAndConditions;termsAndConditionsPage;TermsAndConditionsLink
-
-UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];linkComponents(&linkRef);;;;;
-#;;storefinderPage;StoreFinderLink
-#;;login;LoginLink
-
-# Product Details Page
-UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
-#;;productDetails;productDetailsPagePreview
-
-# Category Pages
-UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
-#;;productList;productListPagePreview
-#;;productGrid;productGridPagePreview
-#;;category;defaultCategoryPagePreview
-
-###### Spareparts Homepage ######
-
-#INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;&imageRef;folder(qualifier)[default='images']
-#;;1934793_1719.jpg;$productResource/images/96Wx96H/1934793_1719.jpg;;"Canon PowerShot A480";1934793_1719.jpg
-#;;1992695-Sony-DSC-S930P-11441.jpg;$productResource/images/96Wx96H/1992695-Sony-DSC-S930P-11441.jpg;;"Sony Cybershot DSC-S930";1992695-Sony-DSC-S930P-11441.jpg
-#;;1320808-1767.jpg;$productResource/images/96Wx96H/1320808-1767.jpg;;"Kodak EASYSHARE V1253";1320808-1767.jpg
-#;;1978440-Sony-DSC-H20-114081.jpg;$productResource/images/96Wx96H/1978440-Sony-DSC-H20-114081.jpg;;"Sony DSC-H20";1978440-Sony-DSC-H20-114081.jpg
-
-INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
-#;;BrandsGaloreBanner;Brands Galore Banner;BrandsGaloreBanner;/Brands/c/brands
-#;;CamcordersBanner;Camcorders Banner;CamcordersBanner;/Open-Catalogue/Cameras/Hand-held-Camcorders/c/584
-#;;LensesBanner;Lenses Banner;LensesBanner;/Open-Catalogue/Cameras/Camera-Accessories-%26-Supplies/Camera-Lenses/c/588
-#;;NextDayDeliveryBanner;Next Day Delivery Banner;NextDayDeliveryBanner
-
-INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
-#;;CanonPowershotBannerComponent;Canon Powershot A480 Thumbnail Detail;CanonPowershotBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/PowerShot-A480/p/1934793
-#;;SonyCybershotBannerComponent;Sony Cybershot DSC-S930 Thumbnail Detail;SonyCybershotBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/DSC-S930/p/1992695
-#;;KodakEasyshareBannerComponent;Kodak Easyshare V1253 Thumbnail Detail;KodakEasyshareBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/EASYSHARE-V1253%2C-Black/p/1320808
-#;;SonyDSCBannerComponent;Sony DSC-H20 Thumbnail Detail;SonyDSCBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/DSC-H20/p/1978440
-#;;DigitalCompactCamerasBannerComponent;Digital Compact Cameras Small Detail;DigitalCompactCamerasBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/c/576
-#;;DigitalSLRCamerasBannerComponent;Digital SLR Cameras Small Detail;DigitalSLRCamerasBannerComponent;/Open-Catalogue/Cameras/Digital-Cameras/Digital-SLR/c/578
-#;;MemoryBannerComponent;Camera and Camcorder Memory Small Detail;MemoryBannerComponent;/Open-Catalogue/Data-storage/Flash-Memory/c/902
-#;;AccessoriesBannerComponent;Camera Accessories and Supplies Small Detail;AccessoriesBannerComponent;/Open-Catalogue/Cameras/Camera-Accessories-%26-Supplies/c/585
-#;;CarouselCyberBanner;Carousel Cyber Banner;CarouselCyberBanner;/Open-Catalogue/Cameras/Digital-Cameras/Digital-Compacts/Cyber-shot-W55/p/676442
-#;;CarouselCamcorderBanner;Carousel Camcorder Banner;CarouselCamcorderBanner;Open-Catalogue/Cameras/Hand-held-Camcorders/LEGRIA-HF-S100/p/1986316
-#;;CarouselFunBanner;Carousel Fun Banner;CarouselFunBanner;/Open-Catalogue/Cameras/Film-cameras/FUN-Flash-Single-Use-Camera%2C-27%2B12-pic/p/779841
 
 INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
 #;;ElectronicsHomepageCarouselComponent;Electronics Homepage Carousel;CarouselCyberBanner,CarouselCamcorderBanner,CarouselFunBanner;ElectronicsHomepageCarouselComponent
 
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
 ;;SparepartsHomepageProductCarouselComponent;Spareparts Homepage Product Carousel;P0001,P0002,P0003,P0004,P0005;allVisible;false;ElectronicsHomepageProductCarouselComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
-#;;Section1Slot-Homepage;Section1 Slot for Homepage;true;BrandsGaloreBanner
-#;;Section2ASlot-Homepage;Section2A Slot for Homepage;true;CanonPowershotBannerComponent,SonyCybershotBannerComponent,KodakEasyshareBannerComponent,SonyDSCBannerComponent
-#;;Section2BSlot-Homepage;Section2B Slot for Homepage;true;CamcordersBanner,LensesBanner
-#;;Section2CSlot-Homepage;Section2C Slot for Homepage;true;ElectronicsHomepageCarouselComponent
-#;;Section3Slot-Homepage;Section3 Slot for Homepage;true;ElectronicsHomepageProductCarouselComponent,PurchasedCategorySuggestions
-#;;Section4Slot-Homepage;Section4 Slot for Homepage;true;DigitalCompactCamerasBannerComponent,DigitalSLRCamerasBannerComponent,MemoryBannerComponent,AccessoriesBannerComponent
-#;;Section5Slot-Homepage;Section5 Slot for Homepage;true;NextDayDeliveryBanner
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-#;;Section1-Homepage;Section1;;Section1Slot-Homepage
-#;;Section2A-Homepage;Section2A;;Section2ASlot-Homepage
-#;;Section2B-Homepage;Section2B;;Section2BSlot-Homepage
-#;;Section2C-Homepage;Section2C;;Section2CSlot-Homepage
-#;;Section3-Homepage;Section3;;Section3Slot-Homepage
-#;;Section4-Homepage;Section4;;Section4Slot-Homepage
-#;;Section5-Homepage;Section5;;Section5Slot-Homepage
-
-###### Spareparts Camera Accessories and Supplies Category Landing Page ######
-
-INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved'];previewImage(code, $contentCV)
-#;;CamerasAccessoriesAndSuppliesCategoryPage;Cameras Accessories & Supplies Category Page;CategoryPageTemplate;false;;CameraAccessoriesPagePreview
-
-INSERT_UPDATE CMSCategoryRestriction;$contentCV[unique=true];uid[unique=true];name;categories(code, $productCV);pages(uid, $contentCV)
-#;;CamerasAccessoriesAndSupplies-LandingPageRestriction;Restriction for Cameras Accessories And Supplies;BP001;CamerasAccessoriesAndSuppliesCategoryPage
-
-INSERT_UPDATE CategoryFeatureComponent;$contentCV[unique=true];uid[unique=true];name;category(code, $productCV);&componentRef
-#;;CameraFlashesFeatureComponent;CameraFlashesFeatureComponent;586;CameraFlashesFeatureComponent
-#;;TripodFeatureComponent;TripodFeatureComponent;587;TripodFeatureComponent
-#;;CameraLensesFeatureComponent;CameraLensesFeatureComponent;588;CameraLensesFeatureComponent
-#;;ColourFilmsFeatureComponent;ColourFilmsFeatureComponent;597;ColourFilmsFeatureComponent
-#;;BlackAndWhiteFilmsFeatureComponent;BlackAndWhiteFilmsFeatureComponent;598;BlackAndWhiteFilmsFeatureComponent
-#;;BlankVideoTapesFeatureComponent;BlankVideoTapesFeatureComponent;604;BlankVideoTapesFeatureComponent
-
-INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-#;;BuyOnlineBanner;Buy Online Banner;BuyOnlineBanner
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
-#;;Section2Slot-CameraAccessories;Section2 Slot for Camera Accessories Page;true;BuyOnlineBanner
-#;;Section3Slot-CameraAccessories;Section3 Slot for Camera Accessories Page;true;CameraFlashesFeatureComponent,TripodFeatureComponent,CameraLensesFeatureComponent,ColourFilmsFeatureComponent,BlackAndWhiteFilmsFeatureComponent,BlankVideoTapesFeatureComponent
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='CamerasAccessoriesAndSuppliesCategoryPage'];contentSlot(uid,$contentCV)[unique=true]
-#;;Section2-CameraAccessories;Section2;;Section2Slot-CameraAccessories
-#;;Section3-CameraAccessories;Section3;;Section3Slot-CameraAccessories
 
 ###### Spareparts Search Results Page ######
 
@@ -693,10 +549,10 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 #################    HOME PAGE START     #################
 
-###  Home page 
- Slot 1  #######
+
+###  Home page splash Slot 1  #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-;;SparepartsHompageSplashBannerComponent;Spareparts Homepage Splash Banner Component;/Breaks/break/c/BP001;SparepartsHompageSplashBannerComponent
+;;SparepartsHompageSplashBannerComponent;Spareparts Homepage Splash Banner Component;/Brakes/Brake/c/BP001;SparepartsHompageSplashBannerComponent
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
 ;;SparepartsHompageDiscountBannerComponent;Spareparts Homepage Discount Banner Component;/Brake-suspension/bush-kit/c/A03;SparepartsHompageDiscountBannerComponent
@@ -706,48 +562,60 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 
 ###  Home page slot 2A  ####
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-;;SparepartsHompageBreakBannerComponent;Spareparts Homepage Break Banner Component;/Brake-Suspension/c/BP001;SparepartsHompageBreakBannerComponent
+;;SparepartsHompageBrakeBannerComponent;Spareparts Homepage Brake Banner Component;/Brake-Suspension/c/BP001;SparepartsHompageBrakeBannerComponent
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
 ;;SparepartsHompageCarLightBannerComponent;Spareparts Homepage Car Light Banner Component;/Car-lights/c/BP004;SparepartsHompageCarLightBannerComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-;;Section2ASlot-Homepage;true;SparepartsHompageBreakBannerComponent,SparepartsHompageCarLightBannerComponent
+;;Section2ASlot-Homepage;true;SparepartsHompageBrakeBannerComponent,SparepartsHompageCarLightBannerComponent
 
 #### Home section 2B #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-;;SparepartsHompageCarEngineBannerComponent;Spareparts Homepage Car Engine Component;/Car-parts/c/BP002;SparepartsHompageCarEngineBannerComponent
+;;SparepartsHompageCarEngineBannerComponent;Spareparts Homepage Car Engine Component;/Car-engine/c/BP003;SparepartsHompageCarEngineBannerComponent
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-;;SparepartsHompageCarBodypartsBannerComponent;Spareparts Homepage Car Bodyparts Component Child;/Car-engine/c/BP003;SparepartsHompageCarBodypartsBannerComponent
+;;SparepartsHompageCarBodypartsBannerComponent;Spareparts Homepage Car Bodyparts Component Child;/Car-parts/c/BP002;SparepartsHompageCarBodypartsBannerComponent
 
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#;;Section2BSlot-Homepage;true;SparepartsHompageCarBodypartsBannerComponent,SparepartsHompageCarEngineBannerComponent
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+;;Section2BSlot-Homepage;true;SparepartsHompageCarBodypartsBannerComponent,SparepartsHompageCarEngineBannerComponent
 
 ## Home section 2C
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
 ;;Section2CSlot-Homepage;
 
 ## Home section 3
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];&componentRef
-;;SparepartsHomepageProductCarouselComponent;SparepartsHomepageProductCarouselComponent
 
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-;;NewSparepartsHomepageProductCarouselComponent;What's New Spareparts Homepage Product Carousel;P0001,P0002,P0003,P0004,P0005;allVisible;true;NewSparepartsHomepageProductCarouselComponent
+;;SparepartsHomepageProductCarouselComponent;Spareparts Homepage Product Carousel;P0031,P0024,P0033,P0034,P0035,P0036,P0037,P0027;allVisible;false;SparepartsHomepageProductCarouselComponent
+
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+;;NewSparepartsHomepageProductCarouselComponent;Spareparts Homepage Product Carousel;P0001,P0002,P0003,P0004,P0005,P0011,P0013,P0014,P0016,P0018;allVisible;false;NewSparepartsHomepageProductCarouselComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
 ;;Section3Slot-Homepage;SparepartsHomepageProductCarouselComponent,NewSparepartsHomepageProductCarouselComponent
 
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;Section3-Homepage;Section3;;Section3Slot-Homepage
+
+
+UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;SparepartsHomepageProductCarouselComponent;Our Bestselling Products
+
+UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+;;NewSparepartsHomepageProductCarouselComponent;What's New
+
+
 #### Section 4
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-;;SparepartsHompageImage1BannerComponent;Spareparts Homepage Image 1 Banner Component;/p/#;SparepartsHompageImage1BannerComponent
-;;SparepartsHompageImage2Component;Spareparts Homepage Image 2 Banner Component;/p/#;SparepartsHompageImage2Component
-;;SparepartsHompageImage3BannerComponent;Spareparts Homepage Image 3 Banner Component;/p/#;SparepartsHompageImage3BannerComponent
-;;SparepartsHompageImage4BannerComponent;Spareparts Homepage Image 4 Banner Component;/p/#;SparepartsHompageImage4BannerComponent
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+#;;SparepartsHompageImage1BannerComponent;Spareparts Homepage Image 1 Banner Component;/p/#;SparepartsHompageImage1BannerComponent
+#;;SparepartsHompageImage2Component;Spareparts Homepage Image 2 Banner Component;/p/#;SparepartsHompageImage2Component
+#;;SparepartsHompageImage3BannerComponent;Spareparts Homepage Image 3 Banner Component;/p/#;SparepartsHompageImage3BannerComponent
+#;;SparepartsHompageImage4BannerComponent;Spareparts Homepage Image 4 Banner Component;/p/#;SparepartsHompageImage4BannerComponent
 
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-;;Section4Slot-Homepage;true;SparepartsHompageImage1BannerComponent,SparepartsHompageImage2Component,SparepartsHompageImage3BannerComponent,SparepartsHompageImage4BannerComponent
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+#;;Section4SlotHomepage;true;SparepartsHompageImage1BannerComponent,SparepartsHompageImage2Component,SparepartsHompageImage3BannerComponent,SparepartsHompageImage4BannerComponent
 
 ### Section 5
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
@@ -815,49 +683,6 @@ INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterT
 
 ##### End Update the Camera and Accessories Category Page #####
 
-###### Spareparts SLR Category Landing Page ######
-
-INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved'];previewImage(code, $contentCV)
-#;;SLRCamerasCategoryPage;SLR Cameras Category Page;CategoryPageTemplate;false;;;
-
-INSERT_UPDATE CMSCategoryRestriction;$contentCV[unique=true];uid[unique=true];name;categories(code, $productCV);pages(uid, $contentCV)
-#;;SLRCameras-LandingPageRestriction;Restriction for SLR Cameras;578;SLRCamerasCategoryPage
-
-INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-#;;BuyOnlineBanner;Buy Online Banner;BuyOnlineBanner
-
-##### Section 1 ######
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-#;;ElectronicsSLRSplashBannerComponent;Electronics SLR Camera Splash Banner Component;Open-Catalogue/Cameras/Digital-Cameras/c/575;ElectronicsSLRSplashBannerComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#;;Section1Slot-SLRCameras;true;ElectronicsSLRSplashBannerComponent
-
-##### Section 2 ######
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-#;;ElectronicsCanon500DBannerComponent;Electronics Canon 500D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS-500D-%2B-18-200mm-IS/p/2054947;ElectronicsCanon500DBannerComponent
-#;;ElectronicsCanon450DBannerComponent;Electronics Canon 450D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS450D-%2B-18-55-IS-Kit/p/1382080;ElectronicsCanon450DBannerComponent
-#;;ElectronicsSonyA100HBannerComponent;Electronics Sony A100H Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A100H/p/816780;ElectronicsSonyA100HBannerComponent
-#;;ElectronicsSonyA330BannerComponent;Electronics Sony A330 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A330-%2BDT-18---55-mm/p/2934302;ElectronicsSonyA330BannerComponent
-#;;ElectronicsSonyA200BannerComponent;Electronics Sony A200 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-200/p/1391319;ElectronicsSonyA200BannerComponent
-#;;ElectronicsSonyAlpha350BannerComponent;Electronics Sony Alpha 350 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-350/p/1446509;ElectronicsSonyAlpha350BannerComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#;;Section2Slot-SLRCameras;true;ElectronicsSonyA100HBannerComponent,ElectronicsCanon500DBannerComponent,ElectronicsCanon450DBannerComponent,ElectronicsSonyA330BannerComponent,ElectronicsSonyA200BannerComponent,ElectronicsSonyAlpha350BannerComponent
-
-##### Section 3 #####
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-#;;ElectronicsSaveBigDLSRBannerComponent;Electronics Save Big DSLR Banner Component;/Open-Catalogue/Cameras/Camera-Accessories-%26-Supplies/c/585;ElectronicsSaveBigDLSRBannerComponent
-
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-#;;Section3Slot-SLRCameras;true;ElectronicsSaveBigDLSRBannerComponent,ElectronicsHompageFreeDelBannerComponent
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='SLRCamerasCategoryPage'];contentSlot(uid,$contentCV)[unique=true]
-#;;Section1-SLRCameras;Section1;;Section1Slot-SLRCameras
-#;;Section2-SLRCameras;Section2;;Section2Slot-SLRCameras
-#;;Section3-SLRCameras;Section3;;Section3Slot-SLRCameras
-
-###### End Spareparts SLR Category Landing Page ######
 
 # Remove new customer component from the center slot of the checkout login page
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
@@ -1097,31 +922,35 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 
 
 INSERT_UPDATE CategoryNavigationComponent;$contentCV[unique=true];uid[unique=true];name;styleClass;&componentRef;navigationNode(&nodeRef);wrapAfter
-;;SparepartsCategoryNavComponent;Category Navigation Component;;SparepartsCategoryNavComponent;SparepartsCategoryNavNode;10
+;;SparepartsCategoryNavComponent;Category Navigation Component;;SparepartsCategoryNavComponent;SparepartsCategoryNavNode;15
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid, $contentCV)
 ;;NavigationBarSlot;SparepartsCategoryNavComponent,breadcrumbComponent
+
 
 ## level 1. SiteRoot ##
 ## level 2. children of SiteRoot ##
 # the following order of children is the display order on the site
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)
-;SparepartsCategoryNavNode;;Categories;SparepartsNavNode;SparepartsCategoryNavNode;BrakeSuspensionNavNode,CarPartsNavNode,CarEngineNavNode,CarLightsNavNode
+;SparepartsCategoryNavNode;;Categories;SparepartsNavNode;SparepartsCategoryNavNode;BrakeSuspensionNavNode,CarPartsNavNode,CarEngineNavNode,CarLightsNavNode,CarWheelsNavNode,FiltersNavNode
 
 ## level 3. children of Category Nav ##
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
 ;BrakeSuspensionNavNode;;Brake Suspension Category;BrakeSuspensionNavNode;BrakePadNavNode,BrakeDiscRoaterNavNode,LowerLinkBushNavNode,ControlArmsNavNode
-;CarPartsNavNode;;Car parts category;CarPartsNavNode
-;CarEngineNavNode;;Car Engine Category;CarEngineNavNode
-;CarLightsNavNode;;Car Lights Category;CarLightsNavNode;BumperLightsNavNode,HeadLightsNavNode,IndicatorLightsNavNode
+;CarPartsNavNode;;Car parts category;CarPartsNavNode;BumperNavNode,GearKnobNavNode,InstrumentClusterNavNode,FuelTankCapNavNode
+;CarEngineNavNode;;Car Engine Category;CarEngineNavNode;GearShiterCabelNavNode,AcceleratorPadelNavNode,TieRodEndNavNode,ClutchPlateNavNode,ClutchCabelNavNode,ClutchBearingNavNode,FuelPumpNavNode
+;CarLightsNavNode;;Car Lights Category;CarLightsNavNode;BumperLightsNavNode,HeadLightsNavNode,IndicatorLightsNavNode,BackLightNavNode
+;CarWheelsNavNode;;Car Wheels Category;CarWheelsNavNode
+;FiltersNavNode;;Filters Category;FiltersNavNode
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
 ;BrakeSuspensionNavNodeEntry;;Brake Suspension Navigation Node Entry;BrakeSuspensionNavNode;BrakeSuspensionCategoryLink;
 ;CarPartsNavNodeEntry;;Car Parts Navigation Node Entry;CarPartsNavNode;CarPartsCategoryLink;
 ;CarEngineNavNodeEntry;;Car Engine Navigation Node Entry;CarEngineNavNode;CarEngineCategoryLink;
-;CarLightsNavNodeEntry;;Car Lights Node Entry;CarLightsNavNode;CarLightsCategoryLink;
-
+;CarLightsNavNodeEntry;;Car Lights Navigation Node Entry;CarLightsNavNode;CarLightsCategoryLink;
+;CarWheelsNavNodeEntry;;Car Wheels Navigation Node Entry;CarWheelsNavNode;CarWheelsCategoryLink
+;FiltersNavNodeEntry;;Filters Navigation Node Entry;FiltersNavNode;FiltersCategoryLink
 
 ## level 4. children of NavNode (the following order of children is the display order on the site) ##
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
@@ -1130,10 +959,29 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&n
 ;BrakeDiscRoaterNavNode;;Brake Disc Roater Links;BrakeDiscRoaterNavNode
 ;LowerLinkBushNavNode;;Lower Link Bush Link;LowerLinkBushNavNode
 ;ControlArmsNavNode;;Control Arms Links;ControlArmsNavNode
+
+## children of CarPartsNavNode
+;BumperNavNode;;Bumper Links;BumperNavNode
+;GearKnobNavNode;;Gear Knob Links;GearKnobNavNode
+;InstrumentClusterNavNode;;Instrument Cluster Links;InstrumentClusterNavNode
+;FuelTankCapNavNode;;Fuel Tank Cap Links;FuelTankCapNavNode
+
+
+## children of CarEngineNavNode
+;GearShiterCabelNavNode;;Gear Shiter Cabel Links;GearShiterCabelNavNode
+;AcceleratorPadelNavNode;;Accelerator Padel Links;AcceleratorPadelNavNode
+;TieRodEndNavNode;;Tie Rod End Links;TieRodEndNavNode
+;ClutchPlateNavNode;;Clutch Plate Links;ClutchPlateNavNode
+;ClutchCabelNavNode;;Clutch Cabel Links;ClutchCabelNavNode
+;ClutchBearingNavNode;;Clutch Bearing Links;ClutchBearingNavNode
+;FuelPumpNavNode;;Fuel Pump Links;FuelPumpNavNode
+
 ## children of CarLightsNavNode
 ;BumperLightsNavNode;; Bumper Lights Links;BumperLightsNavNode
 ;HeadLightsNavNode;;Head Lights Links;HeadLightsNavNode
 ;IndicatorLightsNavNode;;Indicator Lights Links;IndicatorLightsNavNode
+;BackLightNavNode;;Back Light Links;BackLightNavNode
+
 
 ## entries of the above navigation nodes ##
 INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
@@ -1142,9 +990,21 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
 ;BrakeDiscRoaterNavNodeEntry;;Brake Disc Roater Navigation Node Entry;BrakeDiscRoaterNavNode;BrakeDiscRoaterCategoryLink;
 ;LowerLinkBushNavNodeEntry;;Lower Link Bush Navigation Node Entry;LowerLinkBushNavNode;LowerLinkBushKitCategoryLink;
 ;ControlArmsNavNodeEntry;;Control Arms Navigation Node Entry;ControlArmsNavNode;ControlArmsCategoryLink;
+;BumperNavNodeEntry;;Bumper Navigation Node Entry;BumperNavNode;BumperCategoryLink;  
+;GearKnobNavNodeEntry;;Gear Knob Navigation Node Entry;GearKnobNavNode;GearKnobCategoryLink;
+;InstrumentClusterNavNodeEntry;; Instrument Cluster Navigation Node Entry;InstrumentClusterNavNode;InstrumentClusterCategoryLink;          
+;FuelTankCapNavNodeEntry;;Fuel Tank Navigation Node Entry;FuelTankCapNavNode;FuelTankCapCategoryLink;
+;GearShiterCabelNavNodeEntry;; Gear Shiter Cabel Navigation Node ENtry;GearShiterCabelNavNode;GearShiterCabelCategoryLink;
+;AcceleratorPadelNavNodeEntry;;Accelerator Padel Navigation Node Entry;AcceleratorPadelNavNode;AcceleratorPadelCategoryLink;
+;TieRodEndNavNodeEntry;;Tie Rod End Navigation Node Entry;TieRodEndNavNode;TieRodEndCategoryLink;
+;ClutchPlateNavNodeEntry;;Clutch Plate Navigation Node Entry;ClutchPlateNavNode;ClutchPlateCategoryLink;
+;ClutchCabelNavNodeEntry;;Clutch Cabel Navigation Node Entry;ClutchCabelNavNode;ClutchCabelCategoryLink;
+;ClutchBearingNavNodeEntry;;Clush Bearing Navigation Node Entry;ClutchBearingNavNode;ClutchBearingCategoryLink;
+;FuelPumpNavNodeEntry;;Fuel Pump Navigation Node Entry;FuelPumpNavNode;FuelPumpCategoryLink;
 ;BumperLightsNavNodeEntry;; Bumber Lights Navigation Node Entry;BumperLightsNavNode;BumperLightsCategoryLink
 ;HeadLightsNavNodeEntry;;Head Lights Navigation Node Entry;HeadLightsNavNode;HeadLightsCategoryLink
 ;IndicatorLightsNavNodeEntry;;Indicator Lights Navigation Node Entry;IndicatorLightsNavNode;IndicatorLightsCategoryLink
+;BackLightNavNodeEntry;;Back Lights Navigation Node Entry;BackLightNavNode;BackLightsCategoryLink
 
 ###### Footer Component Refactor Start ######
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(uid,$contentCV)
